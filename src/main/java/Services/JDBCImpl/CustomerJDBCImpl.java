@@ -20,19 +20,13 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     Statement statement;
     
     @Override
-    public void addCustomer(Customer customer) throws Exception {
-    String insertAuthor = "INSERT INTO customer(trn, f_name, l_name, email, telephone_nmunber, dob) "
-                + "values('" + customer.getTrn() + 
-                "', '" + customer.getFirstname() +
-                "', '" + customer.getLastname() + 
-                "', '" + customer.getTelephoneNum() + 
-                "', '" + customer.getDob()+"')";    
     
-       
-         statement = this.getConnection().createStatement();        
-        statement.execute(insertAuthor);      
+    
+    
+    public void addCustomer(Customer customer) throws Exception {
         
-        this.getConnection().close();       
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.    
+        
     
     }
 
@@ -56,19 +50,62 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @Override
     public void addCustomerJDBC(Customer customer) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+     String insertCustomer = "INSERT INTO customer(trn, f_name, l_name, email, telephone_nmunber, dob) "
+                + "values('" + customer.getTrn() + 
+                "', '" + customer.getFirstname() +
+                "', '" + customer.getLastname() + 
+                "', '" + customer.getTelephoneNum() + 
+                "', '" + customer.getDob()+"')";    
+    
+       
+         statement = this.getConnection().createStatement();        
+        statement.execute(insertCustomer);      
+        
+        this.getConnection().close();       
+       
+        
+        
     }
 
     @Override
     public void updateCustomerJDBC(Customer customer) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         
+        String updateCustomer = "UPDATE authors SET Title = '" + customer.getTrn() + 
+                "', '" + customer.getFirstname() +
+                "', '" + customer.getLastname() + 
+                "', '" + customer.getTelephoneNum() + 
+                "', '" + customer.getDob()+"')";    
+          
+        
+        statement = this.getConnection().createStatement();
+        
+        int rowsUpdated = statement.executeUpdate(updateCustomer);
+        if (rowsUpdated > 0) {
+            System.out.println("Update Successful");
+        }
+        
+        this.getConnection().close();  
+        
     }
 
     @Override
     public Customer geCustomerJDBC(String trn) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+
+
     }
 
     @Override
