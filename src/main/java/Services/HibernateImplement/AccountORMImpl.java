@@ -5,9 +5,10 @@
  */
 package Services.HibernateImplement;
 
+import Domain.Account;
 import Domain.Customer;
 import Services.HibernateMainConfig;
-import Services.ICustomerService;
+import Services.IAccountService;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -18,23 +19,23 @@ import org.hibernate.Transaction;
  *
  * @author OraceMundle
  */
-public class CustomerORMImpl extends HibernateMainConfig implements ICustomerService{
+public class AccountORMImpl extends HibernateMainConfig implements IAccountService{
 
     @Override
-    public void addCustomer(Customer customer) throws Exception {
+    public void addAccount(Account account) throws Exception {
         
-         Session session = this.getSession();
+       Session session = this.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             session.save(customer);
+             session.save(account);
              transact.commit();
          }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to save customer; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to save an account; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -42,29 +43,26 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
                       session.flush();
                       session.close();
                      }   
-    
+            
         
-        
-    
-    
-    
     }
 
     @Override
-    public void updateCustomer(Customer customer) throws Exception {
+    public void updateAccount(Account account) throws Exception {
+        
         Session session = this.getSession();
          Transaction transact=null;
          try{
             
              transact=session.beginTransaction();
-             session.update(customer);
+             session.update(account);
              transact.commit();
          }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to update customer information; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to update account information; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -73,25 +71,25 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
                       //session.close();
                      }
         
+        
     }
 
     @Override
-    public Customer geCustomer(String trn) throws Exception {
-        
+    public Account getAccount(String accountnumber) throws Exception {
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
         
-          Customer aCustomer=null;
+          Account account=null;
          try{
              transact=session.beginTransaction();
-             aCustomer = (Customer) session.load(Customer.class, trn);             
+             account = (Account) session.load(Account.class, accountnumber);             
              transact.commit();
          }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load customer with id " + trn + "; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load account with id " + accountnumber  + "; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -100,26 +98,26 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
                    //  session.close();
                      }
          
-        return aCustomer;
+        return account;
         
     }
 
     @Override
-    public List<Customer> getAllCustomers() throws Exception {
-        
-      Session session1 = this.getSession();
+    public List<Account> getAllAccount() throws Exception {
+    
+        Session session1 = this.getSession();
          Transaction transact=null;
-         List<Customer> customerList =  new ArrayList<>();
+         List<Account> accountList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerList = (List<Customer>) session1.createQuery("from ").list();
+             accountList = (List<Account>) session1.createQuery("from ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
              if(session1!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load all customers; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load all accounts; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -127,18 +125,17 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
                       //session1.flush();
                       //session1.close();
                      }
-         return customerList;  
-        
-        
+         return accountList;  
+    
     }
 
     @Override
-    public void deleteCustomer(Class<?> Customer, String trn) throws Exception {
-    Session session = CustomerORMImpl.getSession();
+    public void deleteAccount(Class<?> Account, String accountnumber) throws Exception {
+        Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             Object bookObject = session.load(Customer, trn);
+             Object bookObject = session.load(Account, accountnumber);
              
                       session.delete(bookObject);
                       transact.commit(); 
@@ -147,41 +144,46 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to delete customer; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to delete account; rolling back transaction " + hex.getMessage());
              }
          }
          finally {
                       session.flush();
                       session.close();
                      }
-    
+        
+        
+        
     }
+
+    
+    
+    
+    //JDBC Methods
+    
     @Override
-    public void addCustomerJDBC(Customer customer) throws Exception {
+    public void addAccountJDBC(Account account) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateCustomerJDBC(Customer customer) throws Exception {
+    public void updateAccountJDBC(Account account) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Customer geCustomerJDBC(String trn) throws Exception {
+    public Account getAccountJDBC(String accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Customer> getAllCustomersJDBC() throws Exception {
+    public List<Account> getAllAccountJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteCustomerJDBC(String trn) throws Exception {
+    public void deleteAccountJDBC(Class<?> Account, String accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
     
 }
