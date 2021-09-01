@@ -1,0 +1,187 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Services.HibernateImplement;
+
+import Domain.Customer;
+import Services.HibernateMainConfig;
+import Services.ICustomerService;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+/**
+ *
+ * @author OraceMundle
+ */
+public class CustomerORMImpl extends HibernateMainConfig implements ICustomerService{
+
+    @Override
+    public void addCustomer(Customer customer) throws Exception {
+        
+         Session session = this.getSession();
+         Transaction transact=null;
+         try{
+             transact=session.beginTransaction();
+             session.save(customer);
+             transact.commit();
+         }
+         catch(HibernateException hex){
+             if(session!=null)
+             {
+                 transact.rollback();
+                 throw new HibernateException("Not able to save book; rolling back transaction " + hex.getMessage());
+             }
+             
+         }
+         finally {
+                      session.flush();
+                      session.close();
+                     }   
+    
+        
+        
+    
+    
+    
+    }
+
+    @Override
+    public void updateCustomer(Customer customer) throws Exception {
+        Session session = this.getSession();
+         Transaction transact=null;
+         try{
+            
+             transact=session.beginTransaction();
+             session.update(customer);
+             transact.commit();
+         }
+         catch(HibernateException hex){
+             if(session!=null)
+             {
+                 transact.rollback();
+                 throw new HibernateException("Not able to update book; rolling back transaction " + hex.getMessage());
+             }
+             
+         }
+         finally {
+                     // session.flush();
+                      //session.close();
+                     }
+        
+    }
+
+    @Override
+    public Customer geCustomer(String trn) throws Exception {
+        
+        Session session = CustomerORMImpl.getSession();
+         Transaction transact=null;
+        
+          Customer aCustomer=null;
+         try{
+             transact=session.beginTransaction();
+             aCustomer = (Customer) session.load(Customer.class, trn);             
+             transact.commit();
+         }
+         catch(HibernateException hex){
+             if(session!=null)
+             {
+                 transact.rollback();
+                 throw new HibernateException("Not able to load book with id " + trn + "; rolling back transaction " + hex.getMessage());
+             }
+             
+         }
+         finally {
+                  //   session.flush();
+                   //  session.close();
+                     }
+         
+        return aCustomer;
+        
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() throws Exception {
+        
+      Session session1 = this.getSession();
+         Transaction transact=null;
+         List<Customer> customerList =  new ArrayList<>();
+         try{
+             transact=session1.beginTransaction();
+             customerList = (List<Customer>) session1.createQuery("from ").list();
+             transact.commit();             
+         }
+         catch(HibernateException hex){
+             if(session1!=null)
+             {
+                 transact.rollback();
+                 throw new HibernateException("Not able to load all authors; rolling back transaction " + hex.getMessage());
+             }
+             
+         }
+         finally {
+                      //session1.flush();
+                      //session1.close();
+                     }
+         return customerList;  
+        
+        
+    }
+
+    @Override
+    public void deleteCustomer(Class<?> Customer, String trn) throws Exception {
+    Session session = CustomerORMImpl.getSession();
+         Transaction transact=null;
+         try{
+             transact=session.beginTransaction();
+             Object bookObject = session.load(Customer, trn);
+             
+                      session.delete(bookObject);
+                      transact.commit(); 
+              }
+         catch(HibernateException hex){
+             if(session!=null)
+             {
+                 transact.rollback();
+                 throw new HibernateException("Not able to delete book; rolling back transaction " + hex.getMessage());
+             }
+         }
+         finally {
+                      session.flush();
+                      session.close();
+                     }
+    
+    }
+    @Override
+    public void addCustomerJDBC(Customer customer) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateCustomerJDBC(Customer customer) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Customer geCustomerJDBC(String trn) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Customer> getAllCustomersJDBC() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteCustomerJDBC(String trn) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+    
+}
