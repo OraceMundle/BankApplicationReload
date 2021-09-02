@@ -22,7 +22,13 @@ public class JDBCMainConfiguration {
     
     protected Connection getConnection() throws SQLException
     {
-        con=DriverManager.getConnection(conString,dbUser,dbUserPWD);
+        try {
+            con=DriverManager.getConnection(conString,dbUser,dbUserPWD);
+            } 
+                       
+        catch (Exception e) {
+        }
+        
         
         return con;
     }
