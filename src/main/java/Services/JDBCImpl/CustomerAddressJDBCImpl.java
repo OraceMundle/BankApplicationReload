@@ -23,34 +23,34 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
     
     Statement statement;
 
+
     @Override
-    public void addAccount(CustomerAddress customerAddress) throws Exception {
+    public void addCustomerAddress(CustomerAddress customerAddress) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateAccount(CustomerAddress customerAddress) throws Exception {
+    public void updateCustomerAddress(CustomerAddress customerAddress) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CustomerAddress getAccount(int addressId) throws Exception {
+    public CustomerAddress getCustomerAddress(int addressId) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<CustomerAddress> getAllAccount() throws Exception {
+    public List<CustomerAddress> getAllCustomerAddresses() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteAccount(Class<?> CustomerAddress, int addressId) throws Exception {
+    public void deleteCustomerAddress(Class<?> CustomerAddress, int addressId) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void addAccountJDBC(CustomerAddress customerAddress) throws Exception {
-      
+    public void addCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
         String insertCustomerAddress = "INSERT INTO customeraddress(street, community_parish, country) "
                 + "values('" + customerAddress.getStreet() + 
                 "', '" + customerAddress.getCommunity() +
@@ -63,8 +63,7 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
     }
 
     @Override
-    public void updateAccountJDBC(CustomerAddress customerAddress) throws Exception {
-
+    public void updateCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
         String updateCustomerAddress = "UPDATE customeraddress SET address_id = '" + customerAddress.getAddressId() + 
                 "', street = '" + customerAddress.getStreet() +
                 "', community_parish ='" + customerAddress.getCommunity() + 
@@ -78,12 +77,11 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
             System.out.println("Customer Address Update Successful");
         }
         
-        this.getConnection().close();        
+        this.getConnection().close();  
     }
 
     @Override
-    public CustomerAddress getAccountJDBC(int addressId) throws Exception {
-            
+    public CustomerAddress getCustomerAddressJDBC(int addressId) throws Exception {
         String selectAccount = "Select * From customeraddress Where address_id = " + addressId;
         statement=this.getConnection().createStatement();
         
@@ -94,13 +92,12 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
         customerAddress.setCommunity("community_parish");
         customerAddress.setCountry("country");
                 
-        return customerAddress;   
+        return customerAddress;
     }
 
     @Override
-    public List<CustomerAddress> getAllAccountJDBC() throws Exception {
-
-        ResultSet rs=null;
+    public List<CustomerAddress> getAllCustomerAddressesJDBC() throws Exception {
+         ResultSet rs=null;
         PreparedStatement ps;
         
         String SelectAll="Select * From customeraddress";
@@ -109,14 +106,14 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
         rs=ps.executeQuery(SelectAll);
         
         
-        return (List<CustomerAddress>) rs;        
+        return (List<CustomerAddress>) rs; 
     }
 
     @Override
-    public void deleteAccountJDBC(Class<?> CustomerAddress, int addressId) throws Exception {
-
+    public void deleteCustomerAddressJDBC(int addressId) throws Exception {
+        
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From customeraddress Where address_id  = " + addressId);        
+        statement.execute("Delete From customeraddress Where address_id  = " + addressId);  
     }
     
 }

@@ -21,34 +21,34 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     
     Statement statement;
 
+
     @Override
-    public void addAccount(Worker worker) throws Exception {
+    public void addWorker(Worker worker) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateAccount(Worker worker) throws Exception {
+    public void updateWorker(Worker worker) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Worker getAccount(String id) throws Exception {
+    public Worker getWorker(String id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Worker> getAllAccount() throws Exception {
+    public List<Worker> getAllWorker() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteAccount(Class<?> Worker, String id) throws Exception {
+    public void deleteWorker(Class<?> Worker, String id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void addAccountJDBS(Worker worker) throws Exception {
-
+    public void addWorkerJDBS(Worker worker) throws Exception {
         String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email) "
                 + "values('" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +
@@ -58,12 +58,11 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
          statement = this.getConnection().createStatement();        
         statement.execute(insertWorker);      
         
-        this.getConnection().close();        
+        this.getConnection().close(); 
     }
 
     @Override
-    public void updateAccountJDBC(Worker worker) throws Exception {
-
+    public void updateWorkerJDBC(Worker worker) throws Exception {
         String updateWorker = "UPDATE worker SET worker_id = '" + worker.getId() + 
                 "', f_name = '" + worker.getFirstname() +
                 "', l_name ='" + worker.getLastname() +
@@ -77,13 +76,11 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
             System.out.println("Worker Update Successful");
         }
         
-        this.getConnection().close();    
-        
+        this.getConnection().close(); 
     }
 
     @Override
-    public Worker getAccountJDBC(String id) throws Exception {
-        
+    public Worker getWorkerJDBC(String id) throws Exception {
         String selectWorker = "Select * From worker Where worker_id = " + id;
         statement=this.getConnection().createStatement();
         
@@ -99,8 +96,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public List<Worker> getAllAccountJDBC() throws Exception {
-
+    public List<Worker> getAllWorkerJDBC() throws Exception {
         ResultSet rs=null;
         PreparedStatement ps;
         
@@ -110,14 +106,13 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         rs=ps.executeQuery(SelectAll);
         
         
-        return (List<Worker>) rs;   
+        return (List<Worker>) rs; 
     }
 
     @Override
-    public void deleteAccountJDBC(String id) throws Exception {
-
+    public void deleteWorkerJDBC(String id) throws Exception {
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From worker Where worker_id  = " + id);    
+        statement.execute("Delete From worker Where worker_id  = " + id);  
     }
     
 }
