@@ -17,28 +17,28 @@ public interface ICustomerAddressService extends IService{
     public final String NAME = "ICustomerAddressService";
     
     //ORM  
-    public void addAccount(CustomerAddress customerAddress ) throws Exception;
+    public void addCustomerAddress(CustomerAddress customerAddress ) throws Exception;
     
-    public void updateAccount(CustomerAddress customerAddress) throws Exception;
+    public void updateCustomerAddress(CustomerAddress customerAddress) throws Exception;
     
-    public CustomerAddress getAccount(int addressId)throws Exception;
+    public CustomerAddress getCustomerAddress(int addressId)throws Exception;
     
-    public List<CustomerAddress> getAllAccount() throws Exception;
+    public List<CustomerAddress> getAllCustomerAddresses() throws Exception;
     
-    public void deleteAccount(Class<?> CustomerAddress, int addressId) throws Exception;
+    public void deleteCustomerAddress(Class<?> CustomerAddress, int addressId) throws Exception;
     
     
     
     //JDBC 
-  public void addAccountJDBC(CustomerAddress customerAddress ) throws Exception;
+   public void addCustomerAddressJDBC(CustomerAddress customerAddress ) throws Exception;
     
-    public void updateAccountJDBC(CustomerAddress customerAddress) throws Exception;
+    public void updateCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception;
     
-    public CustomerAddress getAccountJDBC(int addressId)throws Exception;
+    public CustomerAddress getCustomerAddressJDBC(int addressId)throws Exception;
     
-    public List<CustomerAddress> getAllAccountJDBC() throws Exception;
+    public List<CustomerAddress> getAllCustomerAddressesJDBC() throws Exception;
     
-    public void deleteAccountJDBC(Class<?> CustomerAddress, int addressId) throws Exception;
+    public void deleteCustomerAddressJDBC(int addressId) throws Exception;
     
             
     

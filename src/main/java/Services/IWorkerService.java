@@ -17,31 +17,29 @@ public interface IWorkerService extends IService{
      public final String NAME = "IWorkerService";
     
     //ORM  
-    public void addAccount(Worker worker ) throws Exception;
+    public void addWorker(Worker worker ) throws Exception;
     
-    public void updateAccount(Worker worker) throws Exception;
+    public void updateWorker(Worker worker) throws Exception;
     
-    public Worker getAccount(String id)throws Exception;
+    public Worker getWorker(String id)throws Exception;
     
-    public List<Worker> getAllAccount() throws Exception;
+    public List<Worker> getAllWorker() throws Exception;
     
-    public void deleteAccount(Class<?> Worker, String id) throws Exception;
+    public void deleteWorker(Class<?> Worker, String id) throws Exception;
     
     
     
     //JDBC 
-    public void addAccountJDBS(Worker worker ) throws Exception;
+    public void addWorkerJDBS(Worker worker ) throws Exception;
     
-    public void updateAccountJDBC(Worker worker) throws Exception;
+    public void updateWorkerJDBC(Worker worker) throws Exception;
     
-    public Worker getAccountJDBC(String id)throws Exception;
+    public Worker getWorkerJDBC(String id)throws Exception;
     
-    public List<Worker> getAllAccountJDBC() throws Exception;
+    public List<Worker> getAllWorkerJDBC() throws Exception;
     
-    public void deleteAccountJDBC(String id) throws Exception;
+    public void deleteWorkerJDBC(String id) throws Exception;
     
-    
-    
-    
+   
     
 }
