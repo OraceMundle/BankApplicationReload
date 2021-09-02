@@ -5,11 +5,10 @@
  */
 package Services.HibernateImplement;
 
-
 import Domain.Account;
-import Domain.CustomerAddress;
+import Domain.WorkerLog;
 import Services.HibernateMainConfig;
-import Services.ICustomerAddressService;
+import Services.IWorkerLogService;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -20,18 +19,17 @@ import org.hibernate.Transaction;
  *
  * @author OraceMundle
  */
-public class CustomerAddressORMImpl extends HibernateMainConfig implements ICustomerAddressService{
+public class WorkerLogORMImpl extends HibernateMainConfig implements IWorkerLogService{
 
     
     //ORM Methods
     @Override
-    public void addCustomerAddress(CustomerAddress customerAddress) throws Exception {
-        
+    public void addWorkerLog(WorkerLog workerLog) throws Exception {
         Session session = this.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             session.save(customerAddress);
+             session.save(workerLog);
              transact.commit();
          }
          catch(HibernateException hex){
@@ -46,19 +44,19 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                       session.flush();
                       session.close();
                      }   
-            
+                   
         
     }
 
-    
     @Override
-    public void updateCustomerAddress(CustomerAddress customerAddress) throws Exception {
-      Session session = this.getSession();
+    public void updateWorkerLog(WorkerLog workerLog) throws Exception {
+        
+         Session session = this.getSession();
          Transaction transact=null;
          try{
             
              transact=session.beginTransaction();
-             session.update(customerAddress);
+             session.update(workerLog);
              transact.commit();
          }
          catch(HibernateException hex){
@@ -73,26 +71,27 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                      // session.flush();
                       //session.close();
                      }
-               
+        
+        
     }
 
     @Override
-    public CustomerAddress getCustomerAddress(int addressId) throws Exception {
+    public WorkerLog getWorkerLog(int id) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
         
-          CustomerAddress account=null;
+          WorkerLog account=null;
          try{
              transact=session.beginTransaction();
-             account = (CustomerAddress) session.load(CustomerAddress.class, addressId);             
+             account = (WorkerLog) session.load(WorkerLog.class, id);             
              transact.commit();
          }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load account with id " + addressId  + "; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load Worker Log with id " + id  + "; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -102,18 +101,18 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                      }
          
         return account;
-              
+       
     }
 
     @Override
-    public List<CustomerAddress> getAllCustomerAddresses() throws Exception {
+    public List<WorkerLog> getAllWorkerLog() throws Exception {
         
-        Session session1 = this.getSession();
+     Session session1 = this.getSession();
          Transaction transact=null;
-         List<CustomerAddress> customerAddressList =  new ArrayList<>();
+         List<WorkerLog> workerlogList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerAddressList = (List<CustomerAddress>) session1.createQuery("from ").list();
+             workerlogList = (List<WorkerLog>) session1.createQuery("from ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
@@ -128,64 +127,42 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                       //session1.flush();
                       //session1.close();
                      }
-         return customerAddressList;  
-               
+         return workerlogList;  
+    
     }
 
     @Override
-    public void deleteCustomerAddress(Class<?> CustomerAddress, int addressId) throws Exception {
-        
-        Session session = CustomerORMImpl.getSession();
-         Transaction transact=null;
-         try{
-             transact=session.beginTransaction();
-             Object bookObject = session.load(CustomerAddress, addressId);
-             
-                      session.delete(bookObject);
-                      transact.commit(); 
-              }
-         catch(HibernateException hex){
-             if(session!=null)
-             {
-                 transact.rollback();
-                 throw new HibernateException("Not able to delete account; rolling back transaction " + hex.getMessage());
-             }
-         }
-         finally {
-                      session.flush();
-                      session.close();
-                     }
-                 
+    public void deleteWorkLog(Class<?> WorkerLog, int id) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
+    //JDBC Methods
+    @Override
+    public void addWorkerLogJDBC(WorkerLog workerLog) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateWorkerLogJDBC(WorkerLog workerLog) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public WorkerLog getWorkerLogJDBC(int id) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<WorkerLog> getAllWorkerLogJDBC() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteWorkLogJDBC(int id) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    //JDBC
-    
-    @Override
-    public void addCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public CustomerAddress getCustomerAddressJDBC(int addressId) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<CustomerAddress> getAllCustomerAddressesJDBC() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void deleteCustomerAddressJDBC(int addressId) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     

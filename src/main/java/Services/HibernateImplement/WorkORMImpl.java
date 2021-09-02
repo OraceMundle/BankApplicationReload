@@ -5,11 +5,10 @@
  */
 package Services.HibernateImplement;
 
-
 import Domain.Account;
-import Domain.CustomerAddress;
+import Domain.Worker;
 import Services.HibernateMainConfig;
-import Services.ICustomerAddressService;
+import Services.IWorkerService;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -20,18 +19,17 @@ import org.hibernate.Transaction;
  *
  * @author OraceMundle
  */
-public class CustomerAddressORMImpl extends HibernateMainConfig implements ICustomerAddressService{
+public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
 
-    
     //ORM Methods
     @Override
-    public void addCustomerAddress(CustomerAddress customerAddress) throws Exception {
+    public void addWorker(Worker worker) throws Exception {
         
         Session session = this.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             session.save(customerAddress);
+             session.save(worker);
              transact.commit();
          }
          catch(HibernateException hex){
@@ -50,15 +48,15 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
         
     }
 
-    
     @Override
-    public void updateCustomerAddress(CustomerAddress customerAddress) throws Exception {
-      Session session = this.getSession();
+    public void updateWorker(Worker worker) throws Exception {
+        
+        Session session = this.getSession();
          Transaction transact=null;
          try{
             
              transact=session.beginTransaction();
-             session.update(customerAddress);
+             session.update(worker);
              transact.commit();
          }
          catch(HibernateException hex){
@@ -73,26 +71,27 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                      // session.flush();
                       //session.close();
                      }
-               
+        
+        
     }
 
     @Override
-    public CustomerAddress getCustomerAddress(int addressId) throws Exception {
+    public Worker getWorker(String id) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
         
-          CustomerAddress account=null;
+          Worker account=null;
          try{
              transact=session.beginTransaction();
-             account = (CustomerAddress) session.load(CustomerAddress.class, addressId);             
+             account = (Worker) session.load(Worker.class, id);             
              transact.commit();
          }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load account with id " + addressId  + "; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load account with id " + id  + "; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -102,18 +101,18 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                      }
          
         return account;
-              
+        
     }
 
     @Override
-    public List<CustomerAddress> getAllCustomerAddresses() throws Exception {
-        
-        Session session1 = this.getSession();
+    public List<Worker> getAllWorker() throws Exception {
+       
+         Session session1 = this.getSession();
          Transaction transact=null;
-         List<CustomerAddress> customerAddressList =  new ArrayList<>();
+         List<Worker> workerList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerAddressList = (List<CustomerAddress>) session1.createQuery("from ").list();
+             workerList = (List<Worker>) session1.createQuery("from ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
@@ -128,18 +127,18 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                       //session1.flush();
                       //session1.close();
                      }
-         return customerAddressList;  
-               
+         return workerList; 
+        
     }
 
     @Override
-    public void deleteCustomerAddress(Class<?> CustomerAddress, int addressId) throws Exception {
+    public void deleteWorker(Class<?> Worker, String id) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             Object bookObject = session.load(CustomerAddress, addressId);
+             Object bookObject = session.load(Worker, id);
              
                       session.delete(bookObject);
                       transact.commit(); 
@@ -155,35 +154,33 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
                       session.flush();
                       session.close();
                      }
-                 
+        
     }
 
     
-    
-    //JDBC
-    
+    //JDBC Methods
     @Override
-    public void addCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
+    public void addWorkerJDBS(Worker worker) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateCustomerAddressJDBC(CustomerAddress customerAddress) throws Exception {
+    public void updateWorkerJDBC(Worker worker) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public CustomerAddress getCustomerAddressJDBC(int addressId) throws Exception {
+    public Worker getWorkerJDBC(String id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<CustomerAddress> getAllCustomerAddressesJDBC() throws Exception {
+    public List<Worker> getAllWorkerJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteCustomerAddressJDBC(int addressId) throws Exception {
+    public void deleteWorkerJDBC(String id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
