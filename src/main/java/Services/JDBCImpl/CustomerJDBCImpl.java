@@ -76,11 +76,11 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     public void updateCustomerJDBC(Customer customer) throws Exception {
          
         String updateCustomer = "UPDATE customer SET trn = '" + customer.getTrn() + 
-                "', '" + customer.getFirstname() +
-                "', '" + customer.getLastname() + 
-                "', '" + customer.getEmail() +
-                "', '" + customer.getTelephoneNum() + 
-                "', '" + customer.getDob()+"')";    
+                "', f_name = '" + customer.getFirstname() +
+                "', l_name = '" + customer.getLastname() + 
+                "', email =  '" + customer.getEmail() +
+                "', telephone_number = '" + customer.getTelephoneNum() + 
+                "', dob = '" + customer.getDob()+"')";    
           
         
         statement = this.getConnection().createStatement();
