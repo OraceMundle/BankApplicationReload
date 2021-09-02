@@ -48,7 +48,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public void addWorkerJDBS(Worker worker) throws Exception {
+    public void addWorkerJDBC(Worker worker) throws Exception {
         String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email) "
                 + "values('" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +

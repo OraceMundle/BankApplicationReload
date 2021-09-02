@@ -160,7 +160,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     
     //JDBC Methods
     @Override
-    public void addWorkerJDBS(Worker worker) throws Exception {
+    public void addWorkerJDBC(Worker worker) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

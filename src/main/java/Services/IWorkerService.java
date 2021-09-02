@@ -30,7 +30,7 @@ public interface IWorkerService extends IService{
     
     
     //JDBC 
-    public void addWorkerJDBS(Worker worker ) throws Exception;
+    public void addWorkerJDBC(Worker worker ) throws Exception;
     
     public void updateWorkerJDBC(Worker worker) throws Exception;
     

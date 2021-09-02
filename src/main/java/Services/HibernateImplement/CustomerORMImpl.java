@@ -167,7 +167,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
     }
 
     @Override
-    public Customer geCustomerJDBC(String trn) throws Exception {
+    public Customer getCustomerJDBC(String trn) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
