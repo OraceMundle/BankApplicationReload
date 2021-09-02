@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface ICustomerService extends IService{
     
+    //ORM
     public final String NAME = "ICustomerService";
     
     public void addCustomer(Customer customer ) throws Exception;
@@ -28,7 +29,7 @@ public interface ICustomerService extends IService{
     
     
     
-    
+    //JDBC
     public void addCustomerJDBC(Customer customer ) throws Exception;
     
     public void updateCustomerJDBC(Customer customer) throws Exception;

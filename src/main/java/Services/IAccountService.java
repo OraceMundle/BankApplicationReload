@@ -38,7 +38,7 @@ public interface IAccountService extends IService{
      
     public List<Account> getAllAccountJDBC() throws Exception;
     
-    public void deleteAccountJDBC(Class<?> Account, String accountnumber) throws Exception;
+    public void deleteAccountJDBC(String accountnumber) throws Exception;
     
             
     
