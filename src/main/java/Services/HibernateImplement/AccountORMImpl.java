@@ -21,6 +21,8 @@ import org.hibernate.Transaction;
  */
 public class AccountORMImpl extends HibernateMainConfig implements IAccountService{
 
+    
+    //ORM Methods
     @Override
     public void addAccount(Account account) throws Exception {
         

@@ -16,6 +16,7 @@ public interface IAccountService extends IService{
     
      public final String NAME = "IAccountService";
     
+    //ORM  
     public void addAccount(Account account ) throws Exception;
     
     public void updateAccount(Account account) throws Exception;
@@ -28,13 +29,13 @@ public interface IAccountService extends IService{
     
     
     
-    
-     public void addAccountJDBC(Account account ) throws Exception;
+    //JDBC 
+    public void addAccountJDBC(Account account ) throws Exception;
     
     public void updateAccountJDBC(Account account) throws Exception;
     
     public Account getAccountJDBC(String accountnumber)throws Exception;
-    
+     
     public List<Account> getAllAccountJDBC() throws Exception;
     
     public void deleteAccountJDBC(Class<?> Account, String accountnumber) throws Exception;
