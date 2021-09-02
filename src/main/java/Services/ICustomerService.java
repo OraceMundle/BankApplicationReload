@@ -21,7 +21,7 @@ public interface ICustomerService extends IService{
     
     public void updateCustomer(Customer customer) throws Exception;
     
-    public Customer geCustomer(String trn)throws Exception;
+    public Customer getCustomer(String trn)throws Exception;
     
     public List<Customer> getAllCustomers() throws Exception;
     
@@ -34,7 +34,7 @@ public interface ICustomerService extends IService{
     
     public void updateCustomerJDBC(Customer customer) throws Exception;
     
-    public Customer geCustomerJDBC(String trn)throws Exception;
+    public Customer getCustomerJDBC(String trn)throws Exception;
     
     public List<Customer> getAllCustomersJDBC() throws Exception;
     

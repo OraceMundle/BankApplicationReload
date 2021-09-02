@@ -38,7 +38,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     }
 
     @Override
-    public Customer geCustomer(String trn) throws Exception {
+    public Customer getCustomer(String trn) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -95,7 +95,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     }
 
     @Override
-    public Customer geCustomerJDBC(String trn) throws Exception {
+    public Customer getCustomerJDBC(String trn) throws Exception {
             String selectCustomer = "Select * From customer Where TRN = " + trn;
         statement=this.getConnection().createStatement();
         

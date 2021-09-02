@@ -76,7 +76,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
     }
 
     @Override
-    public Customer geCustomer(String trn) throws Exception {
+    public Customer getCustomer(String trn) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;

@@ -17,95 +17,7 @@ import java.util.List;
  *
  * @author OraceMundle
  */
-public class CustomerManager {
-    
-     public void addCustomer(Customer aCustomer)
-    {
-        try {
-            
-            System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
-            Factory factory = new Factory();
-            ICustomerService iBookMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            iBookMgr.addCustomer(aCustomer);
-        } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
-        } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
-        }
-    }
-    public Customer getCustomer(String trn)
-    {
-        Customer aCustomer=new Customer();
-        try {
-            System.out.println("In Business Layer getCustomer(String trn) method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            aCustomer=iCustomerMgr.getCustomer(trn);
-            
-        } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
-            
-        } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
-        }
-        return aCustomer;
-    }
-    
-    public void updateCustomer(Customer aCustomer)
-    {
-        try {
-            System.out.println("In Business Layer updateCustomer(Customer aCustomer) method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            iCustomerMgr.updateCustomer(aCustomer);
-            
-        } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage());
-        } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
-        }
-    }
-    
-    public List<Customer> getAllCustomer()
-    {
-        List<Customer> customerList = new ArrayList<>();
-        try {
-            System.out.println("In Business Layer getAllCustomer method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            customerList=iCustomerMgr.getAllCustomers();
-            
-        } catch (ServiceLoadException ex) {
-          
-            System.out.println(ex.getMessage());
-        } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
-        }
-        return customerList;
-    }
-    
-    
-    public void deleteCustomer(Class<?> Customer, String trn)
-    {
-        try {
-            System.out.println("In Business Layer deleteCustomer method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            iCustomerMgr.deleteCustomer(Customer, trn);            
-        } catch (ServiceLoadException ex) {
-            System.out.println(ex.getMessage());
-            
-        } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
-        }
-    }
-
+public class CustomerJDBCManager {
     
     public void addCustomerJDBC(Customer anCustomer)
     {
@@ -195,16 +107,9 @@ public class CustomerManager {
             System.out.println(ex.getMessage());
         }
     }
-    
-       
-    public CustomerManager() {
+
+    public CustomerJDBCManager() {
     }
- 
+    
+    
 }
-
-    
-    
-    
-    
-    
-
