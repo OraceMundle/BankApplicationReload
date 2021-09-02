@@ -50,17 +50,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void deleteCustomer(Class<?> Customer, String trn) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    } 
     
     @Override
     public void addCustomerJDBC(Customer customer) throws Exception {
@@ -106,7 +96,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 
     @Override
     public Customer geCustomerJDBC(String trn) throws Exception {
-            String selectCustomer = "Select * From authors Where ID = " + trn;
+            String selectCustomer = "Select * From customer Where TRN = " + trn;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectCustomer);
@@ -144,7 +134,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void deleteCustomerJDBC(String trn) throws Exception {
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From authors Where ID = " + trn);
+        statement.execute("Delete From customer Where TRN  = " + trn);
     }
     
 }
