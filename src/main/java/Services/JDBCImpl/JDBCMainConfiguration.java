@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author KRichards
  */
 public class JDBCMainConfiguration {
-    private static final String conString = "jdbc:mysql://localhost:3306/bankapp";
+    private static final String conString = "jdbc:mysql://localhost:3306/bankapp?zeroDateTimeBehavior=CONVERT_TO_NUL";
     private static final String dbUser = "root";
     private static final String dbUserPWD = "Cparasingh@83";
     
@@ -23,6 +23,7 @@ public class JDBCMainConfiguration {
     protected Connection getConnection() throws SQLException
     {
         try {
+            
             con=DriverManager.getConnection(conString,dbUser,dbUserPWD);
             } 
                        
