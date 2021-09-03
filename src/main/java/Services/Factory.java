@@ -45,7 +45,7 @@ public class Factory {
         FileInputStream fis = null;
        
             Properties props = new Properties();
-            fis = new FileInputStream("C:\\Users\\cghfcjg\\Documents\\NetBeansProjects\\BooksJDBCORM\\src\\main\\java\\MyFactory.properties");
+            fis = new FileInputStream("C:\\Users\\orace\\Documents\\NetBeansProjects\\BankApplicationReload\\src\\main\\resources\\MyFactory.properties");
             props.load(fis);
             fis.close();
             return props.getProperty(serviceName);   
