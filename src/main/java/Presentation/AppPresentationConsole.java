@@ -310,14 +310,17 @@ public class AppPresentationConsole {
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();
             
-            System.out.println("List of customerora return using ORM\n");
+            System.out.println("List of customer return using ORM\n");
             
             for(int i=0; i<customer.size(); i++){
-            System.out.println("ID: " + customer.get(i).getId()+"\n");
-            System.out.println("Title: " + customer.get(i).getCustomerTitle()+"\n");
-            System.out.println("First Name: " + customer.get(i).getFname()+"\n");
-            System.out.println("Last Name: " + customer.get(i).getLname()+"\n");
-            System.out.println("School: " + customer.get(i).getCustomerSchool()+"\n");
+            System.out.println("TRN: " + customer.get(i).getTrn()+"\n");
+            System.out.println("First Name: " + customer.get(i).getFirstname()+"\n");
+            System.out.println("Last Name: " + customer.get(i).getLastname()+"\n");
+            System.out.println("Date of Birth: " + customer.get(i).getDob()+"\n");
+            System.out.println("Email: " + customer.get(i).getEmail()+"\n");
+            System.out.println("Telephone Number: " + customer.get(i).getTelephoneNum()+"\n");
+            
+            
             }
         }
         else if(ormChoice==6)
