@@ -5,6 +5,7 @@
  */
 package Domain;
 
+import Domain.Customer;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,7 +18,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "worker")
-public class Worker {
+//public class Worker extends Customer{
+    public class Worker {
     
     @Id
     @Column(name="worker_id")
@@ -29,8 +31,11 @@ public class Worker {
     @Column(name="l_name")
     private String lastname;
     
+
     @Column(name="telephone")
     private String telephoneNumber;
+    
+    
     
     @Column(name="email")
     private String email;
@@ -42,7 +47,9 @@ public class Worker {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.telephoneNumber = telephoneNumber;
+        //this.setFirstname(firstname);
+        //this.setLastname(lastname);
+        this.setTelephoneNumber(telephoneNumber);
         this.email = email;
     }
 

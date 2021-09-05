@@ -141,9 +141,9 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             Object bookObject = session.load(Customer, trn);
+             Object customerObject = session.load(Customer, trn);
              
-                      session.delete(bookObject);
+                      session.delete(customerObject);
                       transact.commit(); 
               }
          catch(HibernateException hex){

@@ -52,7 +52,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email) "
                 + "values('" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +
-                "', '" + worker.getTelephoneNumber() +
+                "', '" + worker.getTelephoneNumber()   +//getTelephoneNumber() +
                 "', '" + worker.getEmail() +"')";    
        
          statement = this.getConnection().createStatement();        

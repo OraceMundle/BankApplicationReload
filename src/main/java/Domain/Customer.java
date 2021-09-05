@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  *
@@ -17,7 +18,7 @@ import javax.persistence.Table;
  @Entity
  @Table(name ="customer")
  
-public class Customer {
+public class Customer implements Serializable{
     
     @Id
     @Column(name ="trn")
