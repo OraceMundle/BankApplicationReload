@@ -13,6 +13,8 @@ import Services.SpringConfig;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -22,17 +24,20 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class CustomerManager {
     
+    private static final Logger log = Logger.getLogger(CustomerManager.class);
+    
     ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
     
      public void addCustomer(Customer aCustomer)
     {
-        
+       PropertyConfigurator.configure("C:\\Users\\orace\\Documents\\NetBeansProjects\\BankApplicationReload\\src\\main\\resources\\log4j.properties"); 
        
         
         
         try {
             
-            System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
+            //System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
+            log.info("In Business Layer addCustomer(Customer aCustomer) method");
             //Factory factory = new Factory();
             //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
             
@@ -40,10 +45,11 @@ public class CustomerManager {
          ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
          iCustomerMgr.addCustomer(aCustomer);
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public Customer getCustomer(String trn)

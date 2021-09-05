@@ -27,7 +27,8 @@ public class AccountManager {
     {
         try {
             
-            System.out.println("In Business Layer addAccount(Account aAccount) method");
+            //System.out.println("In Business Layer addAccount(Account aAccount) method");
+            log.info("In Business Layer addAccount(Account aAccount) method");
             Factory factory = new Factory();
             IAccountService iBookMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
             iBookMgr.addAccount(aAccount);

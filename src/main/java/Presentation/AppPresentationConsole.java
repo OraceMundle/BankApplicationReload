@@ -18,6 +18,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 //import java.util.logging.Logger;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
@@ -26,11 +27,15 @@ import org.apache.log4j.Logger;
 public class AppPresentationConsole {
     
     //private static Logger logger = new Logger(); 
+    
     private static Logger log = Logger.getLogger(AppPresentationConsole.class);
+    //String url = ClassLoader.
     
     
      public static void main(String[] args)
     {
+       PropertyConfigurator.configure("C:\\Users\\orace\\Documents\\NetBeansProjects\\BankApplicationReload\\src\\main\\resources\\log4j.properties");
+        
         Scanner scan = new Scanner(System.in);
         
         int selectMethod=0;        

@@ -71,14 +71,14 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     @Override
     public void updateAccountJDBC(Account account) throws Exception {
         
-        String updateAccount = "UPDATE account SET account_number = '" + account.getAccountnumber() + 
-                "', trn = '" + account.getCustomerTRN() +
+        String updateAccount = "UPDATE account SET  trn = '" + account.getCustomerTRN() +
                 "', date_opened ='" + account.getDateOpened() + 
                 "', date_closed ='" + account.getDateClosed() +
                 "', worker_id ='" + account.getWorkerId() + 
                 "', balance ='" + account.getBalance() +
                 "', loan_amount ='" + account.getLoanAmount() + 
-                "', monthly_install ='" + account.getMonthlyInstalment()+"')";    
+                "', monthly_install ='" + account.getMonthlyInstalment()+ "' WHERE account_number = '" + account.getAccountnumber() + 
+                "'";    
           
         
         statement = this.getConnection().createStatement();
