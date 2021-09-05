@@ -12,12 +12,16 @@ import Services.IAccountService;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author OraceMundle
  */
 public class AccountManager {
+    
+    private static final Logger log = Logger.getLogger(AccountManager.class);
     
      public void addAccount(Account aAccount)
     {
@@ -28,10 +32,13 @@ public class AccountManager {
             IAccountService iBookMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
             iBookMgr.addAccount(aAccount);
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         } catch (Exception ex) {
             
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public Account getAccount(String trn)
@@ -44,11 +51,13 @@ public class AccountManager {
             aAccount=iAccountMgr.getAccount(trn);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          //System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
             
         } catch (Exception ex) {
             
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
         return aAccount;
     }
@@ -63,10 +72,12 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
           
-           System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage());
         } catch (Exception ex) {
             
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -81,10 +92,11 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
           
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
         return customerList;
     }
@@ -98,11 +110,13 @@ public class AccountManager {
             IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
             iAccountMgr.deleteAccount(Account, trn);            
         } catch (ServiceLoadException ex) {
-            System.out.println(ex.getMessage());
+            
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
 
@@ -116,11 +130,12 @@ public class AccountManager {
             iAccountMgrJDBC.addAccountJDBC(anAccount);
             
         } catch (ServiceLoadException ex) {
-         System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+         //System.out.println(ex.getMessage());
            
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public Account getAccountJDBC(String trn)
@@ -133,10 +148,12 @@ public class AccountManager {
             aAccount=iAccountMgrJDBC.getAccountJDBC(trn);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         }
         return aAccount;
@@ -151,11 +168,11 @@ public class AccountManager {
             iAccountMgrJDBC.updateAccountJDBC(aAccount);
             
         } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -170,10 +187,12 @@ public class AccountManager {
             rs=(ResultSet) iAccountMgrJDBC.getAllAccountJDBC();
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());            
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());            
         }
         return rs;
     }
@@ -188,11 +207,12 @@ public class AccountManager {
             iAccountMgrJDBC.deleteAccountJDBC(trn);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
     

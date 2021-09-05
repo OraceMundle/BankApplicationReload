@@ -9,9 +9,12 @@ import Domain.Customer;
 import Services.Exceptions.ServiceLoadException;
 import Services.Factory;
 import Services.ICustomerService;
+import Services.SpringConfig;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
@@ -19,14 +22,23 @@ import java.util.List;
  */
 public class CustomerManager {
     
+    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    
      public void addCustomer(Customer aCustomer)
     {
+        
+       
+        
+        
         try {
             
             System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
-            Factory factory = new Factory();
-            ICustomerService iBookMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
-            iBookMgr.addCustomer(aCustomer);
+            //Factory factory = new Factory();
+            //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            
+            
+         ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
+         iCustomerMgr.addCustomer(aCustomer);
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
         } catch (Exception ex) {
@@ -39,8 +51,11 @@ public class CustomerManager {
         Customer aCustomer=new Customer();
         try {
             System.out.println("In Business Layer getCustomer(String trn) method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            //Factory factory = new Factory();
+            //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
+             //iCustomerMgr.getCustomer(trn);
+            
             aCustomer=iCustomerMgr.getCustomer(trn);
             
         } catch (ServiceLoadException ex) {
@@ -57,8 +72,11 @@ public class CustomerManager {
     {
         try {
             System.out.println("In Business Layer updateCustomer(Customer aCustomer) method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            //Factory factory = new Factory();
+            //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
+         iCustomerMgr.updateCustomer(aCustomer);
+            
             iCustomerMgr.updateCustomer(aCustomer);
             
         } catch (ServiceLoadException ex) {
@@ -75,8 +93,11 @@ public class CustomerManager {
         List<Customer> customerList = new ArrayList<>();
         try {
             System.out.println("In Business Layer getAllCustomer method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            //Factory factory = new Factory();
+            //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            
+            ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
+            //iCustomerMgr.addCustomer(aCustomer);
             customerList=iCustomerMgr.getAllCustomers();
             
         } catch (ServiceLoadException ex) {
@@ -94,8 +115,11 @@ public class CustomerManager {
     {
         try {
             System.out.println("In Business Layer deleteCustomer method");
-            Factory factory = new Factory();
-            ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            //Factory factory = new Factory();
+            //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
+         
+         
             iCustomerMgr.deleteCustomer(Customer, trn);            
         } catch (ServiceLoadException ex) {
             System.out.println(ex.getMessage());

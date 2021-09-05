@@ -13,11 +13,14 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author OraceMundle
  */
+@Component("CustomerORM")
+
 public class CustomerORMImpl extends HibernateMainConfig implements ICustomerService{
 
     @Override
@@ -39,8 +42,8 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
              
          }
          finally {
-                      session.flush();
-                      session.close();
+                      //session.flush();
+                      //session.close();
                      }   
     
         
@@ -112,7 +115,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          List<Customer> customerList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerList = (List<Customer>) session1.createQuery("from ").list();
+             customerList = (List<Customer>) session1.createQuery("from Customer ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
@@ -151,14 +154,14 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
              }
          }
          finally {
-                      session.flush();
-                      session.close();
+                      //session.flush();
+                      //session.close();
                      }
     
     }
     @Override
     public void addCustomerJDBC(Customer customer) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("This is Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

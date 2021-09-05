@@ -26,9 +26,12 @@ public class JDBCMainConfiguration {
         try {
             
             con=DriverManager.getConnection(conString,dbUser,dbUserPWD);
+            
             } 
                        
         catch (Exception e) {
+            System.out.print(e.getMessage());
+            
         }
         
         

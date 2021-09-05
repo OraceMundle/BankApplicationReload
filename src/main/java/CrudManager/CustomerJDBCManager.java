@@ -12,12 +12,14 @@ import Services.ICustomerService;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author OraceMundle
  */
 public class CustomerJDBCManager {
+    
+    private static final Logger log = Logger.getLogger(CustomerJDBCManager.class);
     
     public void addCustomerJDBC(Customer anCustomer)
     {
@@ -28,11 +30,12 @@ public class CustomerJDBCManager {
             iCustomerMgrJDBC.addCustomerJDBC(anCustomer);
             
         } catch (ServiceLoadException ex) {
-         System.out.println(ex.getMessage());
+         //System.out.println(ex.getMessage());
+           log.info(ex.getMessage());
            
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public Customer getCustomerJDBC(String trn)
@@ -45,10 +48,13 @@ public class CustomerJDBCManager {
             aCustomer=iCustomerMgrJDBC.getCustomerJDBC(trn);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        
+            log.info(ex.getMessage());
+        //System.out.println(ex.getMessage());
             
         }
         return aCustomer;
@@ -63,11 +69,11 @@ public class CustomerJDBCManager {
             iCustomerMgrJDBC.updateCustomerJDBC(aCustomer);
             
         } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -82,10 +88,12 @@ public class CustomerJDBCManager {
             rs=(ResultSet) iCustomerMgrJDBC.getAllCustomersJDBC();
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          //System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());            
+            //System.out.println(ex.getMessage());  
+            log.info(ex.getMessage());
         }
         return rs;
     }
@@ -100,11 +108,12 @@ public class CustomerJDBCManager {
             iCustomerMgrJDBC.deleteCustomerJDBC(trn);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          //System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
 

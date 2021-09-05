@@ -8,6 +8,7 @@ package Presentation;
 import CrudManager.CustomerJDBCManager;
 import CrudManager.CustomerManager;
 import Domain.Customer;
+import com.mysql.cj.log.Log;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,13 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @customeror OraceMundle
  */
 public class AppPresentationConsole {
+    
+    //private static Logger logger = new Logger(); 
+    private static Logger log = Logger.getLogger(AppPresentationConsole.class);
+    
     
      public static void main(String[] args)
     {
@@ -37,10 +43,12 @@ public class AppPresentationConsole {
                    //call JDBC Menu
                    JDBCMenu();
                } catch (IOException ex) {
-                   System.out.println(ex.getMessage());
+                   //System.out.println(ex.getMessage());
+                   log.info(ex.getMessage());
                } 
                catch (Exception ex) {
-                   Logger.getLogger(AppPresentationConsole.class.getName()).log(Level.SEVERE, null, ex);
+                   log.info(ex.getMessage());
+//Logger.getLogger(AppPresentationConsole.class.getName()).log(Level.SEVERE, null, ex);
                }
            }
            else if(choice==2)
@@ -49,7 +57,8 @@ public class AppPresentationConsole {
                    //call ORM Menu
                    ORMMenu();
                } catch (IOException ex) {
-                  System.out.println(ex.getMessage());
+                  //System.out.println(ex.getMessage());
+                  log.info(ex.getMessage());
                }
            }
            else if(choice==3)

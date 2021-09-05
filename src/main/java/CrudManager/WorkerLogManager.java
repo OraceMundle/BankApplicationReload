@@ -12,12 +12,15 @@ import Services.IWorkerLogService;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author OraceMundle
  */
 public class WorkerLogManager {
+    
+    private static final Logger log = Logger.getLogger(WorkerLogManager.class);
     
      public void addWorkerLog(WorkerLog aWorkerLog)
     {
@@ -28,10 +31,11 @@ public class WorkerLogManager {
             IWorkerLogService iBookMgr = (IWorkerLogService) factory.getTheService(IWorkerLogService.NAME);
             iBookMgr.addWorkerLog(aWorkerLog);
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage()); 
         }
     }
     public WorkerLog getWorkerLog(int id)
@@ -44,11 +48,12 @@ public class WorkerLogManager {
             aWorkerLog=iWorkerLogMgr.getWorkerLog(id);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          //System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
             
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
         return aWorkerLog;
     }
@@ -62,11 +67,11 @@ public class WorkerLogManager {
             iWorkerLogMgr.updateWorkerLog(aWorkerLog);
             
         } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+           //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -80,11 +85,11 @@ public class WorkerLogManager {
             customerList=iWorkerLogMgr.getAllWorkerLog();
             
         } catch (ServiceLoadException ex) {
-          
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
         return customerList;
     }
@@ -98,11 +103,12 @@ public class WorkerLogManager {
             IWorkerLogService iWorkerLogMgr = (IWorkerLogService) factory.getTheService(IWorkerLogService.NAME);
             iWorkerLogMgr.deleteWorkLog(WorkerLog, id);            
         } catch (ServiceLoadException ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
 
@@ -116,11 +122,12 @@ public class WorkerLogManager {
             iWorkerLogMgrJDBC.addWorkerLogJDBC(anWorkerLog);
             
         } catch (ServiceLoadException ex) {
-         System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
            
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+           log.info(ex.getMessage()); 
+           //System.out.println(ex.getMessage()); 
         }
     }
     public WorkerLog getWorkerLogJDBC(int id)
@@ -133,10 +140,12 @@ public class WorkerLogManager {
             aWorkerLog=iWorkerLogMgrJDBC.getWorkerLogJDBC(id);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         }
         return aWorkerLog;
@@ -151,11 +160,11 @@ public class WorkerLogManager {
             iWorkerLogMgrJDBC.updateWorkerLogJDBC(aWorkerLog);
             
         } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage()); 
+          log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -170,10 +179,12 @@ public class WorkerLogManager {
             rs=(ResultSet) iWorkerLogMgrJDBC.getAllWorkerLogJDBC();
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());            
+           log.info(ex.getMessage()); 
+        //System.out.println(ex.getMessage());            
         }
         return rs;
     }
@@ -188,11 +199,12 @@ public class WorkerLogManager {
             iWorkerLogMgrJDBC.deleteWorkLogJDBC(id);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
     

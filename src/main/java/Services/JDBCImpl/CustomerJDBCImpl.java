@@ -59,6 +59,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
                 + "values('" + customer.getTrn() + 
                 "', '" + customer.getFirstname() +
                 "', '" + customer.getLastname() + 
+              "', '" + customer.getEmail()+ 
                 "', '" + customer.getTelephoneNum() + 
                 "', '" + customer.getDob()+"')";    
     
@@ -75,12 +76,14 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void updateCustomerJDBC(Customer customer) throws Exception {
          
-        String updateCustomer = "UPDATE customer SET trn = '" + customer.getTrn() + 
-                "', f_name = '" + customer.getFirstname() +
+        String updateCustomer = "UPDATE customer SET"   + 
+                " f_name = '" + customer.getFirstname() +
                 "', l_name = '" + customer.getLastname() + 
                 "', email =  '" + customer.getEmail() +
                 "', telephone_number = '" + customer.getTelephoneNum() + 
-                "', dob = '" + customer.getDob()+"')";    
+                "', dob = '" + customer.getDob()+"' Where trn = '" + customer.getTrn()+"'"; 
+        
+        
           
         
         statement = this.getConnection().createStatement();

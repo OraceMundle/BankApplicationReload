@@ -12,12 +12,16 @@ import Services.ICustomerAddressService;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author OraceMundle
  */
 public class CustomerAddressManager {
+    
+    private static final Logger log = Logger.getLogger(CustomerAddress.class);
     
       public void addCustomerAddress(CustomerAddress aCustomerAddress)
     {
@@ -28,10 +32,11 @@ public class CustomerAddressManager {
             ICustomerAddressService iBookMgr = (ICustomerAddressService) factory.getTheService(ICustomerAddressService.NAME);
             iBookMgr.addCustomerAddress(aCustomerAddress);
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public CustomerAddress getCustomerAddress(int addressId)
@@ -44,11 +49,12 @@ public class CustomerAddressManager {
             aCustomerAddress=iCustomerAddressMgr.getCustomerAddressJDBC(addressId);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+          //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
         return aCustomerAddress;
     }
@@ -62,11 +68,13 @@ public class CustomerAddressManager {
             iCustomerAddressMgr.updateCustomerAddress(aCustomerAddress);
             
         } catch (ServiceLoadException ex) {
+            log.info(ex.getMessage());
           
-           System.out.println(ex.getMessage());
+           //System.out.println(ex.getMessage());
         } catch (Exception ex) {
             
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -80,11 +88,11 @@ public class CustomerAddressManager {
             customerList=iCustomerAddressMgr.getAllCustomerAddresses();
             
         } catch (ServiceLoadException ex) {
-          
-            System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
         return customerList;
     }
@@ -98,11 +106,12 @@ public class CustomerAddressManager {
             ICustomerAddressService iCustomerAddressMgr = (ICustomerAddressService) factory.getTheService(ICustomerAddressService.NAME);
             iCustomerAddressMgr.deleteCustomerAddress(CustomerAddress, addressId);            
         } catch (ServiceLoadException ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
 
@@ -116,11 +125,12 @@ public class CustomerAddressManager {
             iCustomerAddressMgrJDBC.addCustomerAddressJDBC(anCustomerAddress);
             
         } catch (ServiceLoadException ex) {
-         System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+         //System.out.println(ex.getMessage());
            
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     public CustomerAddress getCustomerAddressJDBC(int addressId)
@@ -133,10 +143,12 @@ public class CustomerAddressManager {
             aCustomerAddress=iCustomerAddressMgrJDBC.getCustomerAddressJDBC(addressId);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         }
         return aCustomerAddress;
@@ -151,11 +163,11 @@ public class CustomerAddressManager {
             iCustomerAddressMgrJDBC.updateCustomerAddressJDBC(aCustomerAddress);
             
         } catch (ServiceLoadException ex) {
-          
-           System.out.println(ex.getMessage()); 
+          log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
-            
-           System.out.println(ex.getMessage()); 
+            log.info(ex.getMessage());
+           //System.out.println(ex.getMessage()); 
         }
     }
     
@@ -170,10 +182,12 @@ public class CustomerAddressManager {
             rs=(ResultSet) iCustomerAddressMgrJDBC.getAllCustomerAddressesJDBC();
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());            
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());            
         }
         return rs;
     }
@@ -188,11 +202,12 @@ public class CustomerAddressManager {
             iCustomerAddressMgrJDBC.deleteCustomerAddressJDBC(addressId);
             
         } catch (ServiceLoadException ex) {
-          System.out.println(ex.getMessage());
+          log.info(ex.getMessage());
+           //System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
-            
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
     
