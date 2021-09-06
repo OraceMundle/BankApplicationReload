@@ -159,8 +159,8 @@ public class Login extends javax.swing.JFrame {
             
             
             
-                                                //Dashboard db = new Dashboard();
-                                                   CustomerForm db = new CustomerForm();
+                                                   Dashboard db = new Dashboard();
+                                                  // CustomerForm db = new CustomerForm();
                                                     //Login lg = new Login();
                                                     db.setVisible(true);
                                                     this.setVisible(false);

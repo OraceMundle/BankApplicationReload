@@ -11,7 +11,7 @@ package Presentation;
  */
 public class Dashboard extends javax.swing.JFrame {
     
-    Dashboard db = new Dashboard();
+    
 
     /**
      * Creates new form Dashboard
@@ -165,7 +165,7 @@ public class Dashboard extends javax.swing.JFrame {
     //Account Search button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         SearchAccount sa = new SearchAccount();
-        db.setVisible(false);
+        this.setVisible(false);
         sa.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -178,14 +178,14 @@ public class Dashboard extends javax.swing.JFrame {
     //View Customer button
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         SearchClient sc = new SearchClient();
-        db.setVisible(false);
+        this.setVisible(false);
         sc.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     //Transaction button
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Transaction t = new Transaction();
-        db.setVisible(false);
+        this.setVisible(false);
         t.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
