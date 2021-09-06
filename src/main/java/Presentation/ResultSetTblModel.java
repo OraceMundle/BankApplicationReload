@@ -22,6 +22,7 @@ import org.jboss.logging.Logger;
  */
 public class ResultSetTblModel extends AbstractTableModel{
     
+    private Boolean connectToDatabase=false;
     private AccountManager am;
     private int numberOfRows, numberOfCols;
     
