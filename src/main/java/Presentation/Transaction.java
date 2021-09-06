@@ -5,11 +5,17 @@
  */
 package Presentation;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dinham
  */
 public class Transaction extends javax.swing.JFrame {
+    
+    Dashboard db = new Dashboard();
+    Transaction t = new Transaction();
 
     /**
      * Creates new form AddAccount
@@ -65,8 +71,18 @@ public class Transaction extends javax.swing.JFrame {
         jTextField9.setText("Installments");
 
         jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Save");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Account Info");
 
@@ -194,6 +210,18 @@ public class Transaction extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        t.setVisible(false);
+        db.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFrame f = new JFrame();
+        JOptionPane.showMessageDialog(f, "Testig save button");
+        t.setVisible(false);
+        db.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
