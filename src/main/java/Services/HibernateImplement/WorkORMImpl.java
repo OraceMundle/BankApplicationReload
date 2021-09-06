@@ -9,8 +9,10 @@ import Domain.Account;
 import Domain.Worker;
 import Services.HibernateMainConfig;
 import Services.IWorkerService;
+import static com.mysql.cj.conf.PropertyKey.logger;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.BasicConfigurator;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -36,13 +38,13 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to save an account; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to save an worker; rolling back transaction " + hex.getMessage());
              }
              
          }
          finally {
-                      session.flush();
-                      session.close();
+                      //session.flush();
+                      //session.close();
                      }   
             
         
@@ -63,7 +65,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to update account information; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to update worker information; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -91,7 +93,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load account with id " + id  + "; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load worker with id " + id  + "; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -119,7 +121,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
              if(session1!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to load all accounts; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to load all workers; rolling back transaction " + hex.getMessage());
              }
              
          }
@@ -138,25 +140,61 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             Object bookObject = session.load(Worker, id);
+             Object workerObject = session.load(Worker, id);
              
-                      session.delete(bookObject);
+                      session.delete(workerObject);
                       transact.commit(); 
               }
          catch(HibernateException hex){
              if(session!=null)
              {
                  transact.rollback();
-                 throw new HibernateException("Not able to delete account; rolling back transaction " + hex.getMessage());
+                 throw new HibernateException("Not able to delete worker; rolling back transaction " + hex.getMessage());
              }
          }
          finally {
-                      session.flush();
-                      session.close();
+                      //session.flush();
+                      //session.close();
                      }
         
     }
 
+    @Override
+    public Worker getworkerLogin(Worker user) throws Exception {
+           	try {
+                //Session session = hibernate.getSessionFactory();
+        Session session = CustomerORMImpl.getSession();
+        Transaction transact=null;
+			session.beginTransaction(); 
+        
+        if (user != null) {
+		        	System.out.println("Worker find");
+		        	session.close();
+		        	//user.setAttempts(2);
+		    	  	 return user;
+		    	  }
+		   }
+		catch(Exception ex){
+			 		
+			 	BasicConfigurator.configure();
+			 	//ogger.info("login error");
+				//logger.error("user wasn't found");
+				 Worker log = null;
+				 //log.setAttempts(1);
+				 return log;
+				}
+			return null;
+     //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //JDBC Methods
     @Override
@@ -181,6 +219,11 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
 
     @Override
     public void deleteWorkerJDBC(String id) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Worker getworkerLoginJDBC(Worker user) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

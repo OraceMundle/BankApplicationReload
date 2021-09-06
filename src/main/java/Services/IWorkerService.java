@@ -27,6 +27,8 @@ public interface IWorkerService extends IService{
     
     public void deleteWorker(Class<?> Worker, String id) throws Exception;
     
+    public Worker getworkerLogin(Worker user) throws Exception;
+    
     
     
     //JDBC 
@@ -40,6 +42,6 @@ public interface IWorkerService extends IService{
     
     public void deleteWorkerJDBC(String id) throws Exception;
     
-   
+   public Worker getworkerLoginJDBC(Worker user) throws Exception;
     
 }

@@ -5,14 +5,19 @@
  */
 package CrudManager;
 
+import Domain.Customer;
 import Domain.Worker;
 import Services.Exceptions.ServiceLoadException;
 import Services.Factory;
+import Services.IAuthenticateService;
 import Services.IWorkerService;
+import Services.SpringConfig;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 /**
  *
  * @author OraceMundle
@@ -207,7 +212,71 @@ public class WorkerManager {
         }
     }
     
-       
+     public Boolean validateWorker(String username) //check if user exist, does not check password
+    {
+        Boolean exist=false;
+        
+        try {
+           // Factory factory = new Factory();                        
+         //   IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+            ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+            IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateUser(username);  //check only username  
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            
+        }
+        return exist;
+    }
+     
+      public Boolean validateWorkerUsernameAndPwd(Worker worker)//same as validateUser Service layer IAuthenticateService would check the pasword
+    {
+        Boolean exist=false;        
+        try {
+           // Factory factory = new Factory();                        
+           // IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+           ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+           IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateWorkerUsernameAndPwd(worker);
+            //check username and password       
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            
+        }
+        return exist;
+    }
+    
+      
+      
+      
+      //adding testCredentials Method 
+   public Worker testCredentials (Worker user) 
+   
+   {
+   Worker anworkerLogin=new Worker();
+        try {
+            System.out.println("In Business Layer testCredentials (WorkerLogin user) method");
+            Factory factory = new Factory();           
+            IWorkerService iworkerLoginMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            anworkerLogin=iworkerLoginMgr.getworkerLoginJDBC(user);
+                        
+        } catch (ServiceLoadException ex) {
+          System.out.println(ex.getMessage());
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            
+        }
+        return anworkerLogin;
+   
+   
+   
+   }
+          
     public WorkerManager() {
     }
  

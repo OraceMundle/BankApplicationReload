@@ -25,9 +25,9 @@ public interface IAuthenticateService extends IService{
     
     
     public Boolean validateWorker(String username) throws Exception;
-    public Boolean validateWorkerUsernameAndPwd(Customer user) throws Exception;
-    public Boolean addWorker(Customer user) throws Exception;
-    public Boolean updateWorker(Customer user) throws Exception;
+    public Boolean validateWorkerUsernameAndPwd(Worker worker) throws Exception;
+    public Boolean addWorker(Worker worker) throws Exception;
+    public Boolean updateWorker(Worker worker) throws Exception;
     
     
     
