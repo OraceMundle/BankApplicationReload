@@ -114,12 +114,11 @@ public class AppPresentationAccountConsole {
             anAccount.setDateClosed(aScanner.nextLine());
             
             System.out.println("Enter TRN: ");
-            anAccount.setDateClosed(aScanner.nextLine());
+            anAccount.setCustomerTRN(aScanner.nextLine());
             
-            System.out.println("Enter Date Closed: ");
-            anAccount.setDateClosed(aScanner.nextLine());
-            
-            
+            System.out.println("Enter Worker ID: ");
+            anAccount.setWorkerId(aScanner.nextLine());
+                        
             accountJDBC.addAccountJDBC(anAccount);
             System.out.println("Account Added Using JDBC");
             
@@ -129,32 +128,38 @@ public class AppPresentationAccountConsole {
             Account anAccount=new Account();
             AccountManager customerJDBC = new AccountManager();
             
-            Scanner aScanner = new Scanner(System.in);
-            System.out.println("Enter TRN: ");
-            anAccount.setTrn(aScanner.nextLine());
+              Scanner aScanner = new Scanner(System.in);
+            System.out.println("Enter Account Number: ");
+            anAccount.setAccountnumber(aScanner.nextLine());
             
                        
-            System.out.println("Enter first name: ");
-            anAccount.setFirstname(aScanner.nextLine());
+            System.out.println("Enter Balance: ");
+            anAccount.setBalance(aScanner.nextFloat());
             
-            System.out.println("Enter last name: ");
-            anAccount.setLastname(aScanner.nextLine());
+            System.out.println("Enter Loan Amount: ");
+            anAccount.setLoanAmount(aScanner.nextFloat());
             
-            System.out.println("Enter Date of Birth: ");
-            anAccount.setDob(aScanner.nextLine());
+            System.out.println("Enter Monthly Installment: ");
+            anAccount.setMonthlyInstalment(aScanner.nextFloat());
             
-            System.out.println("Enter Email: ");
-            anAccount.setEmail(aScanner.nextLine());
+            System.out.println("Enter Date Opened: ");
+            anAccount.setDateOpened(aScanner.nextLine());
             
-            System.out.println("Enter Telephone Number: ");
-            anAccount.setTelephoneNum(aScanner.nextLine());
+            System.out.println("Enter Date Closed: ");
+            anAccount.setDateClosed(aScanner.nextLine());
+            
+            System.out.println("Enter TRN: ");
+            anAccount.setCustomerTRN(aScanner.nextLine());
+            
+            System.out.println("Enter Worker ID: ");
+            anAccount.setWorkerId(aScanner.nextLine());
             
             customerJDBC.updateAccountJDBC(anAccount);
             System.out.println("Account updated Using JDBC");
         }
         else if(jdbcChoice==3)
         {
-            AccountJDBCManager customerJDBC = new AccountJDBCManager();            
+            AccountManager customerJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter TRN: ");
             
@@ -164,7 +169,7 @@ public class AppPresentationAccountConsole {
         else if(jdbcChoice==4)
         {
             Account anAccount=new Account();
-            AccountJDBCManager customerJDBC = new AccountJDBCManager();            
+            AccountManager customerJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System.in);
             
             System.out.println("Enter TRN: ");
@@ -174,18 +179,20 @@ public class AppPresentationAccountConsole {
             //Runtime.getRuntime().exec("cls");
             
             System.out.println("Account return using JDBC\n");
-            System.out.println("TRN: " + anAccount.getTrn()+"\n");
-            System.out.println("First Name: " + anAccount.getFirstname()+"\n");
-            System.out.println("Last Name: " + anAccount.getLastname()+"\n");
-            System.out.println("Date of Birth: " + anAccount.getDob()+"\n");
-            System.out.println("Email: " + anAccount.getEmail()+"\n");
-            System.out.println("Telephone Number: " + anAccount.getTelephoneNum()+"\n");
+            System.out.println("Account: " + anAccount.getAccountnumber()+"\n");
+            System.out.println("Balance: " + anAccount.getBalance()+"\n");
+            System.out.println("Loan Amount: " + anAccount.getLoanAmount()+"\n");
+            System.out.println("Monthly Installment: " + anAccount.getMonthlyInstalment()+"\n");
+            System.out.println("Date Opened: " + anAccount.getDateOpened()+"\n");
+            System.out.println("Date Closed: " + anAccount.getDateClosed()+"\n");
+            System.out.println("Customer TRN: " + anAccount.getCustomerTRN()+"\n");
+            System.out.println("Worker ID: " + anAccount.getWorkerId()+"\n");
             
         }
         else if(jdbcChoice==5)
         {
             ResultSet rs=null;
-            AccountJDBCManager customerJDBC = new AccountJDBCManager();            
+            AccountManager customerJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System.in);
             
             
@@ -196,12 +203,27 @@ public class AppPresentationAccountConsole {
             System.out.println("ResultSet of Accounts return using JDBC\n");
             
             while(rs.next()){
+            /*    
             System.out.println("TRN: " + rs.getString("trn")+"\n");
             System.out.println("First Name: " + rs.getString("f_name")+"\n");
             System.out.println("Last Name: " + rs.getString("l_name")+"\n");
             System.out.println("Date of Birth: " + rs.getString("dob")+"\n");
             System.out.println("Email: " + rs.getString("email")+"\n");
             System.out.println("Telephone Number: " + rs.getString("telephone_number")+"\n");
+            */
+            
+            System.out.println("Account: " + rs.getString("account_number")+"\n");
+            System.out.println("Balance: " + rs.getString("balance")+"\n");
+            System.out.println("Loan Amount: " + rs.getString("loan_amount")+"\n");
+            System.out.println("Monthly Installment: " + rs.getString("monthly_install")+"\n");
+            System.out.println("Date Opened: " + rs.getString("date_opened")+"\n");
+            System.out.println("Date Closed: " + rs.getString("date_closed")+"\n");
+            System.out.println("Customer TRN: " + rs.getString("trn")+"\n");
+            System.out.println("Worker ID: " + rs.getString("worker_id")+"\n");
+            
+            
+                     
+            
             
         }
         }
@@ -235,24 +257,30 @@ public class AppPresentationAccountConsole {
             AccountManager customerORM = new AccountManager();
             
              Scanner aScanner = new Scanner(System.in);
+            System.out.println("Enter Account Number: ");
+            anAccount.setAccountnumber(aScanner.nextLine());
+            
+                       
+            System.out.println("Enter Balance: ");
+            anAccount.setBalance(aScanner.nextFloat());
+            
+            System.out.println("Enter Loan Amount: ");
+            anAccount.setLoanAmount(aScanner.nextFloat());
+            
+            System.out.println("Enter Monthly Installment: ");
+            anAccount.setMonthlyInstalment(aScanner.nextFloat());
+            
+            System.out.println("Enter Date Opened: ");
+            anAccount.setDateOpened(aScanner.nextLine());
+            
+            System.out.println("Enter Date Closed: ");
+            anAccount.setDateClosed(aScanner.nextLine());
+            
             System.out.println("Enter TRN: ");
-            String trn=aScanner.nextLine();
-            anAccount.setTrn(trn);
+            anAccount.setCustomerTRN(aScanner.nextLine());
             
-            System.out.println("Enter first name: ");
-            anAccount.setFirstname(aScanner.nextLine());
-            
-            System.out.println("Enter last name: ");
-            anAccount.setLastname(aScanner.nextLine());
-            
-            System.out.println("Enter Date of Birth: ");
-            anAccount.setDob(aScanner.nextLine());
-            
-            System.out.println("Enter Email: ");
-            anAccount.setEmail(aScanner.nextLine());
-            
-            System.out.println("Enter Telephone Number: ");
-            anAccount.setTelephoneNum(aScanner.nextLine());
+            System.out.println("Enter Worker ID: ");
+            anAccount.setWorkerId(aScanner.nextLine());
             
             customerORM.addAccount(anAccount);
             System.out.println("Account Added Using ORM");
@@ -263,24 +291,30 @@ public class AppPresentationAccountConsole {
             AccountManager customerORM = new AccountManager();
             
                Scanner aScanner = new Scanner(System.in);
+            System.out.println("Enter Account Number: ");
+            anAccount.setAccountnumber(aScanner.nextLine());
+            
+                       
+            System.out.println("Enter Balance: ");
+            anAccount.setBalance(aScanner.nextFloat());
+            
+            System.out.println("Enter Loan Amount: ");
+            anAccount.setLoanAmount(aScanner.nextFloat());
+            
+            System.out.println("Enter Monthly Installment: ");
+            anAccount.setMonthlyInstalment(aScanner.nextFloat());
+            
+            System.out.println("Enter Date Opened: ");
+            anAccount.setDateOpened(aScanner.nextLine());
+            
+            System.out.println("Enter Date Closed: ");
+            anAccount.setDateClosed(aScanner.nextLine());
+            
             System.out.println("Enter TRN: ");
-            String trn=aScanner.nextLine();
-            anAccount.setTrn(trn);
+            anAccount.setCustomerTRN(aScanner.nextLine());
             
-            System.out.println("Enter first name: ");
-            anAccount.setFirstname(aScanner.nextLine());
-            
-            System.out.println("Enter last name: ");
-            anAccount.setLastname(aScanner.nextLine());
-            
-            System.out.println("Enter Date of Birth: ");
-            anAccount.setDob(aScanner.nextLine());
-            
-            System.out.println("Enter Email: ");
-            anAccount.setEmail(aScanner.nextLine());
-            
-            System.out.println("Enter Telephone Number: ");
-            anAccount.setTelephoneNum(aScanner.nextLine());
+            System.out.println("Enter Worker ID: ");
+            anAccount.setWorkerId(aScanner.nextLine());
             
             customerORM.updateAccount(anAccount);
             System.out.println("Account Added Using ORM");
@@ -289,7 +323,7 @@ public class AppPresentationAccountConsole {
         {
             AccountManager customerORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
-            System.out.println("Enter TRN: ");
+            System.out.println("Enter Account Number: ");
             
             customerORM.deleteAccount(Account.class, aScanner.nextLine());
             System.out.println("Account deleted using ORM");
@@ -300,42 +334,56 @@ public class AppPresentationAccountConsole {
             AccountManager customerORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             
-            System.out.println("Enter TRN: ");
+            System.out.println("Enter Account: ");
             anAccount = customerORM.getAccount(aScanner.nextLine());
             
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();
             
             System.out.println("Account return using ORM\n");
-            System.out.println("ID: " + anAccount.getTrn()+"\n");
-            System.out.println("First Name: " + anAccount.getFirstname()+"\n");
-            System.out.println("Last Name: " + anAccount.getLastname()+"\n");
-            System.out.println("Date of Birth: " + anAccount.getDob()+"\n");
-            System.out.println("Email: " + anAccount.getEmail()+"\n");
-            System.out.println("Telephone Number: " + anAccount.getTelephoneNum()+"\n");
+            System.out.println("Account: " + anAccount.getAccountnumber()+"\n");
+            System.out.println("Balance: " + anAccount.getBalance()+"\n");
+            System.out.println("Loan Amount: " + anAccount.getLoanAmount()+"\n");
+            System.out.println("Monthly Installment: " + anAccount.getMonthlyInstalment()+"\n");
+            System.out.println("Date Opened: " + anAccount.getDateOpened()+"\n");
+            System.out.println("Date Closed: " + anAccount.getDateClosed()+"\n");
+            System.out.println("Customer TRN: " + anAccount.getCustomerTRN()+"\n");
+            System.out.println("Worker ID: " + anAccount.getWorkerId()+"\n");
             
         }
         else if(ormChoice==5)
         {
-            List<Account> customer =new ArrayList();
-            AccountManager customerORM = new AccountManager();            
+            List<Account> account =new ArrayList();
+            AccountManager accountORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             
             
-            customer = customerORM.getAllAccount();
+            account = accountORM.getAllAccount();
             
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();
             
             System.out.println("List of customer return using ORM\n");
             
-            for(int i=0; i<customer.size(); i++){
+            for(int i=0; i<account.size(); i++){
+                
+                /*
             System.out.println("TRN: " + customer.get(i).getTrn()+"\n");
             System.out.println("First Name: " + customer.get(i).getFirstname()+"\n");
             System.out.println("Last Name: " + customer.get(i).getLastname()+"\n");
             System.out.println("Date of Birth: " + customer.get(i).getDob()+"\n");
             System.out.println("Email: " + customer.get(i).getEmail()+"\n");
             System.out.println("Telephone Number: " + customer.get(i).getTelephoneNum()+"\n");
+            */
+            
+            System.out.println("Account: " + account.get(i).getAccountnumber()+"\n");
+            System.out.println("Balance: " + account.get(i).getBalance()+"\n");
+            System.out.println("Loan Amount: " + account.get(i).getLoanAmount()+"\n");
+            System.out.println("Monthly Installment: " + account.get(i).getMonthlyInstalment()+"\n");
+            System.out.println("Date Opened: " + account.get(i).getDateOpened()+"\n");
+            System.out.println("Date Closed: " + account.get(i).getDateClosed()+"\n");
+            System.out.println("Customer TRN: " + account.get(i).getCustomerTRN()+"\n");
+            System.out.println("Worker ID: " + account.get(i).getWorkerId()+"\n");
             
             
             }

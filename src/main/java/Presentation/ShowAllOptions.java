@@ -101,9 +101,9 @@ public class ShowAllOptions extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        TableAccount tblAccount = new  TableAccount();
-        tblAccount.setVisible(true);
-        tblAccount.viewTable("Customer");
+        TableCustomer tblCustomer = new  TableCustomer();
+        tblCustomer.setVisible(true);
+        tblCustomer.viewTable("Customer");
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

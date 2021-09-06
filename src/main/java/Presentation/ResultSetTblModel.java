@@ -6,6 +6,7 @@
 package Presentation;
 
 import CrudManager.AccountManager;
+import CrudManager.CustomerJDBCManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -25,6 +26,7 @@ public class ResultSetTblModel extends AbstractTableModel{
     private Boolean connectToDatabase=false;
     private AccountManager am;
     private int numberOfRows, numberOfCols;
+    private CustomerJDBCManager cm;
     
     private ResultSet rs;
     private ResultSetMetaData rsmd;
@@ -40,13 +42,32 @@ public class ResultSetTblModel extends AbstractTableModel{
                 am = new AccountManager();
                 System.out.println("Getting ResultSet");
                 rs = am.getAllAccountJDBC();
-                System.out.println("Got ResultSet");
+                System.out.println("Got Account ResultSet");
                 connectToDatabase = true;
                 System.out.println("Connected to database set to true");
             }
             
+            else if(objectType.equals("Customer"))
+            {
+                cm = new CustomerJDBCManager();
+                System.out.println("Getting ResultSet");
+                rs = cm.getAllCustomerJDBC();
+                System.out.println("Got Customer ResultSet");
+                connectToDatabase = true;
+                System.out.println("Connected to database set to true");
+            }
+            System.out.println ("column count is");
+               int test = rs.getFetchSize();
+            System.out.println ("column count is"+ test);
             //Obtain metadata for resutlset.
             rsmd = rs.getMetaData();
+            
+            int columnCount = rsmd.getColumnCount();
+            
+            System.out.println ("column count is"+ columnCount);
+
+                     
+            
             //determine number of rows in ResultSet.
             rs.last();
             numberOfRows = rs.getRow(); //get row number
@@ -71,7 +92,7 @@ public class ResultSetTblModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        numberOfCols =0;
+        numberOfCols =5;
         try{
             numberOfCols = rsmd.getColumnCount();
         }catch (SQLException ex){
