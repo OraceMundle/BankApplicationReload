@@ -13,6 +13,7 @@ import javax.swing.table.AbstractTableModel;
 import org.jboss.logging.Logger;
 
 
+
 /**
  *
  * @author Dinham
@@ -51,9 +52,9 @@ public class ResultSetTblModel extends AbstractTableModel{
             fireTableStructureChanged();
             
         }catch (SQLException ex){
-            Logget.getLogger(ResultSetTableModel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ResultSetTableModel.class.getName()).log(Level.SEVERE, null, ex);
         
-        }catch (Exceltopn ex){
+        }catch (Exception ex){
             Logger.getLogger(ResultSetTableModel.class.getName ()).log(Level.SEVERE, null, ex);
         }
     }

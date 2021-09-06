@@ -6,6 +6,7 @@
 package Domain;
 
 import Domain.Customer;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "worker")
 //public class Worker extends Customer{
-    public class Worker {
+    public class Worker implements Serializable{
     
     @Id
     @Column(name="worker_id")
