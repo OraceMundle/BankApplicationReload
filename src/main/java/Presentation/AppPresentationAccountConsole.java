@@ -113,6 +113,13 @@ public class AppPresentationAccountConsole {
             System.out.println("Enter Date Closed: ");
             anAccount.setDateClosed(aScanner.nextLine());
             
+            System.out.println("Enter TRN: ");
+            anAccount.setDateClosed(aScanner.nextLine());
+            
+            System.out.println("Enter Date Closed: ");
+            anAccount.setDateClosed(aScanner.nextLine());
+            
+            
             accountJDBC.addAccountJDBC(anAccount);
             System.out.println("Account Added Using JDBC");
             
