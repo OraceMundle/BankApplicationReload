@@ -8,11 +8,15 @@ package CrudManager;
 import Domain.Customer;
 import Services.Exceptions.ServiceLoadException;
 import Services.Factory;
+import Services.IAuthenticateService;
 import Services.ICustomerService;
+import Services.SpringConfig;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 /**
  *
  * @author OraceMundle
@@ -117,6 +121,55 @@ public class CustomerJDBCManager {
         }
     }
 
+    
+    public Boolean validateUser(String username) //check if user exist, does not check password
+    {
+        Boolean exist=false;
+        
+        try {
+           Factory factory = new Factory();                        
+           IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+            
+            //ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+            //IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateUser(username);  //check only username  
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            
+        }
+        return exist;
+    }
+     
+      public Boolean validateUsernameAndPwd(Customer user)//same as validateUser Service layer IAuthenticateService would check the pasword
+    {
+        Boolean exist=false;        
+        try {
+           Factory factory = new Factory();                        
+           IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+           //ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+           //IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateUsernameAndPwd(user);     //check username and password       
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            
+        }
+        return exist;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public CustomerJDBCManager() {
     }
     
