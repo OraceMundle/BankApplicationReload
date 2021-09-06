@@ -139,5 +139,62 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         statement=this.getConnection().createStatement();
         statement.execute("Delete From customer Where TRN  = " + trn);
     }
+
+    @Override
+    public Customer getCustomerLogin(Customer user) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Customer getCustomerLoginJDBC(Customer user) throws Exception {
+        
+       //Method to authenticate Worker User
+    
+	//Session session = this.getSession();//hibernate.getSessionFactory();
+	//session.beginTransaction(); 
+				
+	String password = user.getTrn();
+	String name = user.getLastname();
+                
+			   
+	String loginQuery = " SELECT * from  customer where l_name  = '" + name + "' and trn = '" + password +"'";
+			   	
+                
+                statement=this.getConnection().createStatement();
+        
+               
+                    Customer customer = new Customer();
+                    ResultSet rs=statement.executeQuery(loginQuery);
+                    if(rs==null){
+                        customer.setLastname("unknown");
+                        customer.setTrn("unknown");
+                        }
+                    
+                    else if(rs!=null) 
+                    {
+                        while(rs.next()){
+                        customer.setLastname(rs.getString("l_name"));
+                        customer.setTrn(rs.getString("trn"));
+                        System.out.println(customer.getLastname());
+                        System.out.println(customer.getTrn());
+                         }
+                    }
+                  /*  workerLogin.getWorkerId();
+                    workerLogin.getAttempts();
+                    workerLogin.getMessage();
+                    workerLogin.getPassword();
+                    workerLogin.getWorkerIdNumbere();
+                    workerLogin.getWorkerUserName();
+                    */
+                return customer; 
+        
+         
+        
+        
+        
+        
+        
+        
+    }
     
 }

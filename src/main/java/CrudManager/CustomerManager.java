@@ -89,9 +89,10 @@ public class CustomerManager {
             
         } catch (ServiceLoadException ex) {
           
+            log.info(ex.getMessage());
            System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
+           log.info(ex.getMessage()); 
            System.out.println(ex.getMessage()); 
         }
     }
@@ -109,10 +110,10 @@ public class CustomerManager {
             customerList=iCustomerMgr.getAllCustomers();
             
         } catch (ServiceLoadException ex) {
-          
+          log.info(ex.getMessage());
             System.out.println(ex.getMessage());
         } catch (Exception ex) {
-            
+            log.info(ex.getMessage());
             System.out.println(ex.getMessage());
         }
         return customerList;
@@ -131,9 +132,9 @@ public class CustomerManager {
             iCustomerMgr.deleteCustomer(Customer, trn);            
         } catch (ServiceLoadException ex) {
             System.out.println(ex.getMessage());
-            
+            log.info(ex.getMessage());
         } catch (Exception ex) {
-            
+            log.info(ex.getMessage());
             System.out.println(ex.getMessage());
         }
     }
@@ -149,9 +150,9 @@ public class CustomerManager {
             
         } catch (ServiceLoadException ex) {
          System.out.println(ex.getMessage());
-           
+           log.info(ex.getMessage());
         } catch (Exception ex) {
-            
+            log.info(ex.getMessage());
            System.out.println(ex.getMessage()); 
         }
     }
@@ -166,10 +167,10 @@ public class CustomerManager {
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
-            
+            log.info(ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-            
+            log.info(ex.getMessage());
         }
         return aCustomer;
     }
@@ -183,10 +184,10 @@ public class CustomerManager {
             iCustomerMgrJDBC.updateCustomerJDBC(aCustomer);
             
         } catch (ServiceLoadException ex) {
-          
+          log.info(ex.getMessage());
            System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
-            
+            log.info(ex.getMessage());
            System.out.println(ex.getMessage()); 
         }
     }
@@ -203,9 +204,10 @@ public class CustomerManager {
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
-            
+            log.info(ex.getMessage());
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());            
+            System.out.println(ex.getMessage());
+               log.info(ex.getMessage());
         }
         return rs;
     }
@@ -221,9 +223,9 @@ public class CustomerManager {
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
-            
+           log.info(ex.getMessage()); 
         } catch (Exception ex) {
-            
+            log.info(ex.getMessage());
             System.out.println(ex.getMessage());
         }
     }
@@ -240,8 +242,10 @@ public class CustomerManager {
             exist=iAuthenticate.validateUser(username);  //check only username  
         } catch (ServiceLoadException ex) {          
             System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
         } catch (Exception ex) {
             System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
             
         }
         return exist;
@@ -258,6 +262,48 @@ public class CustomerManager {
             exist=iAuthenticate.validateUsernameAndPwd(user);     //check username and password       
         } catch (ServiceLoadException ex) {          
             System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
+            
+        }
+        return exist;
+    }
+    
+     public Boolean validateCustomer(String username) //check if user exist, does not check password
+    {
+        Boolean exist=false;
+        
+        try {
+           // Factory factory = new Factory();                        
+         //   IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+            ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+            IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateUser(username);  //check only username  
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
+            log.info(ex.getMessage());
+            
+        }
+        return exist;
+    }
+     
+      public Boolean validateCustomerUsernameAndPwd(Customer customer)//same as validateUser Service layer IAuthenticateService would check the pasword
+    {
+        Boolean exist=false;        
+        try {
+           // Factory factory = new Factory();                        
+           // IAuthenticateService iAuthenticate = (IAuthenticateService) factory.getTheService(IAuthenticateService.NAME);
+           ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+           IAuthenticateService iAuthenticate = (IAuthenticateService) context.getBean("IAuthenticateImplement");
+            exist=iAuthenticate.validateUsernameAndPwd(customer);
+            //check username and password       
+        } catch (ServiceLoadException ex) {          
+            System.out.println("Could not load Service (Service oad Exception): "+ex.getMessage());
         } catch (Exception ex) {
             System.out.println("Could not load Service (Base Exception): "+ex.getMessage());
             
@@ -265,7 +311,36 @@ public class CustomerManager {
         return exist;
     }
     
-    
+      
+      
+      
+      //adding testCredentials Method 
+   public Customer testCredentials (Customer user) 
+   
+   {
+   Customer anworkerLogin=new Customer();
+        try {
+            System.out.println("In Business Layer testCredentials (CustomerLogin user) method");
+            Factory factory = new Factory();           
+            ICustomerService iworkerLoginMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
+            
+            anworkerLogin=iworkerLoginMgr.getCustomerLoginJDBC(user);
+           
+            System.out.println("This is from the CustomerManager " + anworkerLogin.getLastname());
+            System.out.println("This is from the CustomerManager " + anworkerLogin.getTrn());
+                        
+        } catch (ServiceLoadException ex) {
+          System.out.println(ex.getMessage());
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            
+        }
+        return anworkerLogin;
+   
+   
+   
+   }
       
     
        

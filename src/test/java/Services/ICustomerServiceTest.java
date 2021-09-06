@@ -211,6 +211,16 @@ public class ICustomerServiceTest {
 
         public void deleteCustomerJDBC(String trn) throws Exception {
         }
+
+        @Override
+        public Customer getCustomerLogin(Customer user) throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public Customer getCustomerLoginJDBC(Customer user) throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
     
 }

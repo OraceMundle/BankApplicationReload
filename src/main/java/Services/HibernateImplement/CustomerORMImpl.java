@@ -10,6 +10,7 @@ import Services.HibernateMainConfig;
 import Services.ICustomerService;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.BasicConfigurator;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -183,8 +184,45 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
     public void deleteCustomerJDBC(String trn) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
+    @Override
+    public Customer getCustomerLogin(Customer user) throws Exception {
+        
+     try {
+                //Session session = hibernate.getSessionFactory();
+        Session session = CustomerORMImpl.getSession();
+        Transaction transact=null;
+			session.beginTransaction(); 
+        
+        if (user != null) {
+		        	System.out.println("Worker find");
+		        	session.close();
+		        	//user.setAttempts(2);
+		    	  	 return user;
+		    	  }
+		   }
+		catch(Exception ex){
+			 		
+			 	BasicConfigurator.configure();
+			 	//ogger.info("login error");
+				//logger.error("user wasn't found");
+				 Customer log = null;
+				 //log.setAttempts(1);
+				 return log;
+				}
+			return null;
+     //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+        
+        
+    }
+
+    @Override
+    public Customer getCustomerLoginJDBC(Customer user) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
     
     
 }

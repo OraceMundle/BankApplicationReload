@@ -5,8 +5,8 @@
  */
 package Presentation;
 
-import CrudManager.WorkerManager;
-import Domain.Worker;
+import CrudManager.CustomerManager;
+import Domain.Customer;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +45,11 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Username");
 
         userName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        userName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("User ID");
@@ -137,34 +142,38 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
-        Worker worker = new Worker();
-        worker.setLastname(userName.getText().trim());
-        worker.setId(password.getText().trim());
+        Customer customer = new Customer();
+        customer.setLastname(userName.getText().trim());
+        customer.setTrn(password.getText().trim());
         
-        WorkerManager workerLoginMgr= new WorkerManager();
-        Worker wl = workerLoginMgr.testCredentials(worker);
+        CustomerManager customerLoginMgr= new CustomerManager();
+        Customer wl = customerLoginMgr.testCredentials(customer);
         
-        System.out.println(worker.getLastname());
-        System.out.println(worker.getId());
+        System.out.println(customer.getLastname());
+        System.out.println(customer.getTrn());
         
-         
-        
-        if(wl.getLastname().equals(worker.getLastname()) && wl.getId().equals(worker.getId()))
+                 
+        if(wl.getLastname().equals(customer.getLastname()) && wl.getTrn().equals(customer.getTrn()))
         {
-          //Worker workerUI =  new Worker();
-          //workerUI.setVisible(true);
-          
-          //FrontEnd frontEndUI = new FrontEnd();
-          //frontEndUI.setVisible(Boolean.TRUE);
             
-          //WorkerGUI workerGUI  = new WorkerGUI();
-          //workerGUI.setVisible(Boolean.TRUE);
             
-            if(worker.getLastname().isEmpty()){
-		                    	//worker.getPassword().setBackground(Color.red);
+            
+            
+                                                //Dashboard db = new Dashboard();
+                                                   CustomerForm db = new CustomerForm();
+                                                    //Login lg = new Login();
+                                                    db.setVisible(true);
+                                                    this.setVisible(false);
+                                                    //lg.setVisible(false);
+          /*          
+            if(customer.getLastname().isEmpty()){
+		                    	//customer.getPassword().setBackground(Color.red);
 		                    	 int input = JOptionPane.showConfirmDialog(null, 
 		  			  "Password field can't be Empty", "", JOptionPane.DEFAULT_OPTION);
-                                         } else 
+                                         } 
+            
+            
+                                        else 
                                                 { 
                                                 
                                                     Dashboard db = new Dashboard();
@@ -173,22 +182,22 @@ public class Login extends javax.swing.JFrame {
                                                     lg.setVisible(false);
                                                 
                                                 
-                                                }
+                                                }*/
                              
         }
         else
         {
-          //jlInfo.setText("Username or password incorrect");
-          //addAccountGUI userGUI = new addAccountGUI();
-          //userGUI.setVisible(Boolean.TRUE);
-          int input = JOptionPane.showConfirmDialog(null, 
-		  			  "Username or password is incorrect", "", JOptionPane.DEFAULT_OPTION);
+            int input = JOptionPane.showConfirmDialog(null, "Username or password is incorrect", "", JOptionPane.DEFAULT_OPTION);
           
         }
         
          
         
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userNameActionPerformed
 
     /**
      * @param args the command line arguments
