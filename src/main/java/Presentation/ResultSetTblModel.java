@@ -48,7 +48,7 @@ public class ResultSetTblModel extends AbstractTableModel{
             rsmd = rs.getMetaData();
             //determine number of rows in ResultSet.
             rs.last();
-            numberOfRows = resultSet.getRow(); //get row number
+            numberOfRows = rs.getRow(); //get row number
             //notify JTable that model has chaged
             fireTableStructureChanged();
             
