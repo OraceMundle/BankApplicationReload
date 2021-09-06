@@ -10,6 +10,9 @@ package Presentation;
  * @author Dinham
  */
 public class AddAccountPrompt extends javax.swing.JFrame {
+    
+    Dashboard db = new Dashboard();
+    AddAccountPrompt aap = new AddAccountPrompt();
 
     /**
      * Creates new form AddAccountPrompt
@@ -35,10 +38,25 @@ public class AddAccountPrompt extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("New");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Existing");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Return to Dash");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Type of Customer?");
@@ -78,6 +96,29 @@ public class AddAccountPrompt extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //New customer button
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AddAccountNew aan = new AddAccountNew();
+        db.setVisible(false);
+        aap.setVisible(false);
+        aan.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    //Account exist button
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AddAccountExist aae = new AddAccountExist();
+        db.setVisible(false);
+        aap.setVisible(false);
+        aae.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    //Return to dashboard
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        aap.setVisible(false);
+        db.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
