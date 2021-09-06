@@ -45,6 +45,11 @@ public class ShowAllOptions extends javax.swing.JFrame {
 
         jButton2.setText("Customers");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Return to Dash");
 
@@ -93,6 +98,12 @@ public class ShowAllOptions extends javax.swing.JFrame {
         tblAccount.setVisible(true);
         tblAccount.viewTable("Account");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        TableCustomer tblCustomer = new  TableCustomer();
+        tblCustomer.setVisible(true);
+        tblCustomer.viewTable("Customer");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,7 @@
 package Presentation;
 
 import CrudManager.AccountManager;
+import CrudManager.CustomerJDBCManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class ResultSetTblModel extends AbstractTableModel{
     
     private Boolean connectToDatabase=false;
     private AccountManager am;
+    private CustomerJDBCManager cm;
     private int numberOfRows, numberOfCols;
     
     private ResultSet rs;
@@ -43,6 +45,15 @@ public class ResultSetTblModel extends AbstractTableModel{
                 System.out.println("Got ResultSet");
                 connectToDatabase = true;
                 System.out.println("Connected to database set to true");
+            
+            }else if(objectType.equals("Customer"))
+            {
+                cm = new CustomerJDBCManager();
+                System.out.println("Getting ResultSet");
+                rs = cm.getAllCustomerJDBC();
+                System.out.println("Got ResultSet");
+                connectToDatabase = true;
+                System.out.println("Connected to database set to true");                
             }
             
             //Obtain metadata for resutlset.
@@ -54,10 +65,10 @@ public class ResultSetTblModel extends AbstractTableModel{
             fireTableStructureChanged();
             
         }catch (SQLException ex){
-            Logger.getLogger(ResultSetTableModel.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ResultSetTableModel.class.getName()).log(Level.SEVERE, null, ex);
         
         }catch (Exception ex){
-            Logger.getLogger(ResultSetTableModel.class.getName ()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ResultSetTableModel.class.getName ()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -74,7 +85,7 @@ public class ResultSetTblModel extends AbstractTableModel{
         try{
             numberOfCols = rsmd.getColumnCount();
         }catch (SQLException ex){
-            Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numberOfCols;
         
@@ -88,7 +99,7 @@ public class ResultSetTblModel extends AbstractTableModel{
             rs.absolute(rowIndex + 1);
             obj = rs.getObject(columnIndex +1);
         }catch (SQLException ex){
-            Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
         }
         return obj;
         
