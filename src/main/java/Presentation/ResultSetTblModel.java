@@ -20,8 +20,7 @@ import org.jboss.logging.Logger;
 public class ResultSetTblModel extends AbstractTableModel{
     
     private AccountManager am;
-    private int numberOfRows;
-    private int numberOfCols;
+    private int numberOfRows, numberOfCols;
     
     private ResultSet rs;
     private ResultSetMetaData rsmd;
@@ -67,11 +66,27 @@ public class ResultSetTblModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
+        numberOfCols =0;
+        try{
+            numberOfCols = rsmd.getColumnCount();
+        }catch (SQLException ex){
+            Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return numberOfCols;
         
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        
+        Object obj=new Object();
+        try{
+            rs.absolute(rowIndex + 1);
+            obj = rs.getObject(columnIndex +1);
+        }catch (SQLException ex){
+            Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return obj;
         
     }
     
