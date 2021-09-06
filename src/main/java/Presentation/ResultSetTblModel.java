@@ -8,9 +8,11 @@ package Presentation;
 import CrudManager.AccountManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import javax.swing.table.AbstractTableModel;
 import org.jboss.logging.Logger;
+
 
 
 

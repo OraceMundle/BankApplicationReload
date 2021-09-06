@@ -50,7 +50,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.addAccount(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class AccountManagerTest {
         Account result = instance.getAccount(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.updateAccount(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class AccountManagerTest {
         List<Account> result = instance.getAllAccount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -106,7 +106,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.deleteAccount(Account, trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -119,7 +119,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.addAccountJDBC(anAccount);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       //fail("The test case is a prototype.");
     }
 
     /**
@@ -134,7 +134,7 @@ public class AccountManagerTest {
         Account result = instance.getAccountJDBC(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.updateAccountJDBC(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -161,7 +161,7 @@ public class AccountManagerTest {
         ResultSet result = instance.getAllAccountJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -174,7 +174,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.deleteAccount(trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

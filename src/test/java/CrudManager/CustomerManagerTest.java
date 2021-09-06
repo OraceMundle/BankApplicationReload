@@ -50,7 +50,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.addCustomer(aCustomer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class CustomerManagerTest {
         Customer result = instance.getCustomer(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.updateCustomer(aCustomer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class CustomerManagerTest {
         List<Customer> result = instance.getAllCustomer();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -106,7 +106,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.deleteCustomer(Customer, trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -119,7 +119,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.addCustomerJDBC(anCustomer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -134,7 +134,7 @@ public class CustomerManagerTest {
         Customer result = instance.getCustomerJDBC(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.updateCustomerJDBC(aCustomer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -161,7 +161,7 @@ public class CustomerManagerTest {
         ResultSet result = instance.getAllCustomerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -174,7 +174,7 @@ public class CustomerManagerTest {
         CustomerManager instance = new CustomerManager();
         instance.deleteCustomer(trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

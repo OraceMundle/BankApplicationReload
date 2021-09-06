@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author OraceMundle
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Services.HibernateMainConfigTest.class, Services.IWorkerServiceTest.class, Services.ICustomerServiceTest.class, Services.IWorkerLogServiceTest.class, TestSuites.ExceptionsSuite.class, Services.IServiceTest.class, Services.FactoryTest.class, Services.IAccountServiceTest.class, Services.HibernateImplement.HibernateImplementSuite.class, Services.ICustomerAddressServiceTest.class, TestSuites.JDBCImplSuite.class})
+@Suite.SuiteClasses({Services.HibernateMainConfigTest.class, Services.IWorkerServiceTest.class, Services.ICustomerServiceTest.class, Services.IWorkerLogServiceTest.class, TestSuites.ExceptionsSuite.class, Services.IServiceTest.class, Services.FactoryTest.class, Services.IAccountServiceTest.class, TestSuites.HibernateImplementSuite.class, Services.ICustomerAddressServiceTest.class, TestSuites.JDBCImplSuite.class})
 public class ServicesSuite {
 
     @BeforeClass

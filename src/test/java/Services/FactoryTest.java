@@ -49,7 +49,7 @@ public class FactoryTest {
         IService result = instance.getTheService(serviceName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class FactoryTest {
         String result = instance.getImplementName(serviceName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

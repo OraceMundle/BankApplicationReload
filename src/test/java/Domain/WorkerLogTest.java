@@ -48,7 +48,7 @@ public class WorkerLogTest {
         int result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -61,7 +61,7 @@ public class WorkerLogTest {
         WorkerLog instance = new WorkerLog();
         instance.setId(id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -74,7 +74,7 @@ public class WorkerLogTest {
         WorkerLog instance = new WorkerLog();
         instance.setWorkerId(workerId);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -87,7 +87,7 @@ public class WorkerLogTest {
         WorkerLog instance = new WorkerLog();
         instance.setMessage(message);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -100,7 +100,7 @@ public class WorkerLogTest {
         WorkerLog instance = new WorkerLog();
         instance.setDate(date);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -114,7 +114,7 @@ public class WorkerLogTest {
         String result = instance.getWorkerId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -128,7 +128,7 @@ public class WorkerLogTest {
         String result = instance.getMessage();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +142,7 @@ public class WorkerLogTest {
         String result = instance.getDate();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

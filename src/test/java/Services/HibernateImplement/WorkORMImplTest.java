@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TestSuites;
+package Services.HibernateImplement;
 
 import Domain.Worker;
 import Services.HibernateImplement.WorkORMImpl;
@@ -50,7 +50,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.addWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.updateWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class WorkORMImplTest {
         Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class WorkORMImplTest {
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -106,7 +106,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -119,7 +119,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.addWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -132,7 +132,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.updateWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class WorkORMImplTest {
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -161,7 +161,7 @@ public class WorkORMImplTest {
         List<Worker> result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -174,7 +174,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

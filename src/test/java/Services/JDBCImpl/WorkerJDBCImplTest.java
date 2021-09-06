@@ -49,7 +49,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.addWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.updateWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class WorkerJDBCImplTest {
         Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class WorkerJDBCImplTest {
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +105,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.addWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.updateWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +146,7 @@ public class WorkerJDBCImplTest {
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -160,7 +160,7 @@ public class WorkerJDBCImplTest {
         List<Worker> result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +173,7 @@ public class WorkerJDBCImplTest {
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

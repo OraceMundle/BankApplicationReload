@@ -49,7 +49,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.addAccount(account);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.updateAccount(account);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class AccountORMImplTest {
         Account result = instance.getAccount(accountnumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class AccountORMImplTest {
         List<Account> result = instance.getAllAccount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +105,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.deleteAccount(Account, accountnumber);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.addAccountJDBC(account);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.updateAccountJDBC(account);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +146,7 @@ public class AccountORMImplTest {
         Account result = instance.getAccountJDBC(accountnumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -160,7 +160,7 @@ public class AccountORMImplTest {
         List<Account> result = instance.getAllAccountJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +173,7 @@ public class AccountORMImplTest {
         AccountORMImpl instance = new AccountORMImpl();
         instance.deleteAccountJDBC(accountnumber);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

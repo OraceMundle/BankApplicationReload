@@ -49,7 +49,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.addCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.updateCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class CustomerJDBCImplTest {
         Customer result = instance.getCustomer(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class CustomerJDBCImplTest {
         List<Customer> result = instance.getAllCustomers();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +105,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.deleteCustomer(Customer, trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.addCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.updateCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +146,7 @@ public class CustomerJDBCImplTest {
         Customer result = instance.getCustomerJDBC(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -160,7 +160,7 @@ public class CustomerJDBCImplTest {
         List<Customer> result = instance.getAllCustomersJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +173,7 @@ public class CustomerJDBCImplTest {
         CustomerJDBCImpl instance = new CustomerJDBCImpl();
         instance.deleteCustomerJDBC(trn);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
