@@ -39,8 +39,6 @@ public class Customer implements Serializable{
     @Column(name ="telephone_number")
     private String telephoneNum;
          
-       
-
     
     
    

@@ -50,6 +50,9 @@ public class CustomerJDBCManager {
             Factory factory = new Factory();           
             ICustomerService iCustomerMgrJDBC = (ICustomerService) factory.getTheService(ICustomerService.NAME);
             aCustomer=iCustomerMgrJDBC.getCustomerJDBC(trn);
+            System.out.println("In Business Layer getCustomerJDBC(String trn) method" + aCustomer.getLastname());
+            
+            
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());

@@ -65,6 +65,8 @@ public class CustomerManager {
              //iCustomerMgr.getCustomer(trn);
             
             aCustomer=iCustomerMgr.getCustomer(trn);
+            System.out.println(aCustomer.getLastname());
+            
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
@@ -164,6 +166,7 @@ public class CustomerManager {
             Factory factory = new Factory();           
             ICustomerService iCustomerMgrJDBC = (ICustomerService) factory.getTheService(ICustomerService.NAME);
             aCustomer=iCustomerMgrJDBC.getCustomerJDBC(trn);
+             System.out.println("In Business Layer getCustomerJDBC(String trn) method" + aCustomer.getLastname());
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());

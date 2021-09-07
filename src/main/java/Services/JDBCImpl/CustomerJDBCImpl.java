@@ -99,7 +99,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 
     @Override
     public Customer getCustomerJDBC(String trn) throws Exception {
-            String selectCustomer = "Select * From customer Where TRN = " + trn;
+            String selectCustomer = "Select * From customer Where trn = " + trn;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectCustomer);
@@ -137,7 +137,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void deleteCustomerJDBC(String trn) throws Exception {
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From customer Where TRN  = " + trn);
+        statement.execute("Delete From customer Where trn  = " + trn);
     }
 
     @Override

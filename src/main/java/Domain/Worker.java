@@ -52,7 +52,7 @@ import javax.persistence.Table;
     
     //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
     //@JoinColumn(name="account_number")
-	private Account  account;
+	//private Account  account;
 
     public Worker() {
     }
@@ -81,14 +81,13 @@ import javax.persistence.Table;
     
     
     
-    public Worker(String id, String firstname, String lastname, String telephoneNumber, String email, int accountNumber, Account account) {
+    public Worker(String id, String firstname, String lastname, String telephoneNumber, String email, int accountNumber) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.telephoneNumber = telephoneNumber;
         this.email = email;
         this.accountNumber = accountNumber;
-        this.account = account;
     }
     
     

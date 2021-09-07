@@ -36,13 +36,13 @@ public class CustomerAddress {
     @Column(name="country")
     private String country;
     
-    @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="customer_trn")
-    private Customer customer;
+    //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+    @Column(name="customer_trn")
+    private String customer;
 
    
     
-    //Customer customer = 
+   
 
     public CustomerAddress() {
     }
@@ -58,7 +58,7 @@ public class CustomerAddress {
       this.community=address.community;
       this.country=address.community;
       this.street=address.street;
-      this.customer=customer;
+      this.customer=customer.getTrn();
       
       
       
@@ -71,7 +71,7 @@ public class CustomerAddress {
         this.street = street;
         this.community = community;
         this.country = country;
-        this.customer = customer;
+        this.customer = customer.getTrn();
     }
     
     
@@ -94,7 +94,7 @@ public class CustomerAddress {
         return country;
     }
 
-     public Customer getCustomer() {
+     public String getCustomer() {
         return customer;
     }
     
@@ -115,7 +115,7 @@ public class CustomerAddress {
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer = customer.getTrn();
     }
     
     

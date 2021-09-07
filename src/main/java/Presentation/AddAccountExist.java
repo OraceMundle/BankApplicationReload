@@ -7,6 +7,7 @@ package Presentation;
 
 import CrudManager.AccountManager;
 import CrudManager.CustomerJDBCManager;
+import CrudManager.CustomerManager;
 import Domain.Account;
 import Domain.Customer;
 import javax.swing.JFrame;
@@ -316,11 +317,12 @@ public class AddAccountExist extends javax.swing.JFrame {
             }
             else
             {
-                CustomerJDBCManager customerMgr = new CustomerJDBCManager();
+                //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
+                CustomerManager customerMgr = new CustomerManager();
                 Customer customer = new Customer();
 
                 //Passes data from crudmanager to customer class
-                customer = customerMgr.getCustomerJDBC(trnTextField.getText().trim());
+                customer = customerMgr.getCustomer(trnTextField.getText().trim());
 
                 //Push values to the uneditable text boxes.
                 fNameText.setText(customer.getFirstname());
@@ -329,7 +331,8 @@ public class AddAccountExist extends javax.swing.JFrame {
                 trnTextField2.setText(customer.getTrn());
                 emailTextField.setText(customer.getEmail());
                 telTextField.setText(customer.getTelephoneNum());
-            
+                
+                System.out.println(customer.getFirstname());
             }
         }catch (Exception e) {
             

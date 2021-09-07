@@ -116,7 +116,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          List<Customer> customerList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerList = (List<Customer>) session1.createQuery("from Customer ").list();
+             customerList = (List<Customer>) session1.createQuery("from customer ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
