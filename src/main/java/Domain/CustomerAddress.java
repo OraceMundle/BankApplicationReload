@@ -46,13 +46,37 @@ public class CustomerAddress {
 
     public CustomerAddress() {
     }
-
-    public CustomerAddress(int addressId, String street, String community, String country) {
+/*
+    public CustomerAddress(CustomerAddress address ,Customer customer) {
+         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+    }
+*/
+    public CustomerAddress(CustomerAddress address ,Customer customer) {
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      this.addressId= address.addressId;
+      this.community=address.community;
+      this.country=address.community;
+      this.street=address.street;
+      //this.customer=customer.getTrn();
+      
+      
+      
+    }
+    
+    
+    
+    public CustomerAddress(int addressId, String street, String community, String country, Customer customer) {
         this.addressId = addressId;
         this.street = street;
         this.community = community;
         this.country = country;
+        this.customer = customer;
     }
+    
+    
+    
+    
 
     public int getAddressId() {
         return addressId;

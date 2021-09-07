@@ -7,9 +7,11 @@ package Presentation;
 
 import CrudManager.AccountManager;
 import CrudManager.CustomerManager;
+
 import Domain.Account;
 import Domain.Customer;
 import Domain.CustomerAddress;
+import Domain.Worker;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -396,7 +398,10 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         
         try {
-             
+                Customer customer = new Customer();
+                CustomerAddress customerAddress = new CustomerAddress();
+                Account account = new Account();
+                Worker worker = new Worker();
         
             if(jTFirstName.getText().isEmpty() ){
             
@@ -410,16 +415,19 @@ public class AddAccountNew extends javax.swing.JFrame {
                 else 
             {
                 
-                                               
-        Customer customer = new Customer();
+         
+        CustomerManager customerMgr = new CustomerManager();        
+                
+        
         customer.setFirstname(jTFirstName.getText().trim());
         customer.setLastname(jTLastName.getText().trim());
         customer.setDob(jTDob.getText().trim());
         customer.setTrn(jTTrn.getText().trim());
         customer.setEmail(jTEmail.getText().trim());
         customer.setTelephoneNum(jTTelephone.getText().trim());
-                      
-        Account account = new Account();
+        
+        AccountManager accountMgr = new AccountManager();
+        
         
         account.setBalance(Float.parseFloat(jTBalance.getText().trim()));
         account.setMonthlyInstalment(Float.parseFloat(jTInstallment.getText().trim()));
@@ -429,13 +437,35 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         
         
-        CustomerAddress customerAddress = new CustomerAddress();
+        
         customerAddress.setStreet(jTStreet.getText().trim());
         customerAddress.setCommunity(jTCommunity.getText().trim());
         customerAddress.setCountry(jTCountry.getText().trim());
-        //customerAddress.setCustomer(customer.getTrn());
         
         
+        //Adding Customer TRN to Account Foriegn Key Implementation
+        CustomerAddress customerAddress1 = new CustomerAddress(customerAddress, customer);
+          
+        
+        
+        
+        //customerAddress1.setCustomer(customer.getTrn());
+        
+        //Adding Worker ID to Account Foriegn Key Implementation
+        Account account1 = new Account(account, customer, worker);
+        
+        account1.setBalance(account.getBalance());
+        account1.setMonthlyInstalment(account.getMonthlyInstalment());
+        account1.setDateClosed(account.getDateOpened());
+        account1.setDateClosed(account.getDateClosed());
+        account1.setLoanAmount(account.getLoanAmount());
+        account1.setCustomerTRN(customer.getTrn());
+        account1.setWorkerId(worker.getId());
+        
+        
+        accountMgr.addAccount(account1);
+        
+                
         
         
                   
@@ -444,11 +474,11 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         
         
-        CustomerManager customerMgr = new CustomerManager();
+        
         customerMgr.addCustomer(customer);
         
-        AccountManager accountMgr = new AccountManager();
-        accountMgr.addAccount(account);
+        
+        //accountMgr.addAccount(customerAddress1);
         
         
                 

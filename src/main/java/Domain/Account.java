@@ -5,9 +5,13 @@
  */
 package Domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -44,10 +48,39 @@ public class Account {
     
     @Column(name = "worker_id")
     private String workerId;
-
+    
+    
+     @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="user_id_geneartion")
+	private Customer  customer;
+     
+     
+      @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="user_id_geneartion")
+	private Worker  worker;
+     
     public Account() {
     }
 
+    public Account(Account account, Customer customer, Worker worker )
+    {
+        this.accountnumber=account.accountnumber;
+        this.balance=account.balance;
+        this.loanAmount=account.loanAmount;
+        this.dateClosed=account.dateOpened;
+        this.dateClosed=account.dateClosed;
+        this.monthlyInstalment=account.monthlyInstalment;
+        this.customerTRN=customer.getTrn();
+        this.workerId=worker.getId();
+    
+    }
+    
+    
+    
+    
+    
+    
+    
     public Account(String accountnumber, float balance, float loanAmount, float monthlyInstalment, String dateOpened, String dateClosed, String customerTRN, String workerId) {
         this.accountnumber = accountnumber;
         this.balance = balance;
@@ -91,6 +124,18 @@ public class Account {
         return customerTRN;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Worker getWorker() {
+        return worker;
+    }
+    
+    
+    
+    
+
     public void setAccountnumber(String accountnumber) {
         this.accountnumber = accountnumber;
     }
@@ -122,6 +167,21 @@ public class Account {
     public void setCustomerTRN(String customerTRN) {
         this.customerTRN = customerTRN;
     }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void setWorker(Worker worker) {
+        this.worker = worker;
+    }
+
+    public Account(Customer customer, Worker worker) {
+        this.customer = customer;
+        this.worker = worker;
+    }
+    
+    
     
     
     
