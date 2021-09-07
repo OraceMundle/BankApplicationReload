@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Transaction extends javax.swing.JFrame {
     
     Dashboard db = new Dashboard();
-    Transaction t = new Transaction();
+    
 
     /**
      * Creates new form AddAccount
@@ -212,14 +212,14 @@ public class Transaction extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        t.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Testig save button");
-        t.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 

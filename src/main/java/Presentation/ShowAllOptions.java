@@ -101,6 +101,7 @@ public class ShowAllOptions extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         TableAccount tblAccount = new  TableAccount();
         db.setVisible(false);
+        this.setVisible(false);
         tblAccount.setVisible(true);
         tblAccount.viewTable("Account");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -109,6 +110,7 @@ public class ShowAllOptions extends javax.swing.JFrame {
         
         TableCustomer tblCustomer = new  TableCustomer();
         db.setVisible(false);
+        this.setVisible(false);
         tblCustomer.setVisible(true);
         tblCustomer.viewTable("Customer");
         
@@ -116,8 +118,8 @@ public class ShowAllOptions extends javax.swing.JFrame {
 
     //Return to dash
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ShowAllOptions sao = new ShowAllOptions();
-        sao.setVisible(true);
+        
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 

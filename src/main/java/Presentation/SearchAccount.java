@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class SearchAccount extends javax.swing.JFrame {
     
     Dashboard db = new Dashboard();
-    SearchAccount sa = new SearchAccount();
+    
 
     /**
      * Creates new form AddAccount
@@ -275,7 +275,7 @@ public class SearchAccount extends javax.swing.JFrame {
     //return to dashboard
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        sa.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -283,7 +283,7 @@ public class SearchAccount extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Testig save button");
-        sa.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
