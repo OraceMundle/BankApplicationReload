@@ -25,7 +25,7 @@ public class Account {
     private String accountnumber;
     
     @Column(name = "balance")
-    private float balance;
+    private float balance; 
     
     @Column(name = "loan_amount")
     private float loanAmount;
