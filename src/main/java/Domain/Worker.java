@@ -66,8 +66,18 @@ import javax.persistence.Table;
         this.setTelephoneNumber(telephoneNumber);
         this.email = email;
     }
-*/
+    */
     
+    public Worker(Worker worker, Account account)
+    {
+        this.id=worker.id;
+        this.firstname =worker.firstname;
+        this.lastname = worker.lastname;
+        this.telephoneNumber=worker.telephoneNumber;
+        this.email=worker.email;
+        this.accountNumber=Integer.parseInt(account.getAccountnumber());
+         
+    }
     
     
     
