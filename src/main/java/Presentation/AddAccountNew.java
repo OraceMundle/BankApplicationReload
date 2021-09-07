@@ -5,9 +5,11 @@
  */
 package Presentation;
 
+import CrudManager.AccountManager;
 import CrudManager.CustomerManager;
 import Domain.Account;
 import Domain.Customer;
+import Domain.CustomerAddress;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -205,7 +207,7 @@ public class AddAccountNew extends javax.swing.JFrame {
                                                     .addComponent(jLabel6)
                                                     .addComponent(jLabel8)
                                                     .addComponent(jLabel9))))
-                                        .addGap(138, 138, 138)
+                                        .addGap(132, 132, 132)
                                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jTInstallment, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                                             .addComponent(jTDateOpened)
@@ -391,21 +393,21 @@ public class AddAccountNew extends javax.swing.JFrame {
           this.setVisible(false);
         //db.setVisible(true);
         
-           
+        
         
         try {
-             //boolean value = true;
+             
         
             if(jTFirstName.getText().isEmpty() ){
             
-            //value = false;
+            
             int input = JOptionPane.showConfirmDialog(null, 
 		  			                   "First Name  cant be Empty", "", JOptionPane.DEFAULT_OPTION);
             
             }
         
         
-                else //if(value = true)
+                else 
             {
                 
                                                
@@ -419,6 +421,23 @@ public class AddAccountNew extends javax.swing.JFrame {
                       
         Account account = new Account();
         
+        account.setBalance(Float.parseFloat(jTBalance.getText().trim()));
+        account.setMonthlyInstalment(Float.parseFloat(jTInstallment.getText().trim()));
+        account.setDateOpened(jTDateOpened.getText().trim());
+        account.setDateClosed(jTDateClosed.getText().trim());
+        account.setLoanAmount(Float.parseFloat(jTLoanAmount.getText().trim()));
+        
+        
+        
+        CustomerAddress customerAddress = new CustomerAddress();
+        customerAddress.setStreet(jTStreet.getText().trim());
+        customerAddress.setCommunity(jTCommunity.getText().trim());
+        customerAddress.setCountry(jTCountry.getText().trim());
+        //customerAddress.setCustomer(customer.getTrn());
+        
+        
+        
+        
                   
           
         
@@ -427,6 +446,10 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         CustomerManager customerMgr = new CustomerManager();
         customerMgr.addCustomer(customer);
+        
+        AccountManager accountMgr = new AccountManager();
+        accountMgr.addAccount(account);
+        
         
                 
         

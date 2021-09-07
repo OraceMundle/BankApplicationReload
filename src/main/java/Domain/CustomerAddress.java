@@ -5,9 +5,13 @@
  */
 package Domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -31,6 +35,14 @@ public class CustomerAddress {
     
     @Column(name="country")
     private String country;
+    
+    @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+    @JoinColumn(name="customer_trn")
+    private Customer customer;
+
+   
+    
+    //Customer customer = 
 
     public CustomerAddress() {
     }
@@ -58,6 +70,10 @@ public class CustomerAddress {
         return country;
     }
 
+     public Customer getCustomer() {
+        return customer;
+    }
+    
     public void setAddressId(int addressId) {
         this.addressId = addressId;
     }
@@ -73,6 +89,11 @@ public class CustomerAddress {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    
     
     
 }

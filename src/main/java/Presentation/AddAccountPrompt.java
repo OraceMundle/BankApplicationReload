@@ -12,7 +12,7 @@ package Presentation;
 public class AddAccountPrompt extends javax.swing.JFrame {
     
     Dashboard db = new Dashboard();
-    AddAccountPrompt aap = new AddAccountPrompt();
+    
 
     /**
      * Creates new form AddAccountPrompt
@@ -101,7 +101,7 @@ public class AddAccountPrompt extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AddAccountNew aan = new AddAccountNew();
         db.setVisible(false);
-        aap.setVisible(false);
+        this.setVisible(false);
         aan.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -110,13 +110,13 @@ public class AddAccountPrompt extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AddAccountExist aae = new AddAccountExist();
         db.setVisible(false);
-        aap.setVisible(false);
+       this.setVisible(false);
         aae.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     //Return to dashboard
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        aap.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 

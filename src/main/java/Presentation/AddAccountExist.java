@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class AddAccountExist extends javax.swing.JFrame {
     Dashboard db = new Dashboard();
-    AddAccountExist aae = new AddAccountExist();
+   
 
     /**
      * Creates new form AddAccount
@@ -260,7 +260,7 @@ public class AddAccountExist extends javax.swing.JFrame {
 
     //Cancel and return to dashboard
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        aae.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -268,7 +268,7 @@ public class AddAccountExist extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Testig save button");
-        aae.setVisible(false);
+        this.setVisible(false);
         db.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
