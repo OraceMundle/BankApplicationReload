@@ -394,24 +394,25 @@ public class AddAccountNew extends javax.swing.JFrame {
            
         
         try {
-             boolean value = true;
+             //boolean value = true;
         
             if(jTFirstName.getText().isEmpty() ){
             
-            value = false;
+            //value = false;
             int input = JOptionPane.showConfirmDialog(null, 
 		  			                   "First Name  cant be Empty", "", JOptionPane.DEFAULT_OPTION);
             
             }
         
         
-                if(value = true){
+                else //if(value = true)
+            {
                 
                                                
         Customer customer = new Customer();
         customer.setFirstname(jTFirstName.getText().trim());
         customer.setLastname(jTLastName.getText().trim());
-        customer.setEmail(jTDob.getName().trim());
+        customer.setDob(jTDob.getText().trim());
         customer.setTrn(jTTrn.getText().trim());
         customer.setEmail(jTEmail.getText().trim());
         customer.setTelephoneNum(jTTelephone.getText().trim());
