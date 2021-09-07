@@ -34,12 +34,12 @@ public class CustomerJDBCManager {
             iCustomerMgrJDBC.addCustomerJDBC(anCustomer);
             
         } catch (ServiceLoadException ex) {
-         //System.out.println(ex.getMessage());
+           System.out.println(ex.getMessage());
            log.info(ex.getMessage());
            
         } catch (Exception ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+            System.out.println(ex.getMessage()); 
         }
     }
     public Customer getCustomerJDBC(String trn)
@@ -47,7 +47,8 @@ public class CustomerJDBCManager {
         Customer aCustomer=new Customer();
         try {
             System.out.println("In Business Layer getCustomerJDBC(String trn) method");
-            Factory factory = new Factory();           
+            Factory factory = new Factory();
+            
             ICustomerService iCustomerMgrJDBC = (ICustomerService) factory.getTheService(ICustomerService.NAME);
             aCustomer=iCustomerMgrJDBC.getCustomerJDBC(trn);
             System.out.println("In Business Layer getCustomerJDBC(String trn) method" + aCustomer.getLastname());
@@ -56,12 +57,12 @@ public class CustomerJDBCManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-          //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
         
             log.info(ex.getMessage());
-        //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
             
         }
         return aCustomer;
@@ -77,10 +78,10 @@ public class CustomerJDBCManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+            System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     
@@ -95,11 +96,11 @@ public class CustomerJDBCManager {
             rs=(ResultSet) iCustomerMgrJDBC.getAllCustomersJDBC();
             
         } catch (ServiceLoadException ex) {
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
           log.info(ex.getMessage());
             
         } catch (Exception ex) {
-            //System.out.println(ex.getMessage());  
+            System.out.println(ex.getMessage());  
             log.info(ex.getMessage());
         }
         return rs;
@@ -115,12 +116,12 @@ public class CustomerJDBCManager {
             iCustomerMgrJDBC.deleteCustomerJDBC(trn);
             
         } catch (ServiceLoadException ex) {
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
           log.info(ex.getMessage());
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
 

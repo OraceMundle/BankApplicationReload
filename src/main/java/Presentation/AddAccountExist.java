@@ -318,11 +318,15 @@ public class AddAccountExist extends javax.swing.JFrame {
             else
             {
                 //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
+                //working instance of Customer Manager
                 CustomerManager customerMgr = new CustomerManager();
+                
                 Customer customer = new Customer();
 
                 //Passes data from crudmanager to customer class
+                //working method
                 customer = customerMgr.getCustomer(trnTextField.getText().trim());
+                //customer = customerMgr.getCustomerJDBC(trnTextField.getText().trim());
 
                 //Push values to the uneditable text boxes.
                 fNameText.setText(customer.getFirstname());

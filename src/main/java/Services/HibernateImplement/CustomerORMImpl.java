@@ -116,7 +116,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          List<Customer> customerList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             customerList = (List<Customer>) session1.createQuery("from customer ").list();
+             customerList = (List<Customer>) session1.createQuery("from Customer ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
@@ -195,7 +195,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
 			session.beginTransaction(); 
         
         if (user != null) {
-		        	System.out.println("Worker find");
+		        	System.out.println("Customer found");
 		        	session.close();
 		        	//user.setAttempts(2);
 		    	  	 return user;

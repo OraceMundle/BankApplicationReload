@@ -280,7 +280,7 @@ public class AppPresentationConsole {
             anCustomer.setTelephoneNum(aScanner.nextLine());
             
             customerORM.updateCustomer(anCustomer);
-            System.out.println("Customer Added Using ORM");
+            System.out.println("Customer Updated Using ORM");
         }
         else if(ormChoice==3)
         {

@@ -99,7 +99,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 
     @Override
     public Customer getCustomerJDBC(String trn) throws Exception {
-            String selectCustomer = "Select * From customer Where trn = " + trn;
+            String selectCustomer = "SELECT * FROM customer WHERE trn = " + trn;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectCustomer);
@@ -113,7 +113,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         customer.setDob(rs.getString("dob"));
         
         return customer;
-
+        
 
     }
 
@@ -122,7 +122,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
          ResultSet rs=null;
         PreparedStatement ps;
         
-        String SelectAll="Select * From customer";
+        String SelectAll="SELECT * FROM customer";
         //statement=this.getConnection().createStatement();
         ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         rs=ps.executeQuery(SelectAll);
