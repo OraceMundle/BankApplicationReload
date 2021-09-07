@@ -50,13 +50,13 @@ public class Account {
     private String workerId;
     
     
-     @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name="user_id_geneartion")
+     //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+	//@JoinColumn(name="trn")
 	private Customer  customer;
      
      
-      @OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name="user_id_geneartion")
+      //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+	//@JoinColumn(name="worker_id")
 	private Worker  worker;
      
     public Account() {
@@ -72,6 +72,8 @@ public class Account {
         this.monthlyInstalment=account.monthlyInstalment;
         this.customerTRN=customer.getTrn();
         this.workerId=worker.getId();
+        
+        
     
     }
     

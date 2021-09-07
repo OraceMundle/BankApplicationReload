@@ -7,9 +7,13 @@ package Domain;
 
 import Domain.Customer;
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -40,10 +44,19 @@ import javax.persistence.Table;
     
     @Column(name="email")
     private String email;
+    
+    
+    @Column(name = "account_number")
+    private int accountNumber;
+    
+    
+    //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+    //@JoinColumn(name="account_number")
+	private Account  account;
 
     public Worker() {
     }
-
+/*
     public Worker(String id, String firstname, String lastname, String telephoneNumber, String email) {
         this.id = id;
         this.firstname = firstname;
@@ -53,6 +66,22 @@ import javax.persistence.Table;
         this.setTelephoneNumber(telephoneNumber);
         this.email = email;
     }
+*/
+    
+    
+    
+    
+    public Worker(String id, String firstname, String lastname, String telephoneNumber, String email, int accountNumber, Account account) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.telephoneNumber = telephoneNumber;
+        this.email = email;
+        this.accountNumber = accountNumber;
+        this.account = account;
+    }
+    
+    
 
     public String getId() {
         return id;

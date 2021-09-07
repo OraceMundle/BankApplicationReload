@@ -58,7 +58,7 @@ public class CustomerAddress {
       this.community=address.community;
       this.country=address.community;
       this.street=address.street;
-      //this.customer=customer.getTrn();
+      this.customer=customer;
       
       
       
