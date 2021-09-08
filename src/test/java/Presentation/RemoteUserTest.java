@@ -40,7 +40,7 @@ public class RemoteUserTest {
 
     /**
      * Test of createConnection method, of class RemoteUser.
-     */
+     
     @Test
     public void testCreateConnection() {
         System.out.println("createConnection");
@@ -52,7 +52,7 @@ public class RemoteUserTest {
 
     /**
      * Test of getStreams method, of class RemoteUser.
-     */
+     
     @Test
     public void testGetStreams() {
         System.out.println("getStreams");
@@ -64,7 +64,7 @@ public class RemoteUserTest {
 
     /**
      * Test of closeStreams method, of class RemoteUser.
-     */
+     
     @Test
     public void testCloseStreams() {
         System.out.println("closeStreams");
@@ -80,7 +80,7 @@ public class RemoteUserTest {
     @Test
     public void testSendUser() {
         System.out.println("sendUser");
-        Customer customer = null;
+        Customer customer = new Customer("50000000", "Jill", "Thomass", "April 25 1987", "jillThomas@gmail.com","875412899","5");
         RemoteUser instance = new RemoteUser();
         instance.sendUser(customer);
         // TODO review the generated test code and remove the default call to fail.
@@ -89,7 +89,7 @@ public class RemoteUserTest {
 
     /**
      * Test of receiveResponse method, of class RemoteUser.
-     */
+     
     @Test
     public void testReceiveResponse() {
         System.out.println("receiveResponse");
@@ -100,5 +100,6 @@ public class RemoteUserTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    */
     
 }

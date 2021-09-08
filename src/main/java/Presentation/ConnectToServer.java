@@ -22,12 +22,13 @@ import java.io.PrintWriter;
 import java.io.StreamCorruptedException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
+import org.apache.log4j.Logger;
 
 
 /**
@@ -38,6 +39,7 @@ import org.springframework.stereotype.Component;
 
 public class ConnectToServer implements Runnable{
   
+    private static final Logger log = Logger.getLogger(ConnectToServer.class);
     private ServerSocket servSock;
     private Socket connection;
     private static ObjectInputStream is;
@@ -77,7 +79,8 @@ public class ConnectToServer implements Runnable{
         }
         catch(IOException ex)
         {
-            ex.printStackTrace();;
+            ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -93,7 +96,8 @@ public class ConnectToServer implements Runnable{
         }
         catch(IOException ex)
         {
-            ex.printStackTrace();;
+            ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -110,6 +114,7 @@ public class ConnectToServer implements Runnable{
         catch(IOException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -155,12 +160,14 @@ public class ConnectToServer implements Runnable{
                     catch(ClassNotFoundException ex)
                     {
                         ex.printStackTrace();
+                        log.info(ex.getMessage());
                     }
                     catch(ClassCastException ex)
                     {
                         ex.printStackTrace();
                     } catch (Exception ex) {
-                    Logger.getLogger(ConnectToServer.class.getName()).log(Level.SEVERE, null, ex);
+                        log.info(ex.getMessage());
+                    //Logger.getLogger(ConnectToServer.class.getName()).log(Level.SEVERE, null, ex);
                 }
                // }while(student!=null);
                 this.closeStreams();
@@ -173,10 +180,12 @@ public class ConnectToServer implements Runnable{
         catch(EOFException ex)
         {
                 ex.printStackTrace();
+                log.info(ex.getMessage());
         }
         catch(IOException ex)
         {
                 ex.printStackTrace();
+                log.info(ex.getMessage());
         }
            
     }

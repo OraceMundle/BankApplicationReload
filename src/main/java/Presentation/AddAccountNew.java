@@ -6,6 +6,7 @@
 package Presentation;
 
 import CrudManager.AccountManager;
+import CrudManager.CustomerAddressManager;
 import CrudManager.CustomerManager;
 
 import Domain.Account;
@@ -443,7 +444,11 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         //Adding Customer TRN to Account Foriegn Key Implementation
         CustomerAddress customerAddress1 = new CustomerAddress(customerAddress, customer);
-                          
+        
+        
+        
+         
+        CustomerAddressManager customerAddMgr = new CustomerAddressManager();
         //customerAddress1.setCustomer(customer.getTrn());
         
         //Adding Worker ID to Account Foriegn Key Implementation
@@ -462,13 +467,10 @@ public class AddAccountNew extends javax.swing.JFrame {
              
                                
           
-        
-        
-        
-        
+        customerAddMgr.addCustomerAddress(customerAddress1);
+                      
         
         customerMgr.addCustomer(customer);
-        
         
         //accountMgr.addAccount(customerAddress1);
         
