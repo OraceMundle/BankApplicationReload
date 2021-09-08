@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.Customer;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,7 +50,7 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.addCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +63,7 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.updateCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +78,7 @@ public class ICustomerServiceTest {
         Customer result = instance.getCustomer(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +92,7 @@ public class ICustomerServiceTest {
         List<Customer> result = instance.getAllCustomers();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +106,22 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.deleteCustomer(Customer, trn);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomerLogin method, of class ICustomerService.
+     */
+    @Test
+    public void testGetCustomerLogin() throws Exception {
+        System.out.println("getCustomerLogin");
+        Customer user = null;
+        ICustomerService instance = new ICustomerServiceImpl();
+        Customer expResult = null;
+        Customer result = instance.getCustomerLogin(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +134,7 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.addCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +147,7 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.updateCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +162,7 @@ public class ICustomerServiceTest {
         Customer result = instance.getCustomerJDBC(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,11 +172,11 @@ public class ICustomerServiceTest {
     public void testGetAllCustomersJDBC() throws Exception {
         System.out.println("getAllCustomersJDBC");
         ICustomerService instance = new ICustomerServiceImpl();
-        List<Customer> expResult = null;
-        List<Customer> result = instance.getAllCustomersJDBC();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllCustomersJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +189,22 @@ public class ICustomerServiceTest {
         ICustomerService instance = new ICustomerServiceImpl();
         instance.deleteCustomerJDBC(trn);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomerLoginJDBC method, of class ICustomerService.
+     */
+    @Test
+    public void testGetCustomerLoginJDBC() throws Exception {
+        System.out.println("getCustomerLoginJDBC");
+        Customer user = null;
+        ICustomerService instance = new ICustomerServiceImpl();
+        Customer expResult = null;
+        Customer result = instance.getCustomerLoginJDBC(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     public class ICustomerServiceImpl implements ICustomerService {
@@ -195,6 +226,10 @@ public class ICustomerServiceTest {
         public void deleteCustomer(Class<?> Customer, String trn) throws Exception {
         }
 
+        public Customer getCustomerLogin(Customer user) throws Exception {
+            return null;
+        }
+
         public void addCustomerJDBC(Customer customer) throws Exception {
         }
 
@@ -205,21 +240,15 @@ public class ICustomerServiceTest {
             return null;
         }
 
-        public List<Customer> getAllCustomersJDBC() throws Exception {
+        public ResultSet getAllCustomersJDBC() throws Exception {
             return null;
         }
 
         public void deleteCustomerJDBC(String trn) throws Exception {
         }
 
-        @Override
-        public Customer getCustomerLogin(Customer user) throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
         public Customer getCustomerLoginJDBC(Customer user) throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return null;
         }
     }
     

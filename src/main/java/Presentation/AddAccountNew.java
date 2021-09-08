@@ -420,7 +420,6 @@ public class AddAccountNew extends javax.swing.JFrame {
          
         CustomerManager customerMgr = new CustomerManager();        
                 
-        
         customer.setFirstname(jTFirstName.getText().trim());
         customer.setLastname(jTLastName.getText().trim());
         customer.setDob(jTDob.getText().trim());
@@ -428,18 +427,15 @@ public class AddAccountNew extends javax.swing.JFrame {
         customer.setEmail(jTEmail.getText().trim());
         customer.setTelephoneNum(jTTelephone.getText().trim());
         
+        
         AccountManager accountMgr = new AccountManager();
-        
-        
         account.setBalance(Float.parseFloat(jTBalance.getText().trim()));
         account.setMonthlyInstalment(Float.parseFloat(jTInstallment.getText().trim()));
         account.setDateOpened(jTDateOpened.getText().trim());
         account.setDateClosed(jTDateClosed.getText().trim());
         account.setLoanAmount(Float.parseFloat(jTLoanAmount.getText().trim()));
         
-        
-        
-        
+                   
         customerAddress.setStreet(jTStreet.getText().trim());
         customerAddress.setCommunity(jTCommunity.getText().trim());
         customerAddress.setCountry(jTCountry.getText().trim());
@@ -447,10 +443,7 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         //Adding Customer TRN to Account Foriegn Key Implementation
         CustomerAddress customerAddress1 = new CustomerAddress(customerAddress, customer);
-          
-        
-        
-        
+                          
         //customerAddress1.setCustomer(customer.getTrn());
         
         //Adding Worker ID to Account Foriegn Key Implementation
@@ -463,7 +456,6 @@ public class AddAccountNew extends javax.swing.JFrame {
         account1.setLoanAmount(account.getLoanAmount());
         account1.setCustomerTRN(customer.getTrn());
         account1.setWorkerId(worker.getId());
-        
         
         accountMgr.addAccount(account1);
         

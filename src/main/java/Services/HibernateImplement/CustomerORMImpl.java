@@ -8,6 +8,7 @@ package Services.HibernateImplement;
 import Domain.Customer;
 import Services.HibernateMainConfig;
 import Services.ICustomerService;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.BasicConfigurator;
@@ -175,10 +176,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Customer> getAllCustomersJDBC() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     @Override
     public void deleteCustomerJDBC(String trn) throws Exception {
@@ -219,6 +217,11 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
 
     @Override
     public Customer getCustomerLoginJDBC(Customer user) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ResultSet getAllCustomersJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

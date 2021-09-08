@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.Customer;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public interface ICustomerService extends IService{
     
     public Customer getCustomerJDBC(String trn)throws Exception;
     
-    public List<Customer> getAllCustomersJDBC() throws Exception;
+    public ResultSet getAllCustomersJDBC() throws Exception;
     
     public void deleteCustomerJDBC(String trn) throws Exception;
     

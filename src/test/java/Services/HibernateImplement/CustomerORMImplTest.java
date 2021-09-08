@@ -6,6 +6,7 @@
 package Services.HibernateImplement;
 
 import Domain.Customer;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,7 +50,7 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.addCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +63,7 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.updateCustomer(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +78,7 @@ public class CustomerORMImplTest {
         Customer result = instance.getCustomer(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +92,7 @@ public class CustomerORMImplTest {
         List<Customer> result = instance.getAllCustomers();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +106,7 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.deleteCustomer(Customer, trn);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +119,7 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.addCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +132,7 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.updateCustomerJDBC(customer);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -146,21 +147,7 @@ public class CustomerORMImplTest {
         Customer result = instance.getCustomerJDBC(trn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getAllCustomersJDBC method, of class CustomerORMImpl.
-     */
-    @Test
-    public void testGetAllCustomersJDBC() throws Exception {
-        System.out.println("getAllCustomersJDBC");
-        CustomerORMImpl instance = new CustomerORMImpl();
-        List<Customer> expResult = null;
-        List<Customer> result = instance.getAllCustomersJDBC();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +160,51 @@ public class CustomerORMImplTest {
         CustomerORMImpl instance = new CustomerORMImpl();
         instance.deleteCustomerJDBC(trn);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomerLogin method, of class CustomerORMImpl.
+     */
+    @Test
+    public void testGetCustomerLogin() throws Exception {
+        System.out.println("getCustomerLogin");
+        Customer user = null;
+        CustomerORMImpl instance = new CustomerORMImpl();
+        Customer expResult = null;
+        Customer result = instance.getCustomerLogin(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomerLoginJDBC method, of class CustomerORMImpl.
+     */
+    @Test
+    public void testGetCustomerLoginJDBC() throws Exception {
+        System.out.println("getCustomerLoginJDBC");
+        Customer user = null;
+        CustomerORMImpl instance = new CustomerORMImpl();
+        Customer expResult = null;
+        Customer result = instance.getCustomerLoginJDBC(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getAllCustomersJDBC method, of class CustomerORMImpl.
+     */
+    @Test
+    public void testGetAllCustomersJDBC() throws Exception {
+        System.out.println("getAllCustomersJDBC");
+        CustomerORMImpl instance = new CustomerORMImpl();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllCustomersJDBC();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

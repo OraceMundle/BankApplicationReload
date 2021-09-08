@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author OraceMundle
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Services.JDBCImpl.WorkerJDBCImplTest.class, Services.JDBCImpl.WorkerLogJDBCImplTest.class, Services.JDBCImpl.CustomerAddressJDBCImplTest.class, Services.JDBCImpl.AccountJDBCImplTest.class, Services.JDBCImpl.JDBCMainConfigurationTest.class, Services.JDBCImpl.CustomerJDBCImplTest.class})
+@Suite.SuiteClasses({Services.JDBCImpl.WorkerJDBCImplTest.class, Services.JDBCImpl.WorkerLogJDBCImplTest.class, Services.JDBCImpl.CustomerAddressJDBCImplTest.class, Services.JDBCImpl.AccountJDBCImplTest.class, Services.JDBCImpl.JDBCMainConfigurationTest.class, })
 public class JDBCImplSuite {
 
     @BeforeClass

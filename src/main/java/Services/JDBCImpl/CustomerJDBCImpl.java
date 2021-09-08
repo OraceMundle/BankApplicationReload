@@ -99,18 +99,22 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 
     @Override
     public Customer getCustomerJDBC(String trn) throws Exception {
-            String selectCustomer = "SELECT * FROM customer WHERE trn = " + trn;
+            String selectCustomer = "SELECT * FROM customer WHERE trn = " + Integer.parseInt(trn);
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectCustomer);
-        
+               
         Customer customer=new Customer();
+        
+        while(rs.next()){
         customer.setTrn(trn);
         customer.setFirstname(rs.getString("f_name"));
         customer.setLastname(rs.getString("l_name"));
         customer.setEmail(rs.getString("email"));
         customer.setTelephoneNum(rs.getString("telephone_number"));
         customer.setDob(rs.getString("dob"));
+        }
+        
         
         return customer;
         
@@ -118,7 +122,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     }
 
     @Override
-    public List<Customer> getAllCustomersJDBC() throws Exception {
+    public ResultSet getAllCustomersJDBC() throws Exception {
          ResultSet rs=null;
         PreparedStatement ps;
         
@@ -128,7 +132,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         rs=ps.executeQuery(SelectAll);
         
         
-        return (List<Customer>) rs;
+        return rs;
           
     }
     
