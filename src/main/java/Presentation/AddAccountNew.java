@@ -459,10 +459,8 @@ public class AddAccountNew extends javax.swing.JFrame {
         
         accountMgr.addAccount(account1);
         
-                
-        
-        
-                  
+             
+                               
           
         
         
