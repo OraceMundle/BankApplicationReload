@@ -12,6 +12,7 @@ import Domain.Account;
 import Domain.Customer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -21,6 +22,7 @@ public class AddAccountExist extends javax.swing.JFrame {
     Dashboard db = new Dashboard();
    
 
+     private static final Logger log = Logger.getLogger(AddAccountExist.class);
     /**
      * Creates new form AddAccount
      */
@@ -297,10 +299,11 @@ public class AddAccountExist extends javax.swing.JFrame {
                 accountManager.addAccount(ac);
             }
             
-        }catch(Exception e) 
+        }catch(Exception ex) 
         {
             int input = JOptionPane.showConfirmDialog(null,"Error customer info.", "", JOptionPane.DEFAULT_OPTION);
-            	System.out.println(e);
+            	System.out.println(ex);
+                log.info(ex.getMessage());
         }
         
 
@@ -338,11 +341,12 @@ public class AddAccountExist extends javax.swing.JFrame {
                 
                 System.out.println(customer.getFirstname());
             }
-        }catch (Exception e) {
+        }catch (Exception ex) {
             
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
-            	System.out.println(e); 
+            	System.out.println(ex); 
+                log.info(ex.getMessage());
             
         }
     }//GEN-LAST:event_jButton3ActionPerformed

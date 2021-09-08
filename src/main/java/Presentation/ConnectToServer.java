@@ -37,7 +37,7 @@ import org.springframework.stereotype.Component;
 
 
 public class ConnectToServer implements Runnable{
-   
+  
     private ServerSocket servSock;
     private Socket connection;
     private static ObjectInputStream is;

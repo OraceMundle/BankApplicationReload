@@ -7,6 +7,7 @@ package Presentation;
 
 import CrudManager.CustomerManager;
 import Domain.Customer;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +15,8 @@ import javax.swing.JOptionPane;
  * @author Dinham
  */
 public class Login extends javax.swing.JFrame {
-
+        
+    
     /**
      * Creates new form Login
      */
@@ -142,6 +144,9 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
+        try {
+            
+               
         Customer customer = new Customer();
         customer.setLastname(userName.getText().trim());
         customer.setTrn(password.getText().trim());
@@ -191,6 +196,10 @@ public class Login extends javax.swing.JFrame {
           
         }
         
+        } catch (Exception e) {
+            
+            System.out.println(e.getMessage());
+        }
          
         
     }//GEN-LAST:event_loginButtonActionPerformed

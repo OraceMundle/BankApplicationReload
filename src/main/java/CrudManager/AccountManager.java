@@ -27,7 +27,7 @@ public class AccountManager {
     {
         try {
             
-            //System.out.println("In Business Layer addAccount(Account aAccount) method");
+            System.out.println("In Business Layer addAccount(Account aAccount) method");
             log.info("In Business Layer addAccount(Account aAccount) method");
             Factory factory = new Factory();
             IAccountService iBookMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
@@ -35,11 +35,11 @@ public class AccountManager {
         } catch (ServiceLoadException ex) {
           
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         } catch (Exception ex) {
             
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     public Account getAccount(String trn)
@@ -52,13 +52,13 @@ public class AccountManager {
             aAccount=iAccountMgr.getAccount(trn);
             
         } catch (ServiceLoadException ex) {
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
           log.info(ex.getMessage());
             
         } catch (Exception ex) {
             
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
         return aAccount;
     }
@@ -74,11 +74,11 @@ public class AccountManager {
         } catch (ServiceLoadException ex) {
           
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage());
+           System.out.println(ex.getMessage());
         } catch (Exception ex) {
             
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     
@@ -94,10 +94,10 @@ public class AccountManager {
         } catch (ServiceLoadException ex) {
           
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         return customerList;
     }
@@ -113,11 +113,11 @@ public class AccountManager {
         } catch (ServiceLoadException ex) {
             
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -132,11 +132,11 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-         //System.out.println(ex.getMessage());
+         System.out.println(ex.getMessage());
            
         } catch (Exception ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     public Account getAccountJDBC(String trn)
@@ -150,11 +150,11 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
             
         }
         return aAccount;
@@ -170,10 +170,10 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         } catch (Exception ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     
@@ -189,11 +189,11 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());            
+            System.out.println(ex.getMessage());            
         }
         return rs;
     }
@@ -209,11 +209,11 @@ public class AccountManager {
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-          //System.out.println(ex.getMessage());
+          System.out.println(ex.getMessage());
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
-            //System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
     

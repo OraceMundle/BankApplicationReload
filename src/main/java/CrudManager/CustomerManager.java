@@ -38,7 +38,7 @@ public class CustomerManager {
         
         try {
             
-            //System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
+            System.out.println("In Business Layer addCustomer(Customer aCustomer) method");
             log.info("In Business Layer addCustomer(Customer aCustomer) method");
             //Factory factory = new Factory();
             //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
@@ -48,10 +48,10 @@ public class CustomerManager {
          iCustomerMgr.addCustomer(aCustomer);
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
-          //System.out.println(ex.getMessage());
+           System.out.println(ex.getMessage());
         } catch (Exception ex) {
             log.info(ex.getMessage());
-           //System.out.println(ex.getMessage()); 
+           System.out.println(ex.getMessage()); 
         }
     }
     public Customer getCustomer(String trn)
@@ -62,7 +62,7 @@ public class CustomerManager {
             //Factory factory = new Factory();
             //ICustomerService iCustomerMgr = (ICustomerService) factory.getTheService(ICustomerService.NAME);
             ICustomerService iCustomerMgr=(ICustomerService)context.getBean("CustomerORM");
-             //iCustomerMgr.getCustomer(trn);
+             iCustomerMgr.getCustomer(trn);
             
             aCustomer=iCustomerMgr.getCustomer(trn);
             System.out.println(aCustomer.getLastname());

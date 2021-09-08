@@ -14,6 +14,7 @@ import Domain.CustomerAddress;
 import Domain.Worker;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -21,6 +22,7 @@ import javax.swing.JOptionPane;
  */
 public class AddAccountNew extends javax.swing.JFrame {
     
+    private static final Logger log = Logger.getLogger(AddAccountNew.class);
     Dashboard db = new Dashboard();
     
 
@@ -493,11 +495,12 @@ public class AddAccountNew extends javax.swing.JFrame {
             
             
             
-        } catch (Exception e) {
+        } catch (Exception ex) {
             
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error  creating customer account", "", JOptionPane.DEFAULT_OPTION);
-            	System.out.println(e); 
+            	System.out.println(ex);
+                log.info(ex.getMessage());
             
         }
         

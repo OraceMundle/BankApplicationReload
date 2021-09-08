@@ -23,6 +23,8 @@ import org.jboss.logging.Logger;
  */
 public class ResultSetTblModel extends AbstractTableModel{
     
+    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(AccountManager.class);
+    
     private Boolean connectToDatabase=false;
     private AccountManager am;
     private int numberOfRows, numberOfCols;
@@ -76,10 +78,11 @@ public class ResultSetTblModel extends AbstractTableModel{
             
         }catch (SQLException ex){
             //Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
-            
+            log.info(ex.getMessage());
         
         }catch (Exception ex){
             //Logger.getLogger(ResultSetTableModel.class.getName ()).log(Level.SEVERE, null, ex);
+            log.info(ex.getMessage());
         }
     }
 
@@ -97,6 +100,7 @@ public class ResultSetTblModel extends AbstractTableModel{
             numberOfCols = rsmd.getColumnCount();
         }catch (SQLException ex){
             //Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+            log.info(ex.getMessage());
         }
         return numberOfCols;
         
@@ -111,6 +115,7 @@ public class ResultSetTblModel extends AbstractTableModel{
             obj = rs.getObject(columnIndex +1);
         }catch (SQLException ex){
             //Logger.getLogger(ResultSetTblModel.class.getName()).log(Level.SEVERE, null, ex);
+            log.info(ex.getMessage());
         }
         return obj;
         
