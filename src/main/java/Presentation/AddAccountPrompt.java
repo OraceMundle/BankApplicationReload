@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Presentation;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author Dinham
  */
 public class AddAccountPrompt extends javax.swing.JFrame {
-    
+    private static final Logger log = Logger.getLogger(AddAccountPrompt.class);
     Dashboard db = new Dashboard();
     
 
@@ -99,19 +100,38 @@ public class AddAccountPrompt extends javax.swing.JFrame {
 
     //New customer button
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       try {
+        
         AddAccountNew aan = new AddAccountNew();
-        db.setVisible(false);
-        this.setVisible(false);
-        aan.setVisible(true);
+        
+                db.setVisible(false);
+                this.setVisible(false);
+                aan.setVisible(true);
+            
+        } catch (Exception ex) {
+            log.info(ex.getMessage());
+            
+        }
+        
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Account exist button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AddAccountExist aae = new AddAccountExist();
-        db.setVisible(false);
-       this.setVisible(false);
-        aae.setVisible(true);
+        
+        try {
+            
+             AddAccountExist aae = new AddAccountExist();
+                  
+            db.setVisible(false);
+            this.setVisible(false);
+            aae.setVisible(true);
+            
+        } catch (Exception ex) {
+            log.info(ex.getMessage());
+        }
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     //Return to dashboard

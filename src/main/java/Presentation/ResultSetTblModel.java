@@ -10,10 +10,10 @@ import CrudManager.CustomerJDBCManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.logging.Level;
+//import java.util.logging.Level;
 import javax.swing.table.AbstractTableModel;
-import org.jboss.logging.Logger;
-
+//import org.jboss.logging.Logger;
+import org.apache.log4j.Logger;
 
 
 
@@ -23,7 +23,8 @@ import org.jboss.logging.Logger;
  */
 public class ResultSetTblModel extends AbstractTableModel{
     
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(AccountManager.class);
+    //private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(AccountManager.class);
+    private static final Logger log = Logger.getLogger(ResultSetTblModel.class);
     
     private Boolean connectToDatabase=false;
     private AccountManager am;

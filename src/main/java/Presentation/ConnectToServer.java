@@ -121,6 +121,7 @@ public class ConnectToServer implements Runnable{
     public void waitForRequests()
     {
         Customer customer=new Customer();
+        
         try
         {
             while(true)
@@ -130,7 +131,11 @@ public class ConnectToServer implements Runnable{
                //do
                 //{
                     try
-                    {                     
+                    {    
+                        Login login = new Login();
+                        login.setVisible(true);
+                        
+                        /*
                         customer= (Customer) is.readObject();                  
                         if(!customer.getLastname().equals(""))
                         {
@@ -154,14 +159,18 @@ public class ConnectToServer implements Runnable{
                            }
                                    
                         }
-                       
+                       */
                     
                     }
+                    
+                    
+                    /*
                     catch(ClassNotFoundException ex)
                     {
                         ex.printStackTrace();
                         log.info(ex.getMessage());
                     }
+                        */
                     catch(ClassCastException ex)
                     {
                         ex.printStackTrace();
@@ -176,6 +185,7 @@ public class ConnectToServer implements Runnable{
         catch(StreamCorruptedException sce)
         {
             System.out.println(sce.getMessage());
+            log.info(sce.getMessage());
         }
         catch(EOFException ex)
         {

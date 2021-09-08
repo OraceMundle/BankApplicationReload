@@ -16,6 +16,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Component;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -25,6 +26,8 @@ import org.springframework.stereotype.Component;
 
 public class CustomerORMImpl extends HibernateMainConfig implements ICustomerService{
 
+    private static final Logger log = Logger.getLogger(CustomerORMImpl.class);
+    
     @Override
     public void addCustomer(Customer customer) throws Exception {
         
@@ -38,6 +41,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to save customer; rolling back transaction " + hex.getMessage());
              }
@@ -68,6 +72,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to update customer information; rolling back transaction " + hex.getMessage());
              }
@@ -95,6 +100,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load customer with id " + trn + "; rolling back transaction " + hex.getMessage());
              }
@@ -123,6 +129,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          catch(HibernateException hex){
              if(session1!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load all customers; rolling back transaction " + hex.getMessage());
              }
@@ -151,6 +158,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to delete customer; rolling back transaction " + hex.getMessage());
              }
@@ -200,7 +208,7 @@ public class CustomerORMImpl extends HibernateMainConfig implements ICustomerSer
 		    	  }
 		   }
 		catch(Exception ex){
-			 		
+			 	log.info(ex.getMessage());	
 			 	BasicConfigurator.configure();
 			 	//ogger.info("login error");
 				//logger.error("user wasn't found");

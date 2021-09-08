@@ -11,6 +11,7 @@ import Domain.Customer;
 import Domain.CustomerAddress;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class SearchClient extends javax.swing.JFrame {
     
+    private static final Logger log = Logger.getLogger(SearchClient.class);
     Dashboard db = new Dashboard();
     
 
@@ -248,7 +250,7 @@ public class SearchClient extends javax.swing.JFrame {
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
             	System.out.println(e); 
-            
+            log.info(e.getMessage());
         } 
         
         JFrame f = new JFrame();
@@ -301,7 +303,7 @@ public class SearchClient extends javax.swing.JFrame {
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
             	System.out.println(e); 
-            
+                log.info(e.getMessage());
         }        
     }//GEN-LAST:event_jButton3ActionPerformed
 

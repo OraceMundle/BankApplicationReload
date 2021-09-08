@@ -16,13 +16,15 @@ import org.apache.log4j.BasicConfigurator;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author OraceMundle
  */
 public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
 
+    public static final Logger log = Logger.getLogger(WorkORMImpl.class);
+    
     //ORM Methods
     @Override
     public void addWorker(Worker worker) throws Exception {
@@ -37,6 +39,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to save an worker; rolling back transaction " + hex.getMessage());
              }
@@ -64,6 +67,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to update worker information; rolling back transaction " + hex.getMessage());
              }
@@ -92,6 +96,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load worker with id " + id  + "; rolling back transaction " + hex.getMessage());
              }
@@ -120,6 +125,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          catch(HibernateException hex){
              if(session1!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load all workers; rolling back transaction " + hex.getMessage());
              }
@@ -148,6 +154,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to delete worker; rolling back transaction " + hex.getMessage());
              }
@@ -175,7 +182,8 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
 		    	  }
 		   }
 		catch(Exception ex){
-			 		
+                                    
+                                log.info(ex.getMessage());			 		
 			 	BasicConfigurator.configure();
 			 	//ogger.info("login error");
 				//logger.error("user wasn't found");

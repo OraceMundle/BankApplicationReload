@@ -7,6 +7,7 @@ package Presentation;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Transaction extends javax.swing.JFrame {
     
+    private static final Logger log = Logger.getLogger(Transaction.class);
     Dashboard db = new Dashboard();
     
 
@@ -217,10 +219,18 @@ public class Transaction extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JFrame f = new JFrame();
-        JOptionPane.showMessageDialog(f, "Testig save button");
-        this.setVisible(false);
-        db.setVisible(true);
+        
+        try {
+            
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f, "Testig save button");
+            this.setVisible(false);
+            db.setVisible(true);
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

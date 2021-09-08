@@ -7,15 +7,16 @@ package Presentation;
 
 import CrudManager.CustomerManager;
 import Domain.Customer;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author Dinham
  */
 public class Login extends javax.swing.JFrame {
-        
+     private static final Logger log = Logger.getLogger(Login.class);   
     
     /**
      * Creates new form Login
@@ -196,9 +197,9 @@ public class Login extends javax.swing.JFrame {
           
         }
         
-        } catch (Exception e) {
-            
-            System.out.println(e.getMessage());
+        } catch (Exception ex) {
+            log.info(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
          
         

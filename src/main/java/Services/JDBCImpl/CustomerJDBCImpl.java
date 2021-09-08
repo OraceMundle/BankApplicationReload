@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -19,6 +20,7 @@ import java.util.List;
  */
 public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomerService{
 
+    private static final Logger log = Logger.getLogger(CustomerJDBCImpl.class);    
     Statement statement;
     
     @Override
@@ -54,7 +56,9 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     
     @Override
     public void addCustomerJDBC(Customer customer) throws Exception {
-        
+        try {
+            
+                
      String insertCustomer = "INSERT INTO customer(trn, f_name, l_name, email, telephone_number, dob) "
                 + "values('" + customer.getTrn() + 
                 "', '" + customer.getFirstname() +
@@ -67,7 +71,11 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
          statement = this.getConnection().createStatement();        
         statement.execute(insertCustomer);      
         
-        this.getConnection().close();       
+        this.getConnection().close();   
+        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
        
         
         
@@ -76,6 +84,10 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void updateCustomerJDBC(Customer customer) throws Exception {
          
+        try {
+            
+        
+        
         String updateCustomer = "UPDATE customer SET"   + 
                 " f_name = '" + customer.getFirstname() +
                 "', l_name = '" + customer.getLastname() + 
@@ -95,17 +107,25 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         
         this.getConnection().close();  
         
+        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
     }
 
     @Override
     public Customer getCustomerJDBC(String trn) throws Exception {
+        
+        Customer customer=new Customer();
+        try {
+            
+        
             String selectCustomer = "SELECT * FROM customer WHERE trn = " + Integer.parseInt(trn);
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectCustomer);
-               
-        Customer customer=new Customer();
-        
+                        
         while(rs.next()){
         customer.setTrn(trn);
         customer.setFirstname(rs.getString("f_name"));
@@ -115,6 +135,9 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
         customer.setDob(rs.getString("dob"));
         }
         
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
         
         return customer;
         
@@ -123,15 +146,22 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 
     @Override
     public ResultSet getAllCustomersJDBC() throws Exception {
-         ResultSet rs=null;
+        
+                
+        ResultSet rs=null;
         PreparedStatement ps;
+        
+        try {
+            
         
         String SelectAll="SELECT * FROM customer";
         //statement=this.getConnection().createStatement();
         ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         rs=ps.executeQuery(SelectAll);
         
-        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
         return rs;
           
     }
@@ -159,15 +189,19 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
 				
 	String password = user.getTrn();
 	String name = user.getLastname();
+        Customer customer = new Customer();
                 
-			   
+	try {
+            
+        
+		   
 	String loginQuery = " SELECT * from  customer where l_name  = '" + name + "' and trn = '" + password +"'";
 			   	
                 
                 statement=this.getConnection().createStatement();
         
                
-                    Customer customer = new Customer();
+                    
                     ResultSet rs=statement.executeQuery(loginQuery);
                     if(rs==null){
                         customer.setLastname("unknown");
@@ -190,11 +224,15 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
                     workerLogin.getWorkerIdNumbere();
                     workerLogin.getWorkerUserName();
                     */
+                  
+                  
+                  
+                  } catch (Exception e) {
+        }
                 return customer; 
         
          
-        
-        
+         
         
         
         

@@ -16,8 +16,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -26,6 +27,8 @@ import java.util.logging.Logger;
  * @author DELL
  */
 public class RemoteUser {
+    private static final Logger log = Logger.getLogger(AddAccountPrompt.class);
+    
     
 private static ObjectInputStream is;
     private static ObjectOutputStream os;
@@ -47,10 +50,12 @@ private static ObjectInputStream is;
         catch(UnknownHostException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
         catch(IOException ex)
         {
-            ex.printStackTrace();;
+            ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -64,7 +69,8 @@ private static ObjectInputStream is;
         }
         catch(IOException ex)
         {
-            ex.printStackTrace();;
+            ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -80,6 +86,7 @@ private static ObjectInputStream is;
         catch(IOException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -96,6 +103,7 @@ private static ObjectInputStream is;
         catch(IOException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
     }
     
@@ -124,14 +132,17 @@ private static ObjectInputStream is;
         catch(ClassCastException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
         catch(ClassNotFoundException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
         catch(IOException ex)
         {
             ex.printStackTrace();
+            log.info(ex.getMessage());
         }
        return response;
     }

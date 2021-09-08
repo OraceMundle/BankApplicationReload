@@ -13,13 +13,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author Dinham
  */
 public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountService {
     
+    private static final Logger log = Logger.getLogger(AccountJDBCImpl.class);
     Statement statement;
 
     @Override
@@ -50,6 +51,8 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     @Override
     public void addAccountJDBC(Account account) throws Exception {
 
+        try {
+                 
      String insertAccount = "INSERT INTO account(balance, loan_amount, monthly_install, date_open, date_closed, trn, worker_id) "
                 + "values('" + account.getBalance() + 
                 "', '" + account.getLoanAmount() +
@@ -66,10 +69,18 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
         this.getConnection().close();
         
         
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
+        
     }
 
     @Override
     public void updateAccountJDBC(Account account) throws Exception {
+        
+        try {
+            
         
         String updateAccount = "UPDATE account SET  trn = '" + account.getCustomerTRN() +
                 "', date_opened ='" + account.getDateOpened() + 
@@ -88,19 +99,28 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
             System.out.println("Update Successful");
         }
         
-        this.getConnection().close();        
+        this.getConnection().close();   
+        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
         
     }
 
     @Override
     public Account getAccountJDBC(String accountnumber) throws Exception {
+         Account account=new Account();
         
-            String selectAccount = "Select * From account Where account_number = " + accountnumber;
+        try {
+            
+       
+        
+        String selectAccount = "Select * From account Where account_number = " + accountnumber;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectAccount);
         
-        Account account=new Account();
+       while(rs.next()){
         account.setAccountnumber("account_number");
         account.setBalance(rs.getFloat("balance"));
         account.setCustomerTRN("trn");
@@ -109,8 +129,19 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
         account.setLoanAmount(rs.getFloat("loan_amount"));
         account.setMonthlyInstalment(rs.getFloat("monthly_install"));
         account.setWorkerId("worker_id");
-                
-        return account;        
+          }
+       
+       
+        } catch (Exception e) {
+             log.info(e.getMessage());
+        }
+        
+        
+        
+        return account;    
+        
+         
+        
     }
 
     @Override
@@ -118,12 +149,18 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
 
         ResultSet rs=null;
         PreparedStatement ps;
+        try {
+            
+        
         
         String SelectAll="Select * From account";
         //statement=this.getConnection().createStatement();
         ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         rs=ps.executeQuery(SelectAll);
         
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
         
         return (List<Account>) rs;
         
@@ -131,9 +168,16 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
 
     @Override
     public void deleteAccountJDBC(String accountnumber) throws Exception {
-
+        try {
+            
+        
         statement=this.getConnection().createStatement();
         statement.execute("Delete From account Where account_number  = " + accountnumber);
+        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
     }
     
 }

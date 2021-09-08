@@ -7,7 +7,7 @@ package Presentation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author DELL
@@ -16,12 +16,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class WaitForConnection {
     
+    public static final Logger log = Logger.getLogger(WaitForConnection.class);
+    
     public static void main(String args[])
     {
      
-    
-     ConnectToServer connect=new ConnectToServer();
-     connect.start();
+        try {
+                    ConnectToServer connect=new ConnectToServer();
+                    connect.start();
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+     
         
     }
 }

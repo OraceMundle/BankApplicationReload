@@ -13,13 +13,14 @@ import Domain.Customer;
 import Domain.CustomerAddress;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author Dinham
  */
 public class SearchAccount extends javax.swing.JFrame {
     
+    private static final Logger log = Logger.getLogger(SearchAccount.class);
     Dashboard db = new Dashboard();
     
 
@@ -329,6 +330,7 @@ public class SearchAccount extends javax.swing.JFrame {
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
             	System.out.println(e); 
+                log.info(e.getMessage());
             
         }
                 
@@ -395,7 +397,7 @@ public class SearchAccount extends javax.swing.JFrame {
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
             	System.out.println(e); 
-            
+                log.info(e.getMessage());
         }        
     }//GEN-LAST:event_jButton3ActionPerformed
 

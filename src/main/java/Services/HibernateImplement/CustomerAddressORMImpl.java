@@ -15,6 +15,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -22,6 +23,7 @@ import org.hibernate.Transaction;
  */
 public class CustomerAddressORMImpl extends HibernateMainConfig implements ICustomerAddressService{
 
+    private static final Logger log = Logger.getLogger(CustomerAddressORMImpl.class);
     
     //ORM Methods
     @Override
@@ -37,6 +39,7 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to save an account; rolling back transaction " + hex.getMessage());
              }
@@ -64,6 +67,7 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to update account information; rolling back transaction " + hex.getMessage());
              }
@@ -91,6 +95,7 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load account with id " + addressId  + "; rolling back transaction " + hex.getMessage());
              }
@@ -119,6 +124,7 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
          catch(HibernateException hex){
              if(session1!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to load all accounts; rolling back transaction " + hex.getMessage());
              }
@@ -147,6 +153,7 @@ public class CustomerAddressORMImpl extends HibernateMainConfig implements ICust
          catch(HibernateException hex){
              if(session!=null)
              {
+                 log.info(hex.getMessage());
                  transact.rollback();
                  throw new HibernateException("Not able to delete account; rolling back transaction " + hex.getMessage());
              }

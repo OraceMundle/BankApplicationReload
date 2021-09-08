@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Presentation;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author Dinham
  */
 public class Dashboard extends javax.swing.JFrame {
-    
+ private static final Logger log = Logger.getLogger(Dashboard.class);
+         
     
 
     /**
@@ -201,35 +202,74 @@ public class Dashboard extends javax.swing.JFrame {
 
     //Account Search button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        SearchAccount sa = new SearchAccount();
-        this.setVisible(false);
-        sa.setVisible(true);
+        
+        try {
+            SearchAccount sa = new SearchAccount();
+            this.setVisible(false);
+            sa.setVisible(true);
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     //Add account button
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AddAccountPrompt aap = new AddAccountPrompt();
-        aap.setVisible(true);
+        
+        try {
+                AddAccountPrompt aap = new AddAccountPrompt();
+                aap.setVisible(true);
+            
+        } catch (Exception e) {
+            
+            log.info(e.getMessage());
+        }
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //View Customer button
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        SearchClient sc = new SearchClient();
-        this.setVisible(false);
-        sc.setVisible(true);
+        try { 
+            
+            SearchClient sc = new SearchClient();
+            this.setVisible(false);
+            sc.setVisible(true);
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            
+        }
+        
+       
     }//GEN-LAST:event_jButton5ActionPerformed
 
     //Transaction button
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Transaction t = new Transaction();
-        this.setVisible(false);
-        t.setVisible(true);
+        try {
+            
+            Transaction t = new Transaction();
+            this.setVisible(false);
+            t.setVisible(true);
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     //Show all button
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ShowAllOptions sao = new ShowAllOptions();
-        sao.setVisible(true);
+        try {
+            ShowAllOptions sao = new ShowAllOptions();
+            sao.setVisible(true);
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     //Exit button

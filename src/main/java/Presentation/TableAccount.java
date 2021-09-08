@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package Presentation;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author Dinham
  */
 public class TableAccount extends javax.swing.JFrame {
-
+        public static final Logger log = Logger.getLogger(TableAccount.class);
+    
     /**
      * Creates new form TableAccount
      */
@@ -98,9 +100,17 @@ public class TableAccount extends javax.swing.JFrame {
     
     public void viewTable(String tblName)
     {
-        ResultSetTblModel tblModel = new ResultSetTblModel();
-        tblModel.viewAll(tblName);
-        tableAccounts.setModel(tblModel);
+        
+        try {
+            
+            ResultSetTblModel tblModel = new ResultSetTblModel();
+            tblModel.viewAll(tblName);
+            tableAccounts.setModel(tblModel);
+            
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

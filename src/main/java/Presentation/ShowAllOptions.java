@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package Presentation;
-
+import org.apache.log4j.Logger;
 /**
  *
  * @author Dinham
  */
 public class ShowAllOptions extends javax.swing.JFrame {
-
+     private static final Logger log = Logger.getLogger(ShowAllOptions.class);
     Dashboard db = new Dashboard();
     /**
      * Creates new form AddAccountPrompt
@@ -99,20 +99,37 @@ public class ShowAllOptions extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TableAccount tblAccount = new  TableAccount();
-        db.setVisible(false);
-        this.setVisible(false);
-        tblAccount.setVisible(true);
-        tblAccount.viewTable("Account");
+        try {
+            
+             TableAccount tblAccount = new  TableAccount();
+                db.setVisible(false);
+                this.setVisible(false);
+                tblAccount.setVisible(true);
+                tblAccount.viewTable("Account");
+            
+        } catch (Exception e) {
+            
+            log.info(e.getMessage());
+        }
+        
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        TableCustomer tblCustomer = new  TableCustomer();
-        db.setVisible(false);
-        this.setVisible(false);
-        tblCustomer.setVisible(true);
-        tblCustomer.viewTable("Customer");
+        try {
+            TableCustomer tblCustomer = new  TableCustomer();
+            db.setVisible(false);
+            this.setVisible(false);
+            tblCustomer.setVisible(true);
+            tblCustomer.viewTable("Customer");
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+            
+        
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
