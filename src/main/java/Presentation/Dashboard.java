@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Presentation;
+import java.awt.MenuShortcut;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import javax.swing.KeyStroke;
 import org.apache.log4j.Logger;
 /**
  *
@@ -11,6 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class Dashboard extends javax.swing.JFrame {
  private static final Logger log = Logger.getLogger(Dashboard.class);
+ MenuShortcut s;
          
     
 
@@ -40,13 +45,11 @@ public class Dashboard extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMAddCustomer = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        FileMenu = new javax.swing.JMenu();
+        DeleteCustMenuItem = new javax.swing.JMenuItem();
+        DeleteAccMenuItem = new javax.swing.JMenuItem();
+        SearchAccMenuItem = new javax.swing.JMenu();
+        SearchCustMenuItem = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -155,31 +158,30 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
+        FileMenu.setText("File");
 
-        jMAddCustomer.setText("Add Customer");
-        jMenu1.add(jMAddCustomer);
+        DeleteCustMenuItem.setText("Delete Customer");
+        DeleteCustMenuItem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                DeleteCustMenuItemKeyPressed(evt);
+            }
+        });
+        FileMenu.add(DeleteCustMenuItem);
 
-        jMenuItem2.setText("jMenuItem2");
-        jMenu1.add(jMenuItem2);
+        DeleteAccMenuItem.setText("Delete Account");
+        FileMenu.add(DeleteAccMenuItem);
 
-        jMenuItem3.setText("jMenuItem3");
-        jMenu1.add(jMenuItem3);
+        jMenuBar1.add(FileMenu);
 
-        jMenu3.setText("jMenu3");
-        jMenu1.add(jMenu3);
+        SearchAccMenuItem.setText("Edit");
 
-        jMenuBar1.add(jMenu1);
+        SearchCustMenuItem.setText("Search Customer");
+        SearchAccMenuItem.add(SearchCustMenuItem);
 
-        jMenu2.setText("Edit");
+        jMenu4.setText("Search Account");
+        SearchAccMenuItem.add(jMenu4);
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu2.add(jMenuItem1);
-
-        jMenu4.setText("jMenu4");
-        jMenu2.add(jMenu4);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(SearchAccMenuItem);
 
         setJMenuBar(jMenuBar1);
 
@@ -277,6 +279,13 @@ public class Dashboard extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void DeleteCustMenuItemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DeleteCustMenuItemKeyPressed
+        s = new MenuShortcut(KeyEvent.VK_1);
+        //setShortcut(s);
+        //DeleteCustMenuItem.setShortcut(s);
+        DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+    }//GEN-LAST:event_DeleteCustMenuItemKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -313,6 +322,11 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem DeleteAccMenuItem;
+    private javax.swing.JMenuItem DeleteCustMenuItem;
+    private javax.swing.JMenu FileMenu;
+    private javax.swing.JMenu SearchAccMenuItem;
+    private javax.swing.JMenuItem SearchCustMenuItem;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -322,14 +336,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenuItem jMAddCustomer;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
