@@ -7,6 +7,7 @@ package Services;
 
 
 import Domain.WorkerLog;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public interface IWorkerLogService extends IService{
     
     public WorkerLog getWorkerLogJDBC(int id)throws Exception;
     
-    public List<WorkerLog> getAllWorkerLogJDBC() throws Exception;
+    public ResultSet getAllWorkerLogJDBC() throws Exception;
     
     public void deleteWorkLogJDBC(int id) throws Exception;
     

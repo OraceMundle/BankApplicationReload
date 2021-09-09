@@ -9,6 +9,7 @@ import Domain.Account;
 import Domain.WorkerLog;
 import Services.HibernateMainConfig;
 import Services.IWorkerLogService;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -160,7 +161,7 @@ public class WorkerLogORMImpl extends HibernateMainConfig implements IWorkerLogS
     }
 
     @Override
-    public List<WorkerLog> getAllWorkerLogJDBC() throws Exception {
+    public ResultSet getAllWorkerLogJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

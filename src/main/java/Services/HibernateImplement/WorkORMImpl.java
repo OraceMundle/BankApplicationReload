@@ -10,6 +10,7 @@ import Domain.Worker;
 import Services.HibernateMainConfig;
 import Services.IWorkerService;
 import static com.mysql.cj.conf.PropertyKey.logger;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.BasicConfigurator;
@@ -221,7 +222,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     }
 
     @Override
-    public List<Worker> getAllWorkerJDBC() throws Exception {
+    public ResultSet getAllWorkerJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

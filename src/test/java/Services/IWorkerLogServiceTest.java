@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.WorkerLog;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -156,8 +157,8 @@ public class IWorkerLogServiceTest {
     public void testGetAllWorkerLogJDBC() throws Exception {
         System.out.println("getAllWorkerLogJDBC");
         IWorkerLogService instance = new IWorkerLogServiceImpl();
-        List<WorkerLog> expResult = null;
-        List<WorkerLog> result = instance.getAllWorkerLogJDBC();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllWorkerLogJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -205,7 +206,7 @@ public class IWorkerLogServiceTest {
             return null;
         }
 
-        public List<WorkerLog> getAllWorkerLogJDBC() throws Exception {
+        public ResultSet getAllWorkerLogJDBC() throws Exception {
             return null;
         }
 

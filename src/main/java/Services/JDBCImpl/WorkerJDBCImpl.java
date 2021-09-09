@@ -98,64 +98,82 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
 
     @Override
     public Worker getWorkerJDBC(String id) throws Exception {
+        
+        Worker worker = new Worker();
+        
+        try {
+            
+          
         String selectWorker = "Select * From worker Where worker_id = " + id;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectWorker);
         
-        Worker worker = new Worker();
+        while(rs.next()){
+        worker.setId(id);
         worker.setFirstname("f_name");
         worker.setLastname("l_name");
         worker.setTelephoneNumber("telephone");
         worker.setEmail("email");
+        }
                 
+         } catch (Exception e) {
+             log.info(e.getMessage());
+        }
         return worker;
     }
 
     @Override
-    public List<Worker> getAllWorkerJDBC() throws Exception {
+    public ResultSet getAllWorkerJDBC() throws Exception {
         ResultSet rs=null;
         PreparedStatement ps;
         
+        try {
+            
+       
         String SelectAll="Select * From worker";
         //statement=this.getConnection().createStatement();
         ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         rs=ps.executeQuery(SelectAll);
         
-        
-        return (List<Worker>) rs; 
+         } catch (Exception e) {
+             
+        }
+        return  rs; 
     }
 
     @Override
     public void deleteWorkerJDBC(String id) throws Exception {
+        try {
+            
         statement=this.getConnection().createStatement();
         statement.execute("Delete From worker Where worker_id  = " + id);  
+        
+        } catch (Exception e) {
+            
+            log.info(e.getMessage());
+        }
     }
     
     @Override
     public Worker getworkerLoginJDBC(Worker user) throws Exception {
         
         //Method to authenticate Worker User
-    
-	//Session session = this.getSession();//hibernate.getSessionFactory();
-	//session.beginTransaction(); 
-				
+    	 
+	Worker worker = new Worker();			
 	String password = user.getLastname();
 	String name = user.getId();
+        
+        try {
+            
+       
 			   
 	String loginQuery = " select * from  worker where l_name  = '" + name + "' and worker_id = '" + password +"'";
 	//WorkerLogin work = null; 
-		       
-	//TypedQuery< WorkerLogin> typedQuery = session.createQuery(loginQuery,  WorkerLogin.class);
-	//work = loginQuery.get
-	           
-		        	
+	  	
                 //String selectWorkerLogin = "Select * From worker_log Where worker_id = " + user.getWorkerId();
                 statement=this.getConnection().createStatement();
-        
-                //ResultSet rs=statement.executeQuery(selectWorkerLogin);
                     
-                    Worker worker = new Worker();
                     ResultSet rs=statement.executeQuery(loginQuery);
                     if(rs==null){
                         worker.setLastname("unknown");
@@ -171,13 +189,10 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
                         System.out.println(rs.getString("work_id"));
                          }
                     }
-                  /*  workerLogin.getWorkerId();
-                    workerLogin.getAttempts();
-                    workerLogin.getMessage();
-                    workerLogin.getPassword();
-                    workerLogin.getWorkerIdNumbere();
-                    workerLogin.getWorkerUserName();
-                    */
+                                  
+                   } catch (Exception e) {
+                       log.info(e.getMessage());
+        }
                 return worker; 
         
         

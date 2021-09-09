@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.Worker;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -109,6 +110,21 @@ public class IWorkerServiceTest {
     }
 
     /**
+     * Test of getworkerLogin method, of class IWorkerService.
+     */
+    @Test
+    public void testGetworkerLogin() throws Exception {
+        System.out.println("getworkerLogin");
+        Worker user = null;
+        IWorkerService instance = new IWorkerServiceImpl();
+        Worker expResult = null;
+        Worker result = instance.getworkerLogin(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
      * Test of addWorkerJDBC method, of class IWorkerService.
      */
     @Test
@@ -156,8 +172,8 @@ public class IWorkerServiceTest {
     public void testGetAllWorkerJDBC() throws Exception {
         System.out.println("getAllWorkerJDBC");
         IWorkerService instance = new IWorkerServiceImpl();
-        List<Worker> expResult = null;
-        List<Worker> result = instance.getAllWorkerJDBC();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -172,6 +188,21 @@ public class IWorkerServiceTest {
         String id = "";
         IWorkerService instance = new IWorkerServiceImpl();
         instance.deleteWorkerJDBC(id);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getworkerLoginJDBC method, of class IWorkerService.
+     */
+    @Test
+    public void testGetworkerLoginJDBC() throws Exception {
+        System.out.println("getworkerLoginJDBC");
+        Worker user = null;
+        IWorkerService instance = new IWorkerServiceImpl();
+        Worker expResult = null;
+        Worker result = instance.getworkerLoginJDBC(user);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -195,6 +226,10 @@ public class IWorkerServiceTest {
         public void deleteWorker(Class<?> Worker, String id) throws Exception {
         }
 
+        public Worker getworkerLogin(Worker user) throws Exception {
+            return null;
+        }
+
         public void addWorkerJDBC(Worker worker) throws Exception {
         }
 
@@ -205,21 +240,15 @@ public class IWorkerServiceTest {
             return null;
         }
 
-        public List<Worker> getAllWorkerJDBC() throws Exception {
+        public ResultSet getAllWorkerJDBC() throws Exception {
             return null;
         }
 
         public void deleteWorkerJDBC(String id) throws Exception {
         }
 
-        @Override
-        public Worker getworkerLogin(Worker user) throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
         public Worker getworkerLoginJDBC(Worker user) throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return null;
         }
     }
     

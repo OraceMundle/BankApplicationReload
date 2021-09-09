@@ -6,6 +6,7 @@
 package Services.JDBCImpl;
 
 import Domain.WorkerLog;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,7 +50,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.addWorkerLog(workerLog);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +63,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.updateWorkerLog(workerLog);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +78,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLog result = instance.getWorkerLog(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +92,7 @@ public class WorkerLogJDBCImplTest {
         List<WorkerLog> result = instance.getAllWorkerLog();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +106,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.deleteWorkLog(WorkerLog, id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +119,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.addWorkerLogJDBC(workerLog);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +132,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.updateWorkerLogJDBC(workerLog);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +147,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLog result = instance.getWorkerLogJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,11 +157,11 @@ public class WorkerLogJDBCImplTest {
     public void testGetAllWorkerLogJDBC() throws Exception {
         System.out.println("getAllWorkerLogJDBC");
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
-        List<WorkerLog> expResult = null;
-        List<WorkerLog> result = instance.getAllWorkerLogJDBC();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllWorkerLogJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +174,7 @@ public class WorkerLogJDBCImplTest {
         WorkerLogJDBCImpl instance = new WorkerLogJDBCImpl();
         instance.deleteWorkLogJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }

@@ -6,7 +6,7 @@
 package Services.HibernateImplement;
 
 import Domain.Worker;
-import Services.HibernateImplement.WorkORMImpl;
+import java.sql.ResultSet;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -110,6 +110,21 @@ public class WorkORMImplTest {
     }
 
     /**
+     * Test of getworkerLogin method, of class WorkORMImpl.
+     */
+    @Test
+    public void testGetworkerLogin() throws Exception {
+        System.out.println("getworkerLogin");
+        Worker user = null;
+        WorkORMImpl instance = new WorkORMImpl();
+        Worker expResult = null;
+        Worker result = instance.getworkerLogin(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
      * Test of addWorkerJDBC method, of class WorkORMImpl.
      */
     @Test
@@ -157,8 +172,8 @@ public class WorkORMImplTest {
     public void testGetAllWorkerJDBC() throws Exception {
         System.out.println("getAllWorkerJDBC");
         WorkORMImpl instance = new WorkORMImpl();
-        List<Worker> expResult = null;
-        List<Worker> result = instance.getAllWorkerJDBC();
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -173,6 +188,21 @@ public class WorkORMImplTest {
         String id = "";
         WorkORMImpl instance = new WorkORMImpl();
         instance.deleteWorkerJDBC(id);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getworkerLoginJDBC method, of class WorkORMImpl.
+     */
+    @Test
+    public void testGetworkerLoginJDBC() throws Exception {
+        System.out.println("getworkerLoginJDBC");
+        Worker user = null;
+        WorkORMImpl instance = new WorkORMImpl();
+        Worker expResult = null;
+        Worker result = instance.getworkerLoginJDBC(user);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

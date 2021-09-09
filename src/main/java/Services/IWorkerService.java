@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.Worker;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public interface IWorkerService extends IService{
     
     public Worker getWorkerJDBC(String id)throws Exception;
     
-    public List<Worker> getAllWorkerJDBC() throws Exception;
+    public ResultSet getAllWorkerJDBC() throws Exception;
     
     public void deleteWorkerJDBC(String id) throws Exception;
     
