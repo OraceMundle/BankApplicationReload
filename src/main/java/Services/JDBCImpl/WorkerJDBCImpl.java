@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -19,6 +20,7 @@ import java.util.List;
  */
 public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerService{
     
+    private static final Logger log = Logger.getLogger(WorkerJDBCImpl.class);
     Statement statement;
 
 
@@ -49,6 +51,10 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
 
     @Override
     public void addWorkerJDBC(Worker worker) throws Exception {
+        
+        try {
+            
+                  
         String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email) "
                 + "values('" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +
@@ -59,11 +65,18 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         statement.execute(insertWorker);      
         
         this.getConnection().close(); 
+        
+         } catch (Exception e) {
+             log.info(e.getMessage());
+        }
     }
 
     @Override
     public void updateWorkerJDBC(Worker worker) throws Exception {
-        String updateWorker = "UPDATE worker SET worker_id = '" + worker.getId() + 
+        
+        try {
+            
+                String updateWorker = "UPDATE worker SET worker_id = '" + worker.getId() + 
                 "', f_name = '" + worker.getFirstname() +
                 "', l_name ='" + worker.getLastname() +
                 "', telephone ='" + worker.getTelephoneNumber() +
@@ -77,6 +90,10 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         }
         
         this.getConnection().close(); 
+        } catch (Exception e) {
+            
+            log.info(e.getMessage());
+        }
     }
 
     @Override
