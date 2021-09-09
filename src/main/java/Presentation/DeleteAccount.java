@@ -18,16 +18,16 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class SearchAccount extends javax.swing.JFrame {
+public class DeleteAccount extends javax.swing.JFrame {
     
-    private static final Logger log = Logger.getLogger(SearchAccount.class);
+    private static final Logger log = Logger.getLogger(DeleteAccount.class);
     Dashboard db = new Dashboard();
     
 
     /**
      * Creates new form AddAccount
      */
-    public SearchAccount() {
+    public DeleteAccount() {
         initComponents();
     }
 
@@ -135,14 +135,19 @@ public class SearchAccount extends javax.swing.JFrame {
 
         jLabel3.setText("Account Info");
 
+        balanceTextField.setEditable(false);
         balanceTextField.setToolTipText("Balance");
 
+        loanTextField.setEditable(false);
         loanTextField.setToolTipText("Loan Amount");
 
+        insTextField.setEditable(false);
         insTextField.setToolTipText("Installments");
 
+        dopenTextField.setEditable(false);
         dopenTextField.setToolTipText("Date Opened");
 
+        dclosedTextField.setEditable(false);
         dclosedTextField.setToolTipText("Date Closed");
         dclosedTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +162,7 @@ public class SearchAccount extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Save");
+        jButton2.setText("Delete");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -207,7 +212,7 @@ public class SearchAccount extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(trnTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                             .addComponent(dopenTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dclosedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,7 +229,7 @@ public class SearchAccount extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(accNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -297,32 +302,27 @@ public class SearchAccount extends javax.swing.JFrame {
         db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    //used to update account info
+    //used to Delete account info
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         try{
             
                 //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
                 AccountManager accountMgr = new AccountManager();
-                Account account = new Account();                
+                Account account = new Account();
                 
-                CustomerManager customerMgr = new CustomerManager();
-                Customer customer = new Customer();
-                
-                CustomerAddressManager addressMgr = new CustomerAddressManager();
-                CustomerAddress address = new CustomerAddress();
-                
-                customer.setFirstname(fNameText.getText());
-                customer.setLastname(lNameText.getText());
-                customer.setTrn(trnTextField2.getText());
-                customer.setDob(dobTextField.getText());
-                customer.setEmail(emailTextField.getText());
-                customer.setTelephoneNum(telTextField.getText());
+                //Customer info text boxes
+                fNameText.setText("");
+                lNameText.setText("");
+                trnTextField2.setText("");
+                dobTextField.setText("");
+                emailTextField.setText("");
+                telTextField.setText("");
                 
                 //Address Info textboxes
-                address.setStreet(streetTextField.getText());
-                address.setCommunity(comTextField.getText());
-                address.setCountry(couTextField.getText());
+                streetTextField.setText("");
+                comTextField.setText("");
+                couTextField.setText("");
                 
                 //Account textboxes
                 account.setBalance(Float.parseFloat(balanceTextField.getText()));
@@ -331,7 +331,13 @@ public class SearchAccount extends javax.swing.JFrame {
                 account.setDateOpened(dopenTextField.getText());
                 account.setDateClosed(dclosedTextField.getText());
                 
-                accountMgr.updateAccountJDBC(account);
+                accountMgr.deleteAccount(account.getAccountnumber());
+                
+                balanceTextField.setText("");
+                loanTextField.setText("");
+                insTextField.setText("");
+                dopenTextField.setText("");
+                dclosedTextField.setText("");
             
         }catch (Exception e) {
                         
@@ -426,14 +432,18 @@ public class SearchAccount extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -442,7 +452,7 @@ public class SearchAccount extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchAccount().setVisible(true);
+                new DeleteAccount().setVisible(true);
             }
         });
     }

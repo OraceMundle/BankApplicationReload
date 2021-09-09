@@ -17,16 +17,16 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class SearchClient extends javax.swing.JFrame {
+public class DeleteClient extends javax.swing.JFrame {
     
-    private static final Logger log = Logger.getLogger(SearchClient.class);
+    private static final Logger log = Logger.getLogger(DeleteClient.class);
     Dashboard db = new Dashboard();
     
 
     /**
      * Creates new form AddAccount
      */
-    public SearchClient() {
+    public DeleteClient() {
         initComponents();
     }
 
@@ -75,22 +75,31 @@ public class SearchClient extends javax.swing.JFrame {
 
         jLabel2.setText("Customer Info");
 
+        fNameText.setEditable(false);
         fNameText.setText("First Name");
 
+        lNameText.setEditable(false);
         lNameText.setText("Last Name");
 
+        dobTextField.setEditable(false);
         dobTextField.setText("DOB");
 
+        trnTextField2.setEditable(false);
         trnTextField2.setText("TRN");
 
+        emailTextField.setEditable(false);
         emailTextField.setText("Email");
 
+        telTextField.setEditable(false);
         telTextField.setText("Telephone");
 
+        jTextField13.setEditable(false);
         jTextField13.setText("Street");
 
+        jTextField14.setEditable(false);
         jTextField14.setText("Community");
 
+        jTextField15.setEditable(false);
         jTextField15.setText("Country");
 
         jButton1.setText("Cancel");
@@ -100,7 +109,7 @@ public class SearchClient extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Update");
+        jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -226,21 +235,20 @@ public class SearchClient extends javax.swing.JFrame {
         db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    //Save button
+    //Delete button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
             CustomerManager customerMgr = new CustomerManager();
             Customer customer = new Customer();
             
-            customer.setFirstname(fNameText.getText());
-            customer.setLastname(lNameText.getText());
-            customer.setDob(dobTextField.getText());
-            customer.setTrn(trnTextField2.getText());
-            customer.setEmail(emailTextField.getText());
-            customer.setTelephoneNum(telTextField.getText());
+            fNameText.setText("");
+            lNameText.setText("");
+            dobTextField.setText("");
+            trnTextField2.setText("");
+            emailTextField.setText("");
+            telTextField.setText("");
             
-            customerMgr.updateCustomer(customer);
-            
+            customerMgr.deleteCustomer(customer.getTrn());
             
         }catch (Exception e) {
             
@@ -321,14 +329,22 @@ public class SearchClient extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -341,7 +357,7 @@ public class SearchClient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchClient().setVisible(true);
+                new DeleteClient().setVisible(true);
             }
         });
     }
