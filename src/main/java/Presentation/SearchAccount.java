@@ -157,7 +157,7 @@ public class SearchAccount extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Save");
+        jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

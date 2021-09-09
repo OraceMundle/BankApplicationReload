@@ -33,6 +33,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Search Customer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchCustMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu4">
               <Properties>

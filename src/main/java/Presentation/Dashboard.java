@@ -176,6 +176,11 @@ public class Dashboard extends javax.swing.JFrame {
         SearchAccMenuItem.setText("Edit");
 
         SearchCustMenuItem.setText("Search Customer");
+        SearchCustMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchCustMenuItemActionPerformed(evt);
+            }
+        });
         SearchAccMenuItem.add(SearchCustMenuItem);
 
         jMenu4.setText("Search Account");
@@ -285,6 +290,10 @@ public class Dashboard extends javax.swing.JFrame {
         //DeleteCustMenuItem.setShortcut(s);
         DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
     }//GEN-LAST:event_DeleteCustMenuItemKeyPressed
+
+    private void SearchCustMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCustMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchCustMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
