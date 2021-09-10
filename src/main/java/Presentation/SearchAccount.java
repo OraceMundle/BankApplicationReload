@@ -299,53 +299,59 @@ public class SearchAccount extends javax.swing.JFrame {
 
     //used to update account info
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        try{
+        AccountManager accountMgr = new AccountManager();
+        Account account = new Account();                
+        if(account.getAccountnumber().isBlank() || account.getAccountnumber().isEmpty()){
             
-                //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
-                AccountManager accountMgr = new AccountManager();
-                Account account = new Account();                
-                
-                CustomerManager customerMgr = new CustomerManager();
-                Customer customer = new Customer();
-                
-                CustomerAddressManager addressMgr = new CustomerAddressManager();
-                CustomerAddress address = new CustomerAddress();
-                
-                customer.setFirstname(fNameText.getText());
-                customer.setLastname(lNameText.getText());
-                customer.setTrn(trnTextField2.getText());
-                customer.setDob(dobTextField.getText());
-                customer.setEmail(emailTextField.getText());
-                customer.setTelephoneNum(telTextField.getText());
-                
-                //Address Info textboxes
-                address.setStreet(streetTextField.getText());
-                address.setCommunity(comTextField.getText());
-                address.setCountry(couTextField.getText());
-                
-                //Account textboxes
-                account.setBalance(Float.parseFloat(balanceTextField.getText()));
-                account.setLoanAmount(Float.parseFloat(loanTextField.getText()));
-                account.setMonthlyInstalment(Float.parseFloat(insTextField.getText()));
-                account.setDateOpened(dopenTextField.getText());
-                account.setDateClosed(dclosedTextField.getText());
-                
-                accountMgr.updateAccountJDBC(account);
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Acccount number is blank");
             
-        }catch (Exception e) {
-                        
-            int input = JOptionPane.showConfirmDialog(null, 
-		                  "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
-            	System.out.println(e); 
-                log.info(e.getMessage());
-            
-        }
+        }else{
+            try{
+
+                    //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
+
+                    CustomerManager customerMgr = new CustomerManager();
+                    Customer customer = new Customer();
+
+                    CustomerAddressManager addressMgr = new CustomerAddressManager();
+                    CustomerAddress address = new CustomerAddress();
+
+                    customer.setFirstname(fNameText.getText());
+                    customer.setLastname(lNameText.getText());
+                    customer.setTrn(trnTextField2.getText());
+                    customer.setDob(dobTextField.getText());
+                    customer.setEmail(emailTextField.getText());
+                    customer.setTelephoneNum(telTextField.getText());
+
+                    //Address Info textboxes
+                    address.setStreet(streetTextField.getText());
+                    address.setCommunity(comTextField.getText());
+                    address.setCountry(couTextField.getText());
+
+                    //Account textboxes
+                    account.setBalance(Float.parseFloat(balanceTextField.getText()));
+                    account.setLoanAmount(Float.parseFloat(loanTextField.getText()));
+                    account.setMonthlyInstalment(Float.parseFloat(insTextField.getText()));
+                    account.setDateOpened(dopenTextField.getText());
+                    account.setDateClosed(dclosedTextField.getText());
+
+                    accountMgr.updateAccountJDBC(account);
+
+            }catch (Exception e) {
+
+                int input = JOptionPane.showConfirmDialog(null, 
+                                      "Error customer info.", "", JOptionPane.DEFAULT_OPTION);
+                    System.out.println(e); 
+                    log.info(e.getMessage());
+
+            }
                 
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Testig save button");
         this.setVisible(false);
         db.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
