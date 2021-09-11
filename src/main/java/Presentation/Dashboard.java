@@ -163,7 +163,13 @@ public class Dashboard extends javax.swing.JFrame {
         FileMenu.setMnemonic('f');
         FileMenu.setText("File");
 
+        DeleteCustMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         DeleteCustMenuItem.setText("Delete Customer");
+        DeleteCustMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteCustMenuItemActionPerformed(evt);
+            }
+        });
         DeleteCustMenuItem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 DeleteCustMenuItemKeyPressed(evt);
@@ -293,13 +299,23 @@ public class Dashboard extends javax.swing.JFrame {
         //DeleteCustMenuItem.setShortcut(s);
         //DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         DeleteCustMenuItem.setMnemonic(KeyEvent.VK_1);
-                        JFrame f = new JFrame();
-                JOptionPane.showMessageDialog(f, "Testing shortcut f and 1");
+                      
     }//GEN-LAST:event_DeleteCustMenuItemKeyPressed
 
     private void SearchCustMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCustMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchCustMenuItemActionPerformed
+
+    private void DeleteCustMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteCustMenuItemActionPerformed
+        // TODO add your handling code here:
+          JFrame f = new JFrame();
+          DeleteClient client = new DeleteClient();
+          client.setVisible(true);
+          
+                //JOptionPane.showMessageDialog(f, "Testing shortcut Delete Customer.");
+        
+        
+    }//GEN-LAST:event_DeleteCustMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

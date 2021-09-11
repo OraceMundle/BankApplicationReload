@@ -107,7 +107,7 @@ public class CustomerJDBCManager {
     }
     
     
-    public void deleteCustomer(String trn)
+    public void deleteCustomerJDBC(String trn)
     {
         try {
             System.out.println("In Business Layer deleteCustomerJDBC method");

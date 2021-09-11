@@ -6,6 +6,7 @@
 package Presentation;
 
 import CrudManager.CustomerAddressManager;
+import CrudManager.CustomerJDBCManager;
 import CrudManager.CustomerManager;
 import Domain.Customer;
 import Domain.CustomerAddress;
@@ -21,6 +22,9 @@ public class DeleteClient extends javax.swing.JFrame {
     
     private static final Logger log = Logger.getLogger(DeleteClient.class);
     Dashboard db = new Dashboard();
+    //CustomerManager customerMgr = new CustomerManager();
+    Customer customer = new Customer();
+    CustomerJDBCManager customerMgr = new CustomerJDBCManager();
     
 
     /**
@@ -232,23 +236,25 @@ public class DeleteClient extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         this.setVisible(false);
-        db.setVisible(true);
+        //db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Delete button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
-            CustomerManager customerMgr = new CustomerManager();
-            Customer customer = new Customer();
             
+            /*            
             fNameText.setText("");
             lNameText.setText("");
             dobTextField.setText("");
             trnTextField2.setText("");
             emailTextField.setText("");
             telTextField.setText("");
+            */
             
-            customerMgr.deleteCustomer(customer.getTrn());
+            System.out.print("Customer TRn Delete button " + customer.getTrn());
+            
+            customerMgr.deleteCustomerJDBC(customer.getTrn());
             
         }catch (Exception e) {
             
@@ -259,9 +265,13 @@ public class DeleteClient extends javax.swing.JFrame {
         } 
         
         JFrame f = new JFrame();
-        JOptionPane.showMessageDialog(f, "Testig save button");
+        
+        //if(customer.getTrn())
+        JOptionPane.showMessageDialog(f, "Delete Client Successful");
+        
+        
         this.setVisible(false);
-        db.setVisible(true);
+        //db.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -277,14 +287,14 @@ public class DeleteClient extends javax.swing.JFrame {
             else
             {
                 
-                CustomerManager customerMgr = new CustomerManager();
-                Customer customer = new Customer();
+                //CustomerManager customerMgr = new CustomerManager();
+                //Customer customer = new Customer();
                 
                 CustomerAddressManager addressMgr = new CustomerAddressManager();
                 CustomerAddress address = new CustomerAddress();
                 
                 //Passes data from crudmanager to customer class
-                customer = customerMgr.getCustomer(trnTextField.getText());
+                customer = customerMgr.getCustomerJDBC(trnTextField.getText());
                 //address = getCustomerAddress(trnTextField.getText());
                 
 
@@ -302,6 +312,7 @@ public class DeleteClient extends javax.swing.JFrame {
                 couTextField.setText(address.getCountry());
                 */
                 System.out.println(customer.getFirstname());
+                System.out.print("Customer Trn Search button " + customer.getTrn());
             }
         }catch (Exception e) {
             

@@ -171,7 +171,7 @@ public class CustomerJDBCImpl extends JDBCMainConfiguration implements ICustomer
     @Override
     public void deleteCustomerJDBC(String trn) throws Exception {
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From customer Where trn  = " + trn);
+        statement.execute("Delete From customer Where trn  = " + Integer.parseInt(trn));
     }
 
     @Override

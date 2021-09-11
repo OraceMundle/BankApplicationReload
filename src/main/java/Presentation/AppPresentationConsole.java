@@ -155,7 +155,7 @@ public class AppPresentationConsole {
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter TRN: ");
             
-            customerJDBC.deleteCustomer(aScanner.nextLine());
+            customerJDBC.deleteCustomerJDBC(aScanner.nextLine());
             System.out.println("Customer deleted using JDBC");
         }
         else if(jdbcChoice==4)

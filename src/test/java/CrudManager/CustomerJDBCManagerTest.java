@@ -95,14 +95,44 @@ public class CustomerJDBCManagerTest {
     }
 
     /**
-     * Test of deleteCustomer method, of class CustomerJDBCManager.
+     * Test of deleteCustomerJDBC method, of class CustomerJDBCManager.
      */
     @Test
-    public void testDeleteCustomer() {
-        System.out.println("deleteCustomer");
+    public void testDeleteCustomerJDBC() {
+        System.out.println("deleteCustomerJDBC");
         String trn = "";
         CustomerJDBCManager instance = new CustomerJDBCManager();
-        instance.deleteCustomer(trn);
+        instance.deleteCustomerJDBC(trn);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of validateUser method, of class CustomerJDBCManager.
+     */
+    @Test
+    public void testValidateUser() {
+        System.out.println("validateUser");
+        String username = "";
+        CustomerJDBCManager instance = new CustomerJDBCManager();
+        Boolean expResult = null;
+        Boolean result = instance.validateUser(username);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of validateUsernameAndPwd method, of class CustomerJDBCManager.
+     */
+    @Test
+    public void testValidateUsernameAndPwd() {
+        System.out.println("validateUsernameAndPwd");
+        Customer user = null;
+        CustomerJDBCManager instance = new CustomerJDBCManager();
+        Boolean expResult = null;
+        Boolean result = instance.validateUsernameAndPwd(user);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
