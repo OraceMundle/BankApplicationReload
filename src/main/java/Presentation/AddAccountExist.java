@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
  * @author Dinham
  */
 public class AddAccountExist extends javax.swing.JFrame {
-    Dashboard db = new Dashboard();
+    //Dashboard db = new Dashboard();
    
 
      private static final Logger log = Logger.getLogger(AddAccountExist.class);
@@ -259,7 +259,7 @@ public class AddAccountExist extends javax.swing.JFrame {
     //Cancel and return to dashboard
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        db.setVisible(true);
+        //db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Save button
@@ -273,11 +273,15 @@ public class AddAccountExist extends javax.swing.JFrame {
                     || installTextField.getText().isBlank() && installTextField.getText().isEmpty()
                     || dateOpenTextField.getText().isBlank() && dateOpenTextField.getText().isEmpty())
             {
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Missing information, please review.");
+            }else
+            {
                 
                 JFrame f = new JFrame();
-                JOptionPane.showMessageDialog(f, "Testig save button");
+                JOptionPane.showMessageDialog(f, "Customer info Saved");
                 this.setVisible(false);
-                db.setVisible(true);
+                //db.setVisible(true);
                 
                 ac.setBalance(Float.parseFloat(balanceTextField.getText()));
                 ac.setLoanAmount(Float.parseFloat(loanTextField.getText()));
