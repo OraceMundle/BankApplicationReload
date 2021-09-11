@@ -288,6 +288,13 @@ public class AddAccountExist extends javax.swing.JFrame {
                 accountManager.addAccount(ac);
             }
             
+            
+            
+            
+            
+            
+            
+            
         }catch(Exception ex) 
         {
             int input = JOptionPane.showConfirmDialog(null,"Error customer info.", "", JOptionPane.DEFAULT_OPTION);
