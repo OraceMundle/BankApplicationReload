@@ -158,6 +158,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
+        FileMenu.setMnemonic('f');
         FileMenu.setText("File");
 
         DeleteCustMenuItem.setText("Delete Customer");
@@ -288,7 +289,8 @@ public class Dashboard extends javax.swing.JFrame {
         s = new MenuShortcut(KeyEvent.VK_1);
         //setShortcut(s);
         //DeleteCustMenuItem.setShortcut(s);
-        DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+        //DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+        DeleteCustMenuItem.setMnemonic(KeyEvent.VK_1);
     }//GEN-LAST:event_DeleteCustMenuItemKeyPressed
 
     private void SearchCustMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCustMenuItemActionPerformed
