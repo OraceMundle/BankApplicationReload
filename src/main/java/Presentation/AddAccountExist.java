@@ -20,7 +20,7 @@ import org.apache.log4j.Logger;
  */
 public class AddAccountExist extends javax.swing.JFrame {
     //Dashboard db = new Dashboard();
-   
+    JFrame f = new JFrame();
 
      private static final Logger log = Logger.getLogger(AddAccountExist.class);
     /**
@@ -273,12 +273,12 @@ public class AddAccountExist extends javax.swing.JFrame {
                     || installTextField.getText().isBlank() && installTextField.getText().isEmpty()
                     || dateOpenTextField.getText().isBlank() && dateOpenTextField.getText().isEmpty())
             {
-                JFrame f = new JFrame();
+                //JFrame f = new JFrame();
                 JOptionPane.showMessageDialog(f, "Missing information, please review.");
             }else
             {
                 
-                JFrame f = new JFrame();
+                //JFrame f = new JFrame();
                 JOptionPane.showMessageDialog(f, "Customer info Saved");
                 this.setVisible(false);
                 //db.setVisible(true);
@@ -291,13 +291,6 @@ public class AddAccountExist extends javax.swing.JFrame {
                 
                 accountManager.addAccount(ac);
             }
-            
-            
-            
-            
-            
-            
-            
             
         }catch(Exception ex) 
         {
@@ -315,7 +308,7 @@ public class AddAccountExist extends javax.swing.JFrame {
         
             if(trnTextField.getText().isEmpty() && trnTextField.getText().isBlank())
             {
-                JFrame f = new JFrame();
+                //JFrame f = new JFrame();
                 JOptionPane.showMessageDialog(f, "Invalid Data");
             }
             else
