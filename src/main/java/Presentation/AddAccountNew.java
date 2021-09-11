@@ -24,7 +24,7 @@ import org.apache.log4j.Logger;
 public class AddAccountNew extends javax.swing.JFrame {
     
     private static final Logger log = Logger.getLogger(AddAccountNew.class);
-    Dashboard db = new Dashboard();
+    //Dashboard db = new Dashboard();
     
 
     /**
@@ -345,7 +345,7 @@ public class AddAccountNew extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         this.setVisible(false);
-        db.setVisible(true);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jBSaveAccountNewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaveAccountNewCustomerActionPerformed
