@@ -7,6 +7,8 @@ package Presentation;
 import java.awt.MenuShortcut;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import org.apache.log4j.Logger;
 /**
@@ -291,6 +293,8 @@ public class Dashboard extends javax.swing.JFrame {
         //DeleteCustMenuItem.setShortcut(s);
         //DeleteCustMenuItem.setAccelerator(KeyStroke.getKeyStroke('d', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         DeleteCustMenuItem.setMnemonic(KeyEvent.VK_1);
+                        JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Testing shortcut f and 1");
     }//GEN-LAST:event_DeleteCustMenuItemKeyPressed
 
     private void SearchCustMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCustMenuItemActionPerformed
