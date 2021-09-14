@@ -13,6 +13,7 @@ import Domain.Customer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
+import Domain.Worker;
 
 /**
  *
@@ -21,6 +22,11 @@ import org.apache.log4j.Logger;
 public class AddAccountExist extends javax.swing.JFrame {
     //Dashboard db = new Dashboard();
     JFrame f = new JFrame();
+    CustomerManager customerMgr = new CustomerManager();
+    Customer customer = new Customer();
+    Account ac = new Account();
+    Worker worker =new Worker();
+    
 
      private static final Logger log = Logger.getLogger(AddAccountExist.class);
     /**
@@ -265,7 +271,7 @@ public class AddAccountExist extends javax.swing.JFrame {
     //Save button
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
-            Account ac = new Account();
+            
             AccountManager accountManager = new AccountManager();
             
             if(balanceTextField.getText().isBlank() && balanceTextField.getText().isEmpty() 
@@ -289,7 +295,28 @@ public class AddAccountExist extends javax.swing.JFrame {
                 ac.setDateOpened(dateOpenTextField.getText());
                 ac.setCustomerTRN(trnTextField2.getText());
                 
-                accountManager.addAccount(ac);
+                System.out.print(evt);
+                
+                
+                 Account account1 = new Account(ac,customer,worker);
+                 
+                 account1.setBalance(ac.getBalance());
+                 account1.setLoanAmount(ac.getLoanAmount());
+                 account1.setMonthlyInstalment(ac.getMonthlyInstalment());
+                 account1.setDateOpened(ac.getDateOpened());
+                 account1.setDateClosed(ac.getDateClosed());
+                 account1.setCustomerTRN(customer.getTrn());
+                 //account1.setWorkerId(worker.getId());
+                 account1.setWorkerId("W0001");
+                 
+                                           
+                            
+                      
+                 
+                
+                
+                
+                accountManager.addAccount(account1);
             }
             
         }catch(Exception ex) 
@@ -315,9 +342,7 @@ public class AddAccountExist extends javax.swing.JFrame {
             {
                 //CustomerJDBCManager customerMgr = new CustomerJDBCManager();
                 //working instance of Customer Manager
-                CustomerManager customerMgr = new CustomerManager();
                 
-                Customer customer = new Customer();
 
                 //Passes data from crudmanager to customer class
                 //working method

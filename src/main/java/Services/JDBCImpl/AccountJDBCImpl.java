@@ -145,7 +145,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     }
 
     @Override
-    public List<Account> getAllAccountJDBC() throws Exception {
+    public ResultSet getAllAccountJDBC() throws Exception {
 
         ResultSet rs=null;
         PreparedStatement ps;
@@ -162,7 +162,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
             log.info(e.getMessage());
         }
         
-        return (List<Account>) rs;
+        return  rs;
         
     }
 

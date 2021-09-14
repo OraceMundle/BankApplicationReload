@@ -9,17 +9,22 @@ import Domain.Account;
 import Domain.Customer;
 import Services.HibernateMainConfig;
 import Services.IAccountService;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author OraceMundle
  */
+
+
+@Component("AccountORM")
 public class AccountORMImpl extends HibernateMainConfig implements IAccountService{
     private static final Logger log = Logger.getLogger(AccountORMImpl.class);
     
@@ -185,7 +190,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
     }
 
     @Override
-    public List<Account> getAllAccountJDBC() throws Exception {
+    public ResultSet getAllAccountJDBC() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -9,11 +9,15 @@ import Domain.Account;
 import Services.Exceptions.ServiceLoadException;
 import Services.Factory;
 import Services.IAccountService;
+import Services.SpringConfig;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 //import java.util.logging.Logger;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
@@ -23,15 +27,22 @@ public class AccountManager {
     
     private static final Logger log = Logger.getLogger(AccountManager.class);
     
+     ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    
      public void addAccount(Account aAccount)
     {
+        PropertyConfigurator.configure("C:\\Users\\orace\\Documents\\NetBeansProjects\\BankApplicationReload\\src\\main\\resources\\log4j.properties");
+        
+        
         try {
             
             System.out.println("In Business Layer addAccount(Account aAccount) method");
             log.info("In Business Layer addAccount(Account aAccount) method");
-            Factory factory = new Factory();
-            IAccountService iBookMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
-            iBookMgr.addAccount(aAccount);
+            //Factory factory = new Factory();
+            //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            
+            IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
+            iAccountMgr.addAccount(aAccount);
         } catch (ServiceLoadException ex) {
           
             log.info(ex.getMessage());
@@ -47,8 +58,10 @@ public class AccountManager {
         Account aAccount=new Account();
         try {
             System.out.println("In Business Layer getAccount(String trn) method");
-            Factory factory = new Factory();
-            IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            //Factory factory = new Factory();
+            //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            
+            IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
             aAccount=iAccountMgr.getAccount(trn);
             
         } catch (ServiceLoadException ex) {
@@ -67,8 +80,10 @@ public class AccountManager {
     {
         try {
             System.out.println("In Business Layer updateAccount(Account aAccount) method");
-            Factory factory = new Factory();
-            IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            //Factory factory = new Factory();
+            //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            
+            IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
             iAccountMgr.updateAccount(aAccount);
             
         } catch (ServiceLoadException ex) {
@@ -87,8 +102,10 @@ public class AccountManager {
         List<Account> customerList = new ArrayList<>();
         try {
             System.out.println("In Business Layer getAllAccount method");
-            Factory factory = new Factory();
-            IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            //Factory factory = new Factory();
+            //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            
+            IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
             customerList=iAccountMgr.getAllAccount();
             
         } catch (ServiceLoadException ex) {
@@ -107,8 +124,10 @@ public class AccountManager {
     {
         try {
             System.out.println("In Business Layer deleteAccount method");
-            Factory factory = new Factory();
-            IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            //Factory factory = new Factory();
+            //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
+            
+            IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
             iAccountMgr.deleteAccount(Account, trn);            
         } catch (ServiceLoadException ex) {
             

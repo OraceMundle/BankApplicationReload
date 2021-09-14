@@ -6,6 +6,7 @@
 package Services;
 
 import Domain.Account;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -36,7 +37,7 @@ public interface IAccountService extends IService{
     
     public Account getAccountJDBC(String accountnumber)throws Exception;
      
-    public List<Account> getAllAccountJDBC() throws Exception;
+    public ResultSet getAllAccountJDBC() throws Exception;
     
     public void deleteAccountJDBC(String accountnumber) throws Exception;
     

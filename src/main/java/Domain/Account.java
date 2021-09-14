@@ -72,8 +72,8 @@ public class Account {
         this.monthlyInstalment=account.monthlyInstalment;
         this.customerTRN=customer.getTrn();
         this.workerId=worker.getId();
-        
-        
+      
+               
     
     }
     
