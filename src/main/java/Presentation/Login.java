@@ -6,7 +6,10 @@
 package Presentation;
 
 import CrudManager.CustomerManager;
+import CrudManager.WorkerManager;
 import Domain.Customer;
+import Domain.Worker;
+import javax.swing.JFrame;
 //import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
@@ -17,7 +20,10 @@ import org.apache.log4j.Logger;
  */
 public class Login extends javax.swing.JFrame {
      private static final Logger log = Logger.getLogger(Login.class);   
-    
+     JFrame f = new JFrame();
+     Worker w = new Worker();
+     WorkerManager workerMgr = new WorkerManager ();
+     
     /**
      * Creates new form Login
      */
@@ -144,64 +150,79 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        
-        try {
+        try{
             
-               
-        Customer customer = new Customer();
-        customer.setLastname(userName.getText().trim());
-        customer.setTrn(password.getText().trim());
-        
-        CustomerManager customerLoginMgr= new CustomerManager();
-        Customer wl = customerLoginMgr.testCredentials(customer);
-        
-        System.out.println(customer.getLastname());
-        System.out.println(customer.getTrn());
-        
-                 
-        if(wl.getLastname().equals(customer.getLastname()) && wl.getTrn().equals(customer.getTrn()))
-        {
-            
-            
-            
-            
-                                                   Dashboard db = new Dashboard();
-                                                  // CustomerForm db = new CustomerForm();
-                                                    //Login lg = new Login();
-                                                    db.setVisible(true);
-                                                    this.setVisible(false);
-                                                    //lg.setVisible(false);
-          /*          
-            if(customer.getLastname().isEmpty()){
-		                    	//customer.getPassword().setBackground(Color.red);
-		                    	 int input = JOptionPane.showConfirmDialog(null, 
-		  			  "Password field can't be Empty", "", JOptionPane.DEFAULT_OPTION);
-                                         } 
-            
-            
-                                        else 
-                                                { 
-                                                
-                                                    Dashboard db = new Dashboard();
-                                                    Login lg = new Login();
-                                                    db.setVisible(true);
-                                                    lg.setVisible(false);
-                                                
-                                                
-                                                }*/
-                             
-        }
-        else
-        {
-            int input = JOptionPane.showConfirmDialog(null, "Username or password is incorrect", "", JOptionPane.DEFAULT_OPTION);
-          
-        }
-        
-        } catch (Exception ex) {
-            log.info(ex.getMessage());
-            System.out.println(ex.getMessage());
-        }
-         
+            w = workerMgr.getWorkerJDBC(password.getText());
+
+
+            if(userName.getText().isEmpty() && userName.getText().isBlank()
+                    || password.getText().isEmpty() && password.getText().isBlank())
+            {
+                    JOptionPane.showMessageDialog(f, "Username or password is blank");            
+            }else{
+
+                try {  
+
+                /*Customer customer = new Customer();
+                customer.setLastname(userName.getText().trim());
+                customer.setTrn(password.getText().trim());
+
+                CustomerManager customerLoginMgr= new CustomerManager();
+                Customer wl = customerLoginMgr.testCredentials(customer);
+
+                System.out.println(customer.getLastname());
+                System.out.println(customer.getTrn());
+                */
+
+                //if(wl.getLastname().equals(customer.getLastname()) && wl.getTrn().equals(customer.getTrn()))
+                if(w.getLastname().equals(userName.getText()) && w.getId().equals(password.getText()))
+                {
+
+
+
+
+                                                           Dashboard db = new Dashboard();
+                                                          // CustomerForm db = new CustomerForm();
+                                                            //Login lg = new Login();
+                                                            db.setVisible(true);
+                                                            this.setVisible(false);
+                                                            //lg.setVisible(false);
+                  /*          
+                    if(customer.getLastname().isEmpty()){
+                                                //customer.getPassword().setBackground(Color.red);
+                                                 int input = JOptionPane.showConfirmDialog(null, 
+                                                  "Password field can't be Empty", "", JOptionPane.DEFAULT_OPTION);
+                                                 } 
+
+
+                                                else 
+                                                        { 
+
+                                                            Dashboard db = new Dashboard();
+                                                            Login lg = new Login();
+                                                            db.setVisible(true);
+                                                            lg.setVisible(false);
+
+
+                                                        }*/
+
+                }
+                else
+                {
+                    int input = JOptionPane.showConfirmDialog(null, "Username or password is incorrect", "", JOptionPane.DEFAULT_OPTION);
+
+                }
+
+                } catch (Exception ex) {
+                    log.info(ex.getMessage());
+                    System.out.println(ex.getMessage());
+                }
+            }
+
+        }catch (Exception ex) {
+                    log.info(ex.getMessage());
+                    System.out.println(ex.getMessage());
+                }
         
     }//GEN-LAST:event_loginButtonActionPerformed
 
