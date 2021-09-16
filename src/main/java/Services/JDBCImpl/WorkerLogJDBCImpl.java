@@ -54,8 +54,9 @@ public class WorkerLogJDBCImpl extends JDBCMainConfiguration implements IWorkerL
 
         try {
           
-                String insertWorkerLog = "INSERT INTO workerlog(message, date, worker_id) "
-                + "values('" + workerLog.getMessage() + 
+                String insertWorkerLog = "INSERT INTO workerlog(workerlog_id, message, date, worker_id) "
+                + "values('"+ workerLog.getId()+
+                 "','" + workerLog.getMessage() + 
                 "', '" + workerLog.getDate()+
                 "', '" + workerLog.getWorkerId() +"')";    
        

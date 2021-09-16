@@ -25,6 +25,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component("AccountORM")
+
 public class AccountORMImpl extends HibernateMainConfig implements IAccountService{
     private static final Logger log = Logger.getLogger(AccountORMImpl.class);
     

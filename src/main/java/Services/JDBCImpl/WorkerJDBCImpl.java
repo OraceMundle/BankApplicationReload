@@ -52,14 +52,16 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     @Override
     public void addWorkerJDBC(Worker worker) throws Exception {
         
-        try {
+        try { 
             
                   
-        String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email) "
-                + "values('" + worker.getFirstname() + 
+        String insertWorker = "INSERT INTO worker(work_id, f_name, l_name, telephone, email, account_number) "
+                + "values('"+ worker.getId()+
+                "','" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +
                 "', '" + worker.getTelephoneNumber()   +//getTelephoneNumber() +
-                "', '" + worker.getEmail() +"')";    
+                "', '" + worker.getEmail() +
+                "', '" + worker.getAccountNumber()+ "')";    
        
          statement = this.getConnection().createStatement();        
         statement.execute(insertWorker);      

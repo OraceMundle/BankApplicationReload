@@ -120,6 +120,14 @@ import javax.persistence.Table;
         this.firstname = firstname;
     }
 
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }

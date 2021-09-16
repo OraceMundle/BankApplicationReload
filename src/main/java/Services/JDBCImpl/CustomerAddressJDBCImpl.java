@@ -55,10 +55,12 @@ public class CustomerAddressJDBCImpl extends JDBCMainConfiguration implements IC
         try {
             
                 
-        String insertCustomerAddress = "INSERT INTO customeraddress(street, community_parish, country) "
-                + "values('" + customerAddress.getStreet() + 
+        String insertCustomerAddress = "INSERT INTO customeraddress(address_id, street, community_parish, country, customer_trn) "
+                + "values('" + customerAddress.getAddressId() +
+                "','" + customerAddress.getStreet() + 
                 "', '" + customerAddress.getCommunity() +
-                "', '" + customerAddress.getCountry() +"')";    
+                "', '" + customerAddress.getCountry() +
+                "', '" + customerAddress.getCustomer()+"')";    
        
          statement = this.getConnection().createStatement();        
         statement.execute(insertCustomerAddress);      

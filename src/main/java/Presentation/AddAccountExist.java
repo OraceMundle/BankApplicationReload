@@ -300,6 +300,8 @@ public class AddAccountExist extends javax.swing.JFrame {
                 
                  Account account1 = new Account(ac,customer,worker);
                  
+                 //account1.setAccountnumber(ac.getAccountnumber());
+                 account1.setAccountnumber(String.valueOf(1000));
                  account1.setBalance(ac.getBalance());
                  account1.setLoanAmount(ac.getLoanAmount());
                  account1.setMonthlyInstalment(ac.getMonthlyInstalment());
@@ -307,16 +309,11 @@ public class AddAccountExist extends javax.swing.JFrame {
                  account1.setDateClosed(ac.getDateClosed());
                  account1.setCustomerTRN(customer.getTrn());
                  //account1.setWorkerId(worker.getId());
-                 account1.setWorkerId("W0001");
-                 
-                                           
-                            
-                      
+                 account1.setWorkerId(String.valueOf(0001));
                  
                 
-                
-                
-                accountManager.addAccount(account1);
+                //accountManager.addAccount(account1);
+                accountManager.addAccountJDBC(account1);
             }
             
         }catch(Exception ex) 
