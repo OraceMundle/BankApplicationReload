@@ -53,7 +53,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
 
         try {
                  
-     String insertAccount = "INSERT INTO account(account_number, balance, loan_amount, monthly_install, date_opened, date_closed, trn, worker_id) "
+     String insertAccount = "INSERT INTO account(balance, loan_amount, monthly_install, date_opened, date_closed, trn, worker_id) "
                 //+ "values('" + Integer.parseInt(account.getAccountnumber()) +
                + "values ('" + account.getBalance() + 
                 "', '" + account.getLoanAmount() +
