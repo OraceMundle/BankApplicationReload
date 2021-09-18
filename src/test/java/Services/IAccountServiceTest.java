@@ -46,16 +46,16 @@ public class IAccountServiceTest {
     @Test
     public void testAddAccount() throws Exception {
         System.out.println("addAccount");
-        Account account = null;
+        Account account = new Account("1234526",500,1000,6,"Octobr","December","987654321","1000");
         IAccountService instance = new IAccountServiceImpl();
         instance.addAccount(account);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of updateAccount method, of class IAccountService.
-     */
+     
     @Test
     public void testUpdateAccount() throws Exception {
         System.out.println("updateAccount");
@@ -68,7 +68,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of getAccount method, of class IAccountService.
-     */
+     
     @Test
     public void testGetAccount() throws Exception {
         System.out.println("getAccount");
@@ -83,7 +83,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of getAllAccount method, of class IAccountService.
-     */
+     
     @Test
     public void testGetAllAccount() throws Exception {
         System.out.println("getAllAccount");
@@ -97,7 +97,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of deleteAccount method, of class IAccountService.
-     */
+     
     @Test
     public void testDeleteAccount() throws Exception {
         System.out.println("deleteAccount");
@@ -111,7 +111,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of addAccountJDBC method, of class IAccountService.
-     */
+     
     @Test
     public void testAddAccountJDBC() throws Exception {
         System.out.println("addAccountJDBC");
@@ -124,7 +124,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of updateAccountJDBC method, of class IAccountService.
-     */
+     
     @Test
     public void testUpdateAccountJDBC() throws Exception {
         System.out.println("updateAccountJDBC");
@@ -137,7 +137,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of getAccountJDBC method, of class IAccountService.
-     */
+     
     @Test
     public void testGetAccountJDBC() throws Exception {
         System.out.println("getAccountJDBC");
@@ -152,7 +152,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of getAllAccountJDBC method, of class IAccountService.
-     */
+     
     @Test
     public void testGetAllAccountJDBC() throws Exception {
         System.out.println("getAllAccountJDBC");
@@ -166,7 +166,7 @@ public class IAccountServiceTest {
 
     /**
      * Test of deleteAccountJDBC method, of class IAccountService.
-     */
+     
     @Test
     public void testDeleteAccountJDBC() throws Exception {
         System.out.println("deleteAccountJDBC");
@@ -176,7 +176,7 @@ public class IAccountServiceTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
+*/
     public class IAccountServiceImpl implements IAccountService {
 
         public void addAccount(Account account) throws Exception {
