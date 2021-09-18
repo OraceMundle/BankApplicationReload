@@ -312,10 +312,11 @@ public class AddAccountExist extends javax.swing.JFrame {
                  //account1.setWorkerId(worker.getId());
                  account1.setWorkerId(String.valueOf(0001));
                  
-                
-                //accountManager.addAccount(account1);
+                JOptionPane.showMessageDialog(f, "Customer info Saved"+ ac.getBalance()+ ac.getLoanAmount() + ac.getCustomerTRN());
+                 
+                accountManager.addAccount(ac);
                 //accountManager.addAccountJDBC(account1);
-                accountManager.addAccountJDBC(ac);
+                //accountManager.addAccountJDBC(ac);
             }
             
         }catch(Exception ex) 
