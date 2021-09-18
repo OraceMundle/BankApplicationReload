@@ -294,6 +294,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                 ac.setMonthlyInstalment(Float.parseFloat(installTextField.getText()));
                 ac.setDateOpened(dateOpenTextField.getText());
                 ac.setCustomerTRN(trnTextField2.getText());
+                ac.setWorkerId("123");
                 
                 System.out.print(evt);
                 
@@ -313,7 +314,8 @@ public class AddAccountExist extends javax.swing.JFrame {
                  
                 
                 //accountManager.addAccount(account1);
-                accountManager.addAccountJDBC(account1);
+                //accountManager.addAccountJDBC(account1);
+                accountManager.addAccountJDBC(ac);
             }
             
         }catch(Exception ex) 
