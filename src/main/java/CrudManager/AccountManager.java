@@ -144,10 +144,12 @@ public class AccountManager {
     public void addAccountJDBC(Account anAccount)
     {
         try {
-            System.out.println("In Business Layer addAccountJDBC(Account customer) method");
+            System.out.println("In Business Layer addAccountJDBC(Account account) method");
             Factory factory = new Factory();            
             IAccountService iAccountMgrJDBC = (IAccountService) factory.getTheService(IAccountService.NAME);
             iAccountMgrJDBC.addAccountJDBC(anAccount);
+            System.out.println(anAccount.getBalance());
+            
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());

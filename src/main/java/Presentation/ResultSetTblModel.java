@@ -40,17 +40,17 @@ public class ResultSetTblModel extends AbstractTableModel{
     public void viewAll (String objectType)
     {
         try{
-            if(objectType.equals("Account"))
+            if(objectType.equals("account"))
             {
                 am = new AccountManager();
                 System.out.println("Getting ResultSet");
                 rs = am.getAllAccountJDBC();
                 System.out.println("Got Account ResultSet");
-                connectToDatabase = true;
+                connectToDatabase =true;
                 System.out.println("Connected to database set to true");
             }
             
-            else if(objectType.equals("Customer"))
+            else if(objectType.equals("customer"))
             {
                 cm = new CustomerJDBCManager();
                 System.out.println("Getting ResultSet");

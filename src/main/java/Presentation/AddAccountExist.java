@@ -301,7 +301,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                  Account account1 = new Account(ac,customer,worker);
                  
                  //account1.setAccountnumber(ac.getAccountnumber());
-                 account1.setAccountnumber(String.valueOf(1000));
+                 //account1.setAccountnumber(String.valueOf(1000));
                  account1.setBalance(ac.getBalance());
                  account1.setLoanAmount(ac.getLoanAmount());
                  account1.setMonthlyInstalment(ac.getMonthlyInstalment());
