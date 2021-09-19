@@ -105,7 +105,7 @@ public class ShowAllOptions extends javax.swing.JFrame {
                 db.setVisible(false);
                 this.setVisible(false);
                 tblAccount.setVisible(true);
-                tblAccount.viewTable("Account");
+                tblAccount.viewTable("account");
             
         } catch (Exception e) {
             
@@ -123,7 +123,7 @@ public class ShowAllOptions extends javax.swing.JFrame {
             db.setVisible(false);
             this.setVisible(false);
             tblCustomer.setVisible(true);
-            tblCustomer.viewTable("Customer");
+            tblCustomer.viewTable("customer");
         } catch (Exception e) {
             log.info(e.getMessage());
         }
