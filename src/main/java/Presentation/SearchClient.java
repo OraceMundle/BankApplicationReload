@@ -68,27 +68,27 @@ public class SearchClient extends javax.swing.JFrame {
             }
         });
 
-        trnTextField.setText("Enter TRN");
+        trnTextField.setToolTipText("Enter TRN");
 
         jLabel2.setText("Customer Info");
 
-        fNameText.setText("First Name");
+        fNameText.setToolTipText("First Name");
 
-        lNameText.setText("Last Name");
+        lNameText.setToolTipText("Last Name");
 
-        dobTextField.setText("DOB");
+        dobTextField.setToolTipText("Date of Birth");
 
-        trnTextField2.setText("TRN");
+        trnTextField2.setToolTipText("TRN");
 
-        emailTextField.setText("Email");
+        emailTextField.setToolTipText("Email");
 
-        telTextField.setText("Telephone");
+        telTextField.setToolTipText("Telephone");
 
-        jTextField13.setText("Street");
+        jTextField13.setToolTipText("Street");
 
-        jTextField14.setText("Community");
+        jTextField14.setToolTipText("Community");
 
-        jTextField15.setText("Country");
+        jTextField15.setToolTipText("Country");
 
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -289,7 +289,7 @@ public class SearchClient extends javax.swing.JFrame {
                 couTextField.setText(address.getCountry());
                 */
                 System.out.println(customer.getFirstname());
-                this.setVisible(false);
+                
             }
         }catch (Exception e) {
             

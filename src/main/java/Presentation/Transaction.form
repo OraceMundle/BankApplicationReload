@@ -76,24 +76,28 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTextField2" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Component id="fNameText" min="-2" pref="69" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Component id="lNameText" min="-2" pref="69" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField4" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Component id="dobTextField" min="-2" pref="69" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" min="-2" pref="128" max="-2" attributes="0"/>
+                                      <Component id="trnTextField" min="-2" pref="128" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="accNumTextField2" min="-2" pref="71" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="jLabel2" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jTextField7" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="balanceTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextField8" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="loanTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField9" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="insTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton1" min="-2" pref="69" max="-2" attributes="0"/>
@@ -105,9 +109,9 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jButton3" min="-2" pref="69" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="accNumTextField" min="-2" pref="212" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jTextField16" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Component id="payTextField" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -120,10 +124,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="accNumTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="8" max="-2" attributes="0"/>
@@ -131,23 +135,26 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dobTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="trnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="accNumTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="balanceTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="loanTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="insTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jTextField16" min="-2" max="-2" attributes="0"/>
+                      <Component id="payTextField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -168,10 +175,13 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Search"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="accNumTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter Account Number"/>
+                <Property name="toolTipText" type="java.lang.String" value="Enter Account Number"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -181,24 +191,28 @@
                 <Property name="text" type="java.lang.String" value="Customer Info"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="fNameText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="First Name"/>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="First Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="lNameText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Last Name"/>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="dobTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="DOB"/>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="Date of Birth"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField12">
+            <Component class="javax.swing.JTextField" name="trnTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="TRN"/>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="TRN"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
@@ -208,24 +222,24 @@
                 <Property name="text" type="java.lang.String" value="Account Info"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField7">
+            <Component class="javax.swing.JTextField" name="balanceTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Balance"/>
+                <Property name="toolTipText" type="java.lang.String" value="Balance"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField8">
+            <Component class="javax.swing.JTextField" name="loanTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Loan Amount"/>
+                <Property name="toolTipText" type="java.lang.String" value="Loan Amount"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField9">
+            <Component class="javax.swing.JTextField" name="insTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Installments"/>
+                <Property name="toolTipText" type="java.lang.String" value="Installments"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField16">
+            <Component class="javax.swing.JTextField" name="payTextField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Payment Amount"/>
+                <Property name="toolTipText" type="java.lang.String" value="Payment Amount"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
@@ -243,6 +257,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="accNumTextField2">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

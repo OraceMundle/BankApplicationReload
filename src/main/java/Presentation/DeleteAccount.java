@@ -405,7 +405,7 @@ public class DeleteAccount extends javax.swing.JFrame {
                 insTextField.setText(Float.toString(account.getMonthlyInstalment()));
                 dopenTextField.setText(account.getDateOpened());
                 dclosedTextField.setText(account.getDateClosed());
-                this.setVisible(false);
+                
                 
                 System.out.println(customer.getFirstname());
             }

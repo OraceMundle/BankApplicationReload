@@ -409,7 +409,6 @@ public class SearchAccount extends javax.swing.JFrame {
                 
                 System.out.println(customer.getFirstname());
                 
-                this.setVisible(false);
             }
         }catch (Exception e) {
             
