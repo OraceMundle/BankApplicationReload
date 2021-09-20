@@ -5,6 +5,7 @@
  */
 package Domain;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +23,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="account")
-public class Account {
+
+public class Account implements Serializable {
     
     @Id
     @Column(name = "account_number")

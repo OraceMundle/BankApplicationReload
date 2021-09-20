@@ -86,7 +86,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
     }
 
     @Override
-    public Account getAccount(String accountnumber) throws Exception {
+    public Account getAccount(int accountnumber) throws Exception {
         Session session = AccountORMImpl.getSession();
          Transaction transact=null;
         
@@ -143,7 +143,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
     }
 
     @Override
-    public void deleteAccount(Class<?> Account, String accountnumber) throws Exception {
+    public void deleteAccount(Class<?> Account, int accountnumber) throws Exception {
         Session session = AccountORMImpl.getSession();
          Transaction transact=null;
          try{
@@ -186,7 +186,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
     }
 
     @Override
-    public Account getAccountJDBC(String accountnumber) throws Exception {
+    public Account getAccountJDBC(int accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -196,7 +196,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
     }
 
       @Override
-    public void deleteAccountJDBC(String accountnumber) throws Exception {
+    public void deleteAccountJDBC(int accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

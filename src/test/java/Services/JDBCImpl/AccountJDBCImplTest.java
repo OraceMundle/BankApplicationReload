@@ -72,7 +72,7 @@ public class AccountJDBCImplTest {
     @Test
     public void testGetAccount() throws Exception {
         System.out.println("getAccount");
-        String accountnumber = "";
+        int accountnumber = 0;
         AccountJDBCImpl instance = new AccountJDBCImpl();
         Account expResult = null;
         Account result = instance.getAccount(accountnumber);
@@ -102,7 +102,7 @@ public class AccountJDBCImplTest {
     public void testDeleteAccount() throws Exception {
         System.out.println("deleteAccount");
         Class Account = null;
-        String accountnumber = "";
+        int accountnumber = 0;
         AccountJDBCImpl instance = new AccountJDBCImpl();
         instance.deleteAccount(Account, accountnumber);
         // TODO review the generated test code and remove the default call to fail.
@@ -141,7 +141,7 @@ public class AccountJDBCImplTest {
     @Test
     public void testGetAccountJDBC() throws Exception {
         System.out.println("getAccountJDBC");
-        String accountnumber = "";
+        int accountnumber = 0;
         AccountJDBCImpl instance = new AccountJDBCImpl();
         Account expResult = null;
         Account result = instance.getAccountJDBC(accountnumber);
@@ -170,7 +170,7 @@ public class AccountJDBCImplTest {
     @Test
     public void testDeleteAccountJDBC() throws Exception {
         System.out.println("deleteAccountJDBC");
-        String accountnumber = "";
+        int accountnumber = 0;
         AccountJDBCImpl instance = new AccountJDBCImpl();
         instance.deleteAccountJDBC(accountnumber);
         // TODO review the generated test code and remove the default call to fail.

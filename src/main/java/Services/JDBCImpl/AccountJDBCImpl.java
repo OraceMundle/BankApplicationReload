@@ -34,7 +34,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     }
 
     @Override
-    public Account getAccount(String accountnumber) throws Exception {
+    public Account getAccount(int accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -44,7 +44,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     }
 
     @Override
-    public void deleteAccount(Class<?> Account, String accountnumber) throws Exception {
+    public void deleteAccount(Class<?> Account, int accountnumber) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -109,7 +109,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     }
 
     @Override
-    public Account getAccountJDBC(String accountnumber) throws Exception {
+    public Account getAccountJDBC(int accountnumber) throws Exception {
          Account account=new Account();
         
         try {
@@ -168,7 +168,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
     }
 
     @Override
-    public void deleteAccountJDBC(String accountnumber) throws Exception {
+    public void deleteAccountJDBC(int accountnumber) throws Exception {
         try {
             
         

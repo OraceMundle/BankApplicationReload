@@ -163,7 +163,7 @@ public class AppPresentationAccountConsole {
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter TRN: ");
             
-            accountJDBC.deleteAccount(aScanner.nextLine());
+            accountJDBC.deleteAccount(aScanner.nextInt());
             System.out.println("Account deleted using JDBC");
         }
         else if(jdbcChoice==4)
@@ -173,7 +173,7 @@ public class AppPresentationAccountConsole {
             Scanner aScanner = new Scanner(System.in);
             
             System.out.println("Enter Account Number: ");
-            String accountNumber = aScanner.nextLine();
+            int accountNumber = aScanner.nextInt();
             anAccount = accountJDBC.getAccountJDBC(accountNumber);
             
             //Runtime.getRuntime().exec("cls");
@@ -322,7 +322,7 @@ public class AppPresentationAccountConsole {
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter Account Number: ");
                         
-            accountORM.deleteAccount(Account.class, aScanner.nextLine());
+            accountORM.deleteAccount(Account.class, aScanner.nextInt());
             System.out.println("Account deleted using ORM");
         }
         else if(ormChoice==4)
@@ -332,7 +332,7 @@ public class AppPresentationAccountConsole {
             Scanner aScanner = new Scanner(System. in);
             
             System.out.println("Enter Account: ");
-            anAccount = accountORM.getAccount(aScanner.nextLine());
+            anAccount = accountORM.getAccount(aScanner.nextInt());
             
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();

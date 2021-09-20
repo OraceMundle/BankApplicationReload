@@ -72,7 +72,7 @@ public class IAccountServiceTest {
     @Test
     public void testGetAccount() throws Exception {
         System.out.println("getAccount");
-        String accountnumber = "";
+        int accountnumber = 0;
         IAccountService instance = new IAccountServiceImpl();
         Account expResult = null;
         Account result = instance.getAccount(accountnumber);
@@ -102,7 +102,7 @@ public class IAccountServiceTest {
     public void testDeleteAccount() throws Exception {
         System.out.println("deleteAccount");
         Class Account = null;
-        String accountnumber = "";
+        int accountnumber = 0;
         IAccountService instance = new IAccountServiceImpl();
         instance.deleteAccount(Account, accountnumber);
         // TODO review the generated test code and remove the default call to fail.
@@ -141,7 +141,7 @@ public class IAccountServiceTest {
     @Test
     public void testGetAccountJDBC() throws Exception {
         System.out.println("getAccountJDBC");
-        String accountnumber = "";
+        int accountnumber = 0;
         IAccountService instance = new IAccountServiceImpl();
         Account expResult = null;
         Account result = instance.getAccountJDBC(accountnumber);
@@ -170,7 +170,7 @@ public class IAccountServiceTest {
     @Test
     public void testDeleteAccountJDBC() throws Exception {
         System.out.println("deleteAccountJDBC");
-        String accountnumber = "";
+        int accountnumber = 0;
         IAccountService instance = new IAccountServiceImpl();
         instance.deleteAccountJDBC(accountnumber);
         // TODO review the generated test code and remove the default call to fail.
@@ -185,7 +185,7 @@ public class IAccountServiceTest {
         public void updateAccount(Account account) throws Exception {
         }
 
-        public Account getAccount(String accountnumber) throws Exception {
+        public Account getAccount(int accountnumber) throws Exception {
             return null;
         }
 
@@ -193,7 +193,7 @@ public class IAccountServiceTest {
             return null;
         }
 
-        public void deleteAccount(Class<?> Account, String accountnumber) throws Exception {
+        public void deleteAccount(Class<?> Account, int accountnumber) throws Exception {
         }
 
         public void addAccountJDBC(Account account) throws Exception {
@@ -202,7 +202,7 @@ public class IAccountServiceTest {
         public void updateAccountJDBC(Account account) throws Exception {
         }
 
-        public Account getAccountJDBC(String accountnumber) throws Exception {
+        public Account getAccountJDBC(int accountnumber) throws Exception {
             return null;
         }
 
@@ -210,7 +210,7 @@ public class IAccountServiceTest {
             return null;
         }
 
-        public void deleteAccountJDBC(String accountnumber) throws Exception {
+        public void deleteAccountJDBC(int accountnumber) throws Exception {
         }
     }
     

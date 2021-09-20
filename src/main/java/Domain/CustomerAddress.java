@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="customeraddress")
+@Table(name="customeraddress", schema ="bankapp")
 public class CustomerAddress {
     
     @Id

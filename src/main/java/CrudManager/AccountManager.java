@@ -56,7 +56,7 @@ public class AccountManager {
            System.out.println(ex.getMessage()); 
         }
     }
-    public Account getAccount(String trn)
+    public Account getAccount(int accountNumber)
     {
         Account aAccount=new Account();
         try {
@@ -65,7 +65,7 @@ public class AccountManager {
             //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
             
             IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
-            aAccount=iAccountMgr.getAccount(trn);
+            aAccount=iAccountMgr.getAccount(accountNumber);
             
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());
@@ -123,7 +123,7 @@ public class AccountManager {
     }
     
     
-    public void deleteAccount(Class<?> Account, String trn)
+    public void deleteAccount(Class<?> Account, int accountNumber)
     {
         try {
             System.out.println("In Business Layer deleteAccount method");
@@ -131,7 +131,7 @@ public class AccountManager {
             //IAccountService iAccountMgr = (IAccountService) factory.getTheService(IAccountService.NAME);
             
             IAccountService iAccountMgr=(IAccountService)context.getBean("AccountORM");
-            iAccountMgr.deleteAccount(Account, trn);            
+            iAccountMgr.deleteAccount(Account, accountNumber);            
         } catch (ServiceLoadException ex) {
             
             log.info(ex.getMessage());
@@ -164,14 +164,14 @@ public class AccountManager {
            System.out.println(ex.getMessage()); 
         }
     }
-    public Account getAccountJDBC(String trn)
+    public Account getAccountJDBC(int accountNumber)
     {
         Account aAccount=new Account();
         try {
             System.out.println("In Business Layer getAccountJDBC(String trn) method");
             Factory factory = new Factory();           
             IAccountService iAccountMgrJDBC = (IAccountService) factory.getTheService(IAccountService.NAME);
-            aAccount=iAccountMgrJDBC.getAccountJDBC(trn);
+            aAccount=iAccountMgrJDBC.getAccountJDBC(accountNumber);
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
@@ -224,13 +224,13 @@ public class AccountManager {
     }
     
     
-    public void deleteAccount(String trn)
+    public void deleteAccount(int accountNumber)
     {
         try {
             System.out.println("In Business Layer deleteAccountJDBC method");
             Factory factory = new Factory();
             IAccountService iAccountMgrJDBC = (IAccountService) factory.getTheService(IAccountService.NAME);
-            iAccountMgrJDBC.deleteAccountJDBC(trn);
+            iAccountMgrJDBC.deleteAccountJDBC(accountNumber);
             
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());

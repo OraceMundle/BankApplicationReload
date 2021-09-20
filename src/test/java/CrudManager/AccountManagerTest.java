@@ -50,7 +50,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.addAccount(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,13 +59,13 @@ public class AccountManagerTest {
     @Test
     public void testGetAccount() {
         System.out.println("getAccount");
-        String trn = "";
+        int accountNumber = 0;
         AccountManager instance = new AccountManager();
         Account expResult = null;
-        Account result = instance.getAccount(trn);
+        Account result = instance.getAccount(accountNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.updateAccount(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,21 +92,21 @@ public class AccountManagerTest {
         List<Account> result = instance.getAllAccount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
      * Test of deleteAccount method, of class AccountManager.
      */
     @Test
-    public void testDeleteAccount_Class_String() {
+    public void testDeleteAccount_Class_int() {
         System.out.println("deleteAccount");
         Class Account = null;
-        String trn = "";
+        int accountNumber = 0;
         AccountManager instance = new AccountManager();
-        instance.deleteAccount(Account, trn);
+        instance.deleteAccount(Account, accountNumber);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -119,7 +119,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.addAccountJDBC(anAccount);
         // TODO review the generated test code and remove the default call to fail.
-       //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -128,13 +128,13 @@ public class AccountManagerTest {
     @Test
     public void testGetAccountJDBC() {
         System.out.println("getAccountJDBC");
-        String trn = "";
+        int accountNumber = 0;
         AccountManager instance = new AccountManager();
         Account expResult = null;
-        Account result = instance.getAccountJDBC(trn);
+        Account result = instance.getAccountJDBC(accountNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class AccountManagerTest {
         AccountManager instance = new AccountManager();
         instance.updateAccountJDBC(aAccount);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -161,20 +161,20 @@ public class AccountManagerTest {
         ResultSet result = instance.getAllAccountJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
      * Test of deleteAccount method, of class AccountManager.
      */
     @Test
-    public void testDeleteAccount_String() {
+    public void testDeleteAccount_int() {
         System.out.println("deleteAccount");
-        String trn = "";
+        int accountNumber = 0;
         AccountManager instance = new AccountManager();
-        instance.deleteAccount(trn);
+        instance.deleteAccount(accountNumber);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }

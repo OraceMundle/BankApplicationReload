@@ -22,11 +22,11 @@ public interface IAccountService extends IService{
     
     public void updateAccount(Account account) throws Exception;
     
-    public Account getAccount(String accountnumber)throws Exception;
+    public Account getAccount(int accountnumber)throws Exception;
     
     public List<Account> getAllAccount() throws Exception;
     
-    public void deleteAccount(Class<?> Account, String accountnumber) throws Exception;
+    public void deleteAccount(Class<?> Account, int accountnumber) throws Exception;
     
     
     
@@ -35,11 +35,11 @@ public interface IAccountService extends IService{
     
     public void updateAccountJDBC(Account account) throws Exception;
     
-    public Account getAccountJDBC(String accountnumber)throws Exception;
+    public Account getAccountJDBC(int accountnumber)throws Exception;
      
     public ResultSet getAllAccountJDBC() throws Exception;
     
-    public void deleteAccountJDBC(String accountnumber) throws Exception;
+    public void deleteAccountJDBC(int accountnumber) throws Exception;
     
             
     
