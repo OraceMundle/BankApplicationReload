@@ -292,7 +292,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                 ac.setLoanAmount(Float.parseFloat(loanTextField.getText()));
                 ac.setMonthlyInstalment(Float.parseFloat(installTextField.getText()));
                 ac.setDateOpened(dateOpenTextField.getText());
-                ac.setCustomerTRN(trnTextField2.getText());
+                ac.setCustomerTRN(Integer.parseInt(trnTextField2.getText()));
                 ac.setWorkerId(123);
                 
                 System.out.print(evt);
@@ -307,7 +307,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                  account1.setMonthlyInstalment(ac.getMonthlyInstalment());
                  account1.setDateOpened(ac.getDateOpened());
                  account1.setDateClosed(ac.getDateClosed());
-                 account1.setCustomerTRN(customer.getTrn());
+                 account1.setCustomerTRN(Integer.parseInt(customer.getTrn()));
                  //account1.setWorkerId(worker.getId());
                  account1.setWorkerId(0001);
                  

@@ -94,8 +94,8 @@ public class AppPresentationAccountConsole {
             AccountManager accountJDBC = new AccountManager();
             
              Scanner aScanner = new Scanner(System.in);
-            System.out.println("Enter Account Number: ");
-            anAccount.setAccountnumber(aScanner.nextLine());
+            //System.out.println("Enter Account Number: ");
+            //anAccount.setAccountnumber(aScanner.nextLine());
             
                        
             System.out.println("Enter Balance: ");
@@ -114,7 +114,7 @@ public class AppPresentationAccountConsole {
             anAccount.setDateClosed(aScanner.nextLine());
             
             System.out.println("Enter TRN: ");
-            anAccount.setCustomerTRN(aScanner.nextLine());
+            anAccount.setCustomerTRN(aScanner.nextInt());
             
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
@@ -130,7 +130,7 @@ public class AppPresentationAccountConsole {
             
               Scanner aScanner = new Scanner(System.in);
             System.out.println("Enter Account Number: ");
-            anAccount.setAccountnumber(aScanner.nextLine());
+            anAccount.setAccountnumber(aScanner.nextInt());
             
                        
             System.out.println("Enter Balance: ");
@@ -149,7 +149,7 @@ public class AppPresentationAccountConsole {
             anAccount.setDateClosed(aScanner.nextLine());
             
             System.out.println("Enter TRN: ");
-            anAccount.setCustomerTRN(aScanner.nextLine());
+            anAccount.setCustomerTRN(aScanner.nextInt());
             
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
@@ -172,9 +172,9 @@ public class AppPresentationAccountConsole {
             AccountManager accountJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System.in);
             
-            System.out.println("Enter TRN: ");
-            String trn = aScanner.nextLine();
-            anAccount = accountJDBC.getAccountJDBC(trn);
+            System.out.println("Enter Account Number: ");
+            String accountNumber = aScanner.nextLine();
+            anAccount = accountJDBC.getAccountJDBC(accountNumber);
             
             //Runtime.getRuntime().exec("cls");
             
@@ -221,10 +221,7 @@ public class AppPresentationAccountConsole {
             System.out.println("Customer TRN: " + rs.getString("trn")+"\n");
             System.out.println("Worker ID: " + rs.getString("worker_id")+"\n");
             
-            
-                     
-            
-            
+           
         }
         }
         else if(jdbcChoice==6)
@@ -257,8 +254,8 @@ public class AppPresentationAccountConsole {
             AccountManager accountORM = new AccountManager();
             
              Scanner aScanner = new Scanner(System.in);
-            System.out.println("Enter Account Number: ");
-            anAccount.setAccountnumber(aScanner.nextLine());
+            //System.out.println("Enter Account Number: ");
+            //anAccount.setAccountnumber(aScanner.nextLine());
             
                        
             System.out.println("Enter Balance: ");
@@ -277,7 +274,7 @@ public class AppPresentationAccountConsole {
             anAccount.setDateClosed(aScanner.nextLine());
             
             System.out.println("Enter TRN: ");
-            anAccount.setCustomerTRN(aScanner.nextLine());
+            anAccount.setCustomerTRN(aScanner.nextInt());
             
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
@@ -292,7 +289,7 @@ public class AppPresentationAccountConsole {
             
                Scanner aScanner = new Scanner(System.in);
             System.out.println("Enter Account Number: ");
-            anAccount.setAccountnumber(aScanner.nextLine());
+            anAccount.setAccountnumber(aScanner.nextInt());
             
                        
             System.out.println("Enter Balance: ");
@@ -311,7 +308,7 @@ public class AppPresentationAccountConsole {
             anAccount.setDateClosed(aScanner.nextLine());
             
             System.out.println("Enter TRN: ");
-            anAccount.setCustomerTRN(aScanner.nextLine());
+            anAccount.setCustomerTRN(aScanner.nextInt());
             
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
@@ -324,7 +321,7 @@ public class AppPresentationAccountConsole {
             AccountManager accountORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter Account Number: ");
-            
+                        
             accountORM.deleteAccount(Account.class, aScanner.nextLine());
             System.out.println("Account deleted using ORM");
         }

@@ -58,8 +58,8 @@ public class AccountTest {
     public void testGetAccountnumber() {
         System.out.println("getAccountnumber");
         Account instance = new Account();
-        String expResult = "";
-        String result = instance.getAccountnumber();
+        int expResult = 0;
+        int result = instance.getAccountnumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -142,8 +142,8 @@ public class AccountTest {
     public void testGetCustomerTRN() {
         System.out.println("getCustomerTRN");
         Account instance = new Account();
-        String expResult = "";
-        String result = instance.getCustomerTRN();
+        int expResult = 0;
+        int result = instance.getCustomerTRN();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -183,7 +183,7 @@ public class AccountTest {
     @Test
     public void testSetAccountnumber() {
         System.out.println("setAccountnumber");
-        String accountnumber = "";
+        int accountnumber = 0;
         Account instance = new Account();
         instance.setAccountnumber(accountnumber);
         // TODO review the generated test code and remove the default call to fail.
@@ -274,7 +274,7 @@ public class AccountTest {
     @Test
     public void testSetCustomerTRN() {
         System.out.println("setCustomerTRN");
-        String customerTRN = "";
+        int customerTRN = 0;
         Account instance = new Account();
         instance.setCustomerTRN(customerTRN);
         // TODO review the generated test code and remove the default call to fail.

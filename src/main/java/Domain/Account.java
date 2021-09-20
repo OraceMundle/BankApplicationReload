@@ -26,7 +26,7 @@ public class Account {
     
     @Id
     @Column(name = "account_number")
-    private String accountnumber;
+    private int accountnumber;
     
     @Column(name = "balance")
     private float balance; 
@@ -44,7 +44,7 @@ public class Account {
     private String dateClosed;
     
     @Column(name = "trn")
-    private String customerTRN;
+    private int customerTRN;
     
     @Column(name = "worker_id")
     private int workerId;
@@ -70,7 +70,7 @@ public class Account {
         this.dateClosed=account.dateOpened;
         this.dateClosed=account.dateClosed;
         this.monthlyInstalment=account.monthlyInstalment;
-        this.customerTRN=customer.getTrn();
+        this.customerTRN=Integer.parseInt(customer.getTrn());
         this.workerId=worker.getId();
       
                
@@ -83,7 +83,7 @@ public class Account {
     
     
     
-    public Account(String accountnumber, float balance, float loanAmount, float monthlyInstalment, String dateOpened, String dateClosed, String customerTRN, int workerId) {
+    public Account(int accountnumber, float balance, float loanAmount, float monthlyInstalment, String dateOpened, String dateClosed, int customerTRN, int workerId) {
         this.accountnumber = accountnumber;
         this.balance = balance;
         this.loanAmount = loanAmount;
@@ -98,7 +98,7 @@ public class Account {
         return workerId;
     }
 
-    public String getAccountnumber() {
+    public int getAccountnumber() {
         return accountnumber;
     }
 
@@ -122,7 +122,7 @@ public class Account {
         return dateClosed;
     }
 
-    public String getCustomerTRN() {
+    public int getCustomerTRN() {
         return customerTRN;
     }
 
@@ -138,7 +138,7 @@ public class Account {
     
     
 
-    public void setAccountnumber(String accountnumber) {
+    public void setAccountnumber(int accountnumber) {
         this.accountnumber = accountnumber;
     }
 
@@ -166,7 +166,7 @@ public class Account {
         this.dateClosed = dateClosed;
     }
 
-    public void setCustomerTRN(String customerTRN) {
+    public void setCustomerTRN(int customerTRN) {
         this.customerTRN = customerTRN;
     }
 

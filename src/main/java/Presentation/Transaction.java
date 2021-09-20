@@ -275,8 +275,8 @@ public class Transaction extends javax.swing.JFrame {
 
                 //Passes data from crudmanager to customer class
                 account=accountMgr.getAccount(accNumTextField.getText().trim());
-                customer = customerMgr.getCustomer(account.getCustomerTRN());
-                address = addressMgr.getCustomerAddress(Integer.parseInt(account.getCustomerTRN()));
+                customer = customerMgr.getCustomer(String.valueOf(account.getCustomerTRN()));
+                address = addressMgr.getCustomerAddress(account.getCustomerTRN());
                 
 
                 //Push customer values to the uneditable text boxes.
@@ -286,7 +286,7 @@ public class Transaction extends javax.swing.JFrame {
                 trnTextField.setText(customer.getTrn());
                 
                 //Account textboxes
-                accNumTextField2.setText(account.getAccountnumber());
+                accNumTextField2.setText(String.valueOf(account.getAccountnumber()));
                 balanceTextField.setText(Float.toString(account.getBalance()));
                 loanTextField.setText(Float.toString(account.getLoanAmount()));
                 insTextField.setText(Float.toString(account.getMonthlyInstalment()));

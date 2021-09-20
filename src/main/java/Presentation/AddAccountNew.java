@@ -406,7 +406,7 @@ public class AddAccountNew extends javax.swing.JFrame {
                 account1.setDateClosed(account.getDateOpened());
                 account1.setDateClosed(account.getDateClosed());
                 account1.setLoanAmount(account.getLoanAmount());
-                account1.setCustomerTRN(customer.getTrn());
+                account1.setCustomerTRN(Integer.parseInt(customer.getTrn()));
                 account1.setWorkerId(worker.getId());
 
                 accountMgr.addAccount(account1);

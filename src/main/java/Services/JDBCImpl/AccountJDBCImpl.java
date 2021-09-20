@@ -60,7 +60,7 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
                 "', '" + account.getMonthlyInstalment() + 
                 "', '" + account.getDateOpened() + 
                 "', '" + account.getDateClosed() + 
-                "', '" + Integer.parseInt(account.getCustomerTRN()) + 
+                "', '" + account.getCustomerTRN() + 
                 "', '" + account.getWorkerId() +"')";    
     
        
@@ -122,9 +122,9 @@ public class AccountJDBCImpl extends JDBCMainConfiguration implements IAccountSe
         ResultSet rs=statement.executeQuery(selectAccount);
         
        while(rs.next()){
-        account.setAccountnumber("account_number");
+        account.setAccountnumber(rs.getInt("account_number"));
         account.setBalance(rs.getFloat("balance"));
-        account.setCustomerTRN("trn");
+        account.setCustomerTRN(rs.getInt("trn"));
         account.setDateClosed("date_closed");
         account.setDateOpened("date_open");
         account.setLoanAmount(rs.getFloat("loan_amount"));

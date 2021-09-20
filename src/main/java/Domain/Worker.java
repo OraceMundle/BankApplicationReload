@@ -75,7 +75,7 @@ import javax.persistence.Table;
         this.lastname = worker.lastname;
         this.telephoneNumber=worker.telephoneNumber;
         this.email=worker.email;
-        this.accountNumber=Integer.parseInt(account.getAccountnumber());
+        this.accountNumber=account.getAccountnumber();
          
     }
     

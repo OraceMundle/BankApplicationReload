@@ -328,7 +328,7 @@ public class DeleteAccount extends javax.swing.JFrame {
                 account.setDateOpened(dopenTextField.getText());
                 account.setDateClosed(dclosedTextField.getText());
                 
-                accountMgr.deleteAccount(account.getAccountnumber());
+                accountMgr.deleteAccount(String.valueOf(account.getAccountnumber()));
                 
                 balanceTextField.setText("");
                 loanTextField.setText("");
@@ -382,8 +382,8 @@ public class DeleteAccount extends javax.swing.JFrame {
 
                 //Passes data from crudmanager to customer class
                 account=accountMgr.getAccount(accNumTextField.getText().trim());
-                customer = customerMgr.getCustomer(account.getCustomerTRN());
-                address = addressMgr.getCustomerAddress(Integer.parseInt(account.getCustomerTRN()));
+                customer = customerMgr.getCustomer(String.valueOf(account.getCustomerTRN()));
+                address = addressMgr.getCustomerAddress(account.getCustomerTRN());
                 
 
                 //Push customer values to the uneditable text boxes.

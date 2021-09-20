@@ -6,7 +6,7 @@
 package Services.HibernateImplement;
 
 import Domain.Account;
-import Domain.Customer;
+//import Domain.Customer;
 import Services.HibernateMainConfig;
 import Services.IAccountService;
 import java.sql.ResultSet;
@@ -87,7 +87,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
 
     @Override
     public Account getAccount(String accountnumber) throws Exception {
-        Session session = CustomerORMImpl.getSession();
+        Session session = AccountORMImpl.getSession();
          Transaction transact=null;
         
           Account account=null;
@@ -122,7 +122,7 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
          List<Account> accountList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             accountList = (List<Account>) session1.createQuery("from ").list();
+             accountList = (List<Account>) session1.createQuery("from Account ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
@@ -144,13 +144,13 @@ public class AccountORMImpl extends HibernateMainConfig implements IAccountServi
 
     @Override
     public void deleteAccount(Class<?> Account, String accountnumber) throws Exception {
-        Session session = CustomerORMImpl.getSession();
+        Session session = AccountORMImpl.getSession();
          Transaction transact=null;
          try{
              transact=session.beginTransaction();
-             Object bookObject = session.load(Account, accountnumber);
+             Object accountObject = session.load(Account, accountnumber);
              
-                      session.delete(bookObject);
+                      session.delete(accountObject);
                       transact.commit(); 
               }
          catch(HibernateException hex){
