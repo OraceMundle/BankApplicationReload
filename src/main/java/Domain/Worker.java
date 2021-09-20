@@ -28,7 +28,7 @@ import javax.persistence.Table;
     
     @Id
     @Column(name="worker_id")
-    private String id;
+    private int id;
     
     @Column(name="f_name")
     private String firstname;
@@ -81,7 +81,7 @@ import javax.persistence.Table;
     
     
     
-    public Worker(String id, String firstname, String lastname, String telephoneNumber, String email, int accountNumber) {
+    public Worker(int id, String firstname, String lastname, String telephoneNumber, String email, int accountNumber) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -92,7 +92,7 @@ import javax.persistence.Table;
     
     
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -112,7 +112,7 @@ import javax.persistence.Table;
         return email;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

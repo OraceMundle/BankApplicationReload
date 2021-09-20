@@ -47,7 +47,7 @@ public class Account {
     private String customerTRN;
     
     @Column(name = "worker_id")
-    private String workerId;
+    private int workerId;
     
     
      //@OneToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
@@ -83,7 +83,7 @@ public class Account {
     
     
     
-    public Account(String accountnumber, float balance, float loanAmount, float monthlyInstalment, String dateOpened, String dateClosed, String customerTRN, String workerId) {
+    public Account(String accountnumber, float balance, float loanAmount, float monthlyInstalment, String dateOpened, String dateClosed, String customerTRN, int workerId) {
         this.accountnumber = accountnumber;
         this.balance = balance;
         this.loanAmount = loanAmount;
@@ -94,7 +94,7 @@ public class Account {
         this.workerId = workerId;
     }
 
-    public String getWorkerId() {
+    public int getWorkerId() {
         return workerId;
     }
 
@@ -142,7 +142,7 @@ public class Account {
         this.accountnumber = accountnumber;
     }
 
-    public void setWorkerId(String workerId) {
+    public void setWorkerId(int workerId) {
         this.workerId = workerId;
     }
 

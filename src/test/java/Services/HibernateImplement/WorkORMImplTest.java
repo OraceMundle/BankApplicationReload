@@ -50,7 +50,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.addWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.updateWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,13 +72,13 @@ public class WorkORMImplTest {
     @Test
     public void testGetWorker() throws Exception {
         System.out.println("getWorker");
-        String id = "";
+        int id = 0;
         WorkORMImpl instance = new WorkORMImpl();
         Worker expResult = null;
         Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class WorkORMImplTest {
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -102,11 +102,11 @@ public class WorkORMImplTest {
     public void testDeleteWorker() throws Exception {
         System.out.println("deleteWorker");
         Class Worker = null;
-        String id = "";
+        int id = 0;
         WorkORMImpl instance = new WorkORMImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -121,7 +121,7 @@ public class WorkORMImplTest {
         Worker result = instance.getworkerLogin(user);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -134,7 +134,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.addWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class WorkORMImplTest {
         WorkORMImpl instance = new WorkORMImpl();
         instance.updateWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,13 +156,13 @@ public class WorkORMImplTest {
     @Test
     public void testGetWorkerJDBC() throws Exception {
         System.out.println("getWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkORMImpl instance = new WorkORMImpl();
         Worker expResult = null;
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -176,7 +176,7 @@ public class WorkORMImplTest {
         ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -185,11 +185,11 @@ public class WorkORMImplTest {
     @Test
     public void testDeleteWorkerJDBC() throws Exception {
         System.out.println("deleteWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkORMImpl instance = new WorkORMImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -204,7 +204,7 @@ public class WorkORMImplTest {
         Worker result = instance.getworkerLoginJDBC(user);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }

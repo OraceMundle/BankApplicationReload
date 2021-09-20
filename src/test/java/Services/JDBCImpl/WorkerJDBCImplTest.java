@@ -72,7 +72,7 @@ public class WorkerJDBCImplTest {
     @Test
     public void testGetWorker() throws Exception {
         System.out.println("getWorker");
-        String id = "";
+        int id = 0;
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         Worker expResult = null;
         Worker result = instance.getWorker(id);
@@ -102,7 +102,7 @@ public class WorkerJDBCImplTest {
     public void testDeleteWorker() throws Exception {
         System.out.println("deleteWorker");
         Class Worker = null;
-        String id = "";
+        int id = 0;
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
@@ -141,7 +141,7 @@ public class WorkerJDBCImplTest {
     @Test
     public void testGetWorkerJDBC() throws Exception {
         System.out.println("getWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         Worker expResult = null;
         Worker result = instance.getWorkerJDBC(id);
@@ -170,7 +170,7 @@ public class WorkerJDBCImplTest {
     @Test
     public void testDeleteWorkerJDBC() throws Exception {
         System.out.println("deleteWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkerJDBCImpl instance = new WorkerJDBCImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.

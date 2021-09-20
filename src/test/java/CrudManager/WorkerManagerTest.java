@@ -50,7 +50,7 @@ public class WorkerManagerTest {
         WorkerManager instance = new WorkerManager();
         instance.addWorker(aWorker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,13 +59,13 @@ public class WorkerManagerTest {
     @Test
     public void testGetWorker() {
         System.out.println("getWorker");
-        String trn = "";
+        int id = 0;
         WorkerManager instance = new WorkerManager();
         Worker expResult = null;
-        Worker result = instance.getWorker(trn);
+        Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class WorkerManagerTest {
         WorkerManager instance = new WorkerManager();
         instance.updateWorker(aWorker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class WorkerManagerTest {
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -102,11 +102,11 @@ public class WorkerManagerTest {
     public void testDeleteWorker() {
         System.out.println("deleteWorker");
         Class Worker = null;
-        String trn = "";
+        int id = 0;
         WorkerManager instance = new WorkerManager();
-        instance.deleteWorker(Worker, trn);
+        instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -119,7 +119,7 @@ public class WorkerManagerTest {
         WorkerManager instance = new WorkerManager();
         instance.addWorkerJDBC(anWorker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -128,13 +128,13 @@ public class WorkerManagerTest {
     @Test
     public void testGetWorkerJDBC() {
         System.out.println("getWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkerManager instance = new WorkerManager();
         Worker expResult = null;
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class WorkerManagerTest {
         WorkerManager instance = new WorkerManager();
         instance.updateWorkerJDBC(aWorker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -161,7 +161,7 @@ public class WorkerManagerTest {
         ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -170,11 +170,56 @@ public class WorkerManagerTest {
     @Test
     public void testDeleteWorkerJDBC() {
         System.out.println("deleteWorkerJDBC");
-        String id = "";
+        int id = 0;
         WorkerManager instance = new WorkerManager();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of validateWorker method, of class WorkerManager.
+     */
+    @Test
+    public void testValidateWorker() {
+        System.out.println("validateWorker");
+        String username = "";
+        WorkerManager instance = new WorkerManager();
+        Boolean expResult = null;
+        Boolean result = instance.validateWorker(username);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of validateWorkerUsernameAndPwd method, of class WorkerManager.
+     */
+    @Test
+    public void testValidateWorkerUsernameAndPwd() {
+        System.out.println("validateWorkerUsernameAndPwd");
+        Worker worker = null;
+        WorkerManager instance = new WorkerManager();
+        Boolean expResult = null;
+        Boolean result = instance.validateWorkerUsernameAndPwd(worker);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of testCredentials method, of class WorkerManager.
+     */
+    @Test
+    public void testTestCredentials() {
+        System.out.println("testCredentials");
+        Worker user = null;
+        WorkerManager instance = new WorkerManager();
+        Worker expResult = null;
+        Worker result = instance.testCredentials(user);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

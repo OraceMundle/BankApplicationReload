@@ -117,7 +117,7 @@ public class AppPresentationAccountConsole {
             anAccount.setCustomerTRN(aScanner.nextLine());
             
             System.out.println("Enter Worker ID: ");
-            anAccount.setWorkerId(aScanner.nextLine());
+            anAccount.setWorkerId(aScanner.nextInt());
                         
             accountJDBC.addAccountJDBC(anAccount);
             System.out.println("Account Added Using JDBC");
@@ -152,7 +152,7 @@ public class AppPresentationAccountConsole {
             anAccount.setCustomerTRN(aScanner.nextLine());
             
             System.out.println("Enter Worker ID: ");
-            anAccount.setWorkerId(aScanner.nextLine());
+            anAccount.setWorkerId(aScanner.nextInt());
             
             customerJDBC.updateAccountJDBC(anAccount);
             System.out.println("Account updated Using JDBC");
@@ -280,7 +280,7 @@ public class AppPresentationAccountConsole {
             anAccount.setCustomerTRN(aScanner.nextLine());
             
             System.out.println("Enter Worker ID: ");
-            anAccount.setWorkerId(aScanner.nextLine());
+            anAccount.setWorkerId(aScanner.nextInt());
             
             customerORM.addAccount(anAccount);
             System.out.println("Account Added Using ORM");
@@ -314,7 +314,7 @@ public class AppPresentationAccountConsole {
             anAccount.setCustomerTRN(aScanner.nextLine());
             
             System.out.println("Enter Worker ID: ");
-            anAccount.setWorkerId(aScanner.nextLine());
+            anAccount.setWorkerId(aScanner.nextInt());
             
             customerORM.updateAccount(anAccount);
             System.out.println("Account Added Using ORM");
@@ -384,8 +384,7 @@ public class AppPresentationAccountConsole {
             System.out.println("Date Closed: " + account.get(i).getDateClosed()+"\n");
             System.out.println("Customer TRN: " + account.get(i).getCustomerTRN()+"\n");
             System.out.println("Worker ID: " + account.get(i).getWorkerId()+"\n");
-            
-            
+    
             }
         }
         else if(ormChoice==6)

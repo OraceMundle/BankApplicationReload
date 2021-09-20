@@ -152,7 +152,22 @@ public class Login extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         try{
             
-            w = workerMgr.getWorkerJDBC(password.getText());
+           
+           // w = workerMgr.getWorkerJDBC(password.getText());
+           w.setLastname(userName.getText());
+           w.setId(Integer.parseInt(password.getText()));
+           
+           Worker w1 = workerMgr.testCredentials(w);
+           
+           //workerMgr.testCredentials(w);
+           
+            System.out.println("This is from GUI");
+            System.out.println(w.getLastname());
+             System.out.println(w.getId());
+             
+             System.out.println("This is from database");
+             System.out.println(w1.getLastname());
+             System.out.println(w1.getId());
 
 
             if(userName.getText().isEmpty() && userName.getText().isBlank()
@@ -174,16 +189,18 @@ public class Login extends javax.swing.JFrame {
                 System.out.println(customer.getTrn());
                 */
 
-                //if(wl.getLastname().equals(customer.getLastname()) && wl.getTrn().equals(customer.getTrn()))
-                if(w.getLastname().equals(userName.getText()) && w.getId().equals(password.getText()))
+                //if(w1.getLastname().equals(w.getLastname()) && w1.getId().equals(w.getId()))
+                if(w1.getLastname().equals(userName.getText()))
+                    
+
+                    //check if statement
+                    //&& w1.getId().equals(password.getText()))
                 {
 
-
-
-
-                                                           Dashboard db = new Dashboard();
+                                                           //Dashboard db = new Dashboard();
                                                           // CustomerForm db = new CustomerForm();
                                                             //Login lg = new Login();
+                                                            BankAppAdminstration db = new BankAppAdminstration();
                                                             db.setVisible(true);
                                                             this.setVisible(false);
                                                             //lg.setVisible(false);

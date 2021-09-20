@@ -35,7 +35,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public Worker getWorker(String id) throws Exception {
+    public Worker getWorker(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -45,7 +45,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public void deleteWorker(Class<?> Worker, String id) throws Exception {
+    public void deleteWorker(Class<?> Worker, int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -55,11 +55,10 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         try { 
             
                   
-        String insertWorker = "INSERT INTO worker(work_id, f_name, l_name, telephone, email, account_number) "
-                + "values('"+ worker.getId()+
-                "','" + worker.getFirstname() + 
+        String insertWorker = "INSERT INTO worker(f_name, l_name, telephone, email, account_number) "
+                + "values('" + worker.getFirstname() + 
                 "', '" + worker.getLastname() +
-                "', '" + worker.getTelephoneNumber()   +//getTelephoneNumber() +
+                "', '" + worker.getTelephoneNumber()   +
                 "', '" + worker.getEmail() +
                 "', '" + worker.getAccountNumber()+ "')";    
        
@@ -78,11 +77,11 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         
         try {
             
-                String updateWorker = "UPDATE worker SET worker_id = '" + worker.getId() + 
+                String updateWorker = "UPDATE worker SET" + 
                 "', f_name = '" + worker.getFirstname() +
                 "', l_name ='" + worker.getLastname() +
                 "', telephone ='" + worker.getTelephoneNumber() +
-                "', email ='" + worker.getEmail()+"')";
+                "', email ='" + worker.getEmail()+"' Where trn = '" + worker.getId()+"'";
 
         statement = this.getConnection().createStatement();
         
@@ -99,24 +98,27 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public Worker getWorkerJDBC(String id) throws Exception {
+    public Worker getWorkerJDBC(int id) throws Exception {
         
         Worker worker = new Worker();
         
         try {
             
           
-        String selectWorker = "Select * From worker Where worker_id = " + id;
+        String selectWorker = "SELECT * FROM worker WHERE worker_id = " + id;
         statement=this.getConnection().createStatement();
         
         ResultSet rs=statement.executeQuery(selectWorker);
         
         while(rs.next()){
         worker.setId(id);
-        worker.setFirstname("f_name");
-        worker.setLastname("l_name");
-        worker.setTelephoneNumber("telephone");
-        worker.setEmail("email");
+        worker.setFirstname(rs.getString("f_name"));
+        worker.setLastname(rs.getString("l_name"));
+        worker.setTelephoneNumber(rs.getString("telephone"));
+        worker.setEmail(rs.getString("email"));
+        worker.setAccountNumber(rs.getInt("account_number"));
+        
+
         }
                 
          } catch (Exception e) {
@@ -133,7 +135,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
         try {
             
        
-        String SelectAll="Select * From worker";
+        String SelectAll="SELECT * FROM worker";
         //statement=this.getConnection().createStatement();
         ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         rs=ps.executeQuery(SelectAll);
@@ -145,11 +147,11 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     }
 
     @Override
-    public void deleteWorkerJDBC(String id) throws Exception {
+    public void deleteWorkerJDBC(int id) throws Exception {
         try {
             
         statement=this.getConnection().createStatement();
-        statement.execute("Delete From worker Where worker_id  = " + id);  
+        statement.execute("Delete FROM worker WHERE worker_id  = " + id);  
         
         } catch (Exception e) {
             
@@ -164,7 +166,7 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
     	 
 	Worker worker = new Worker();			
 	String password = user.getLastname();
-	String name = user.getId();
+	int name = user.getId();
         
         try {
             
@@ -179,14 +181,14 @@ public class WorkerJDBCImpl extends JDBCMainConfiguration implements IWorkerServ
                     ResultSet rs=statement.executeQuery(loginQuery);
                     if(rs==null){
                         worker.setLastname("unknown");
-                        worker.setId("unknown");
+                        worker.setId(0);
                         }
                     
                     else if(rs!=null) 
                     {
                         while(rs.next()){
                         worker.setLastname(rs.getString("l_name"));
-                        worker.setId(rs.getString("work_id"));
+                        worker.setId(rs.getInt("work_id"));
                         System.out.println(rs.getString("l_name"));
                         System.out.println(rs.getString("work_id"));
                          }

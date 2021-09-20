@@ -44,11 +44,11 @@ public class AccountTest {
     public void testGetWorkerId() {
         System.out.println("getWorkerId");
         Account instance = new Account();
-        String expResult = "";
-        String result = instance.getWorkerId();
+        int expResult = 0;
+        int result = instance.getWorkerId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class AccountTest {
         String result = instance.getAccountnumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class AccountTest {
         float result = instance.getBalance();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class AccountTest {
         float result = instance.getLoanAmount();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class AccountTest {
         float result = instance.getMonthlyInstalment();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class AccountTest {
         String result = instance.getDateOpened();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -132,7 +132,7 @@ public class AccountTest {
         String result = instance.getDateClosed();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +146,35 @@ public class AccountTest {
         String result = instance.getCustomerTRN();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomer method, of class Account.
+     */
+    @Test
+    public void testGetCustomer() {
+        System.out.println("getCustomer");
+        Account instance = new Account();
+        Customer expResult = null;
+        Customer result = instance.getCustomer();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getWorker method, of class Account.
+     */
+    @Test
+    public void testGetWorker() {
+        System.out.println("getWorker");
+        Account instance = new Account();
+        Worker expResult = null;
+        Worker result = instance.getWorker();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -159,7 +187,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setAccountnumber(accountnumber);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -168,11 +196,11 @@ public class AccountTest {
     @Test
     public void testSetWorkerId() {
         System.out.println("setWorkerId");
-        String workerId = "";
+        int workerId = 0;
         Account instance = new Account();
         instance.setWorkerId(workerId);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -185,7 +213,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setBalance(balance);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -198,7 +226,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setLoanAmount(loanAmount);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -211,7 +239,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setMonthlyInstalment(monthlyInstalment);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -224,7 +252,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setDateOpened(dateOpened);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -237,7 +265,7 @@ public class AccountTest {
         Account instance = new Account();
         instance.setDateClosed(dateClosed);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -250,7 +278,33 @@ public class AccountTest {
         Account instance = new Account();
         instance.setCustomerTRN(customerTRN);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setCustomer method, of class Account.
+     */
+    @Test
+    public void testSetCustomer() {
+        System.out.println("setCustomer");
+        Customer customer = null;
+        Account instance = new Account();
+        instance.setCustomer(customer);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setWorker method, of class Account.
+     */
+    @Test
+    public void testSetWorker() {
+        System.out.println("setWorker");
+        Worker worker = null;
+        Account instance = new Account();
+        instance.setWorker(worker);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

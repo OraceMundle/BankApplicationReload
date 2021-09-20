@@ -42,14 +42,14 @@ public class WorkerManager {
             System.out.println(ex.getMessage()); 
         }
     }
-    public Worker getWorker(String trn)
+    public Worker getWorker(int id)
     {
         Worker aWorker=new Worker();
         try {
             System.out.println("In Business Layer getWorker(String trn) method");
             Factory factory = new Factory();
             IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
-            aWorker=iWorkerMgr.getWorker(trn);
+            aWorker=iWorkerMgr.getWorker(id);
             
         } catch (ServiceLoadException ex) {
                log.info(ex.getMessage());
@@ -99,13 +99,13 @@ public class WorkerManager {
     }
     
     
-    public void deleteWorker(Class<?> Worker, String trn)
+    public void deleteWorker(Class<?> Worker, int id)
     {
         try {
             System.out.println("In Business Layer deleteWorker method");
             Factory factory = new Factory();
             IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
-            iWorkerMgr.deleteWorker(Worker, trn);            
+            iWorkerMgr.deleteWorker(Worker, id);            
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
             System.out.println(ex.getMessage());
@@ -134,7 +134,7 @@ public class WorkerManager {
            System.out.println(ex.getMessage()); 
         }
     }
-    public Worker getWorkerJDBC(String id)
+    public Worker getWorkerJDBC(int id)
     {
         Worker aWorker=new Worker();
         try {
@@ -194,7 +194,7 @@ public class WorkerManager {
     }
     
     
-    public void deleteWorkerJDBC(String id)
+    public void deleteWorkerJDBC(int id)
     {
         try {
             System.out.println("In Business Layer deleteWorkerJDBC method");
@@ -265,6 +265,9 @@ public class WorkerManager {
             Factory factory = new Factory();           
             IWorkerService iworkerLoginMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
             anworkerLogin=iworkerLoginMgr.getworkerLoginJDBC(user);
+            
+             System.out.println(user.getLastname());
+             System.out.println(user.getId());
                         
         } catch (ServiceLoadException ex) {
           System.out.println(ex.getMessage());

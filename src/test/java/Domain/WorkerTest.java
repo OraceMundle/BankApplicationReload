@@ -44,11 +44,11 @@ public class WorkerTest {
     public void testGetId() {
         System.out.println("getId");
         Worker instance = new Worker();
-        String expResult = "";
-        String result = instance.getId();
+        int expResult = 0;
+        int result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class WorkerTest {
         String result = instance.getFirstname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class WorkerTest {
         String result = instance.getLastname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class WorkerTest {
         String result = instance.getTelephoneNumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class WorkerTest {
         String result = instance.getEmail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -113,11 +113,11 @@ public class WorkerTest {
     @Test
     public void testSetId() {
         System.out.println("setId");
-        String id = "";
+        int id = 0;
         Worker instance = new Worker();
         instance.setId(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -130,7 +130,34 @@ public class WorkerTest {
         Worker instance = new Worker();
         instance.setFirstname(firstname);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setAccountNumber method, of class Worker.
+     */
+    @Test
+    public void testSetAccountNumber() {
+        System.out.println("setAccountNumber");
+        int accountNumber = 0;
+        Worker instance = new Worker();
+        instance.setAccountNumber(accountNumber);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getAccountNumber method, of class Worker.
+     */
+    @Test
+    public void testGetAccountNumber() {
+        System.out.println("getAccountNumber");
+        Worker instance = new Worker();
+        int expResult = 0;
+        int result = instance.getAccountNumber();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -143,7 +170,7 @@ public class WorkerTest {
         Worker instance = new Worker();
         instance.setLastname(lastname);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,7 +183,7 @@ public class WorkerTest {
         Worker instance = new Worker();
         instance.setTelephoneNumber(telephoneNumber);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -169,7 +196,7 @@ public class WorkerTest {
         Worker instance = new Worker();
         instance.setEmail(email);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }

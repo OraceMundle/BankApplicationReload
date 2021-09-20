@@ -83,7 +83,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     }
 
     @Override
-    public Worker getWorker(String id) throws Exception {
+    public Worker getWorker(int id) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
@@ -141,7 +141,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     }
 
     @Override
-    public void deleteWorker(Class<?> Worker, String id) throws Exception {
+    public void deleteWorker(Class<?> Worker, int id) throws Exception {
         
         Session session = CustomerORMImpl.getSession();
          Transaction transact=null;
@@ -217,7 +217,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     }
 
     @Override
-    public Worker getWorkerJDBC(String id) throws Exception {
+    public Worker getWorkerJDBC(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -227,7 +227,7 @@ public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
     }
 
     @Override
-    public void deleteWorkerJDBC(String id) throws Exception {
+    public void deleteWorkerJDBC(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

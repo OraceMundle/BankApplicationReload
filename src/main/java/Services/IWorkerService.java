@@ -22,11 +22,11 @@ public interface IWorkerService extends IService{
     
     public void updateWorker(Worker worker) throws Exception;
     
-    public Worker getWorker(String id)throws Exception;
+    public Worker getWorker(int id)throws Exception;
     
     public List<Worker> getAllWorker() throws Exception;
     
-    public void deleteWorker(Class<?> Worker, String id) throws Exception;
+    public void deleteWorker(Class<?> Worker, int id) throws Exception;
     
     public Worker getworkerLogin(Worker user) throws Exception;
     
@@ -37,11 +37,11 @@ public interface IWorkerService extends IService{
     
     public void updateWorkerJDBC(Worker worker) throws Exception;
     
-    public Worker getWorkerJDBC(String id)throws Exception;
+    public Worker getWorkerJDBC(int id)throws Exception;
     
     public ResultSet getAllWorkerJDBC() throws Exception;
     
-    public void deleteWorkerJDBC(String id) throws Exception;
+    public void deleteWorkerJDBC(int id) throws Exception;
     
    public Worker getworkerLoginJDBC(Worker user) throws Exception;
     

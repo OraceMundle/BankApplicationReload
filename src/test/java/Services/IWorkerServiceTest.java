@@ -50,7 +50,7 @@ public class IWorkerServiceTest {
         IWorkerService instance = new IWorkerServiceImpl();
         instance.addWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class IWorkerServiceTest {
         IWorkerService instance = new IWorkerServiceImpl();
         instance.updateWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,13 +72,13 @@ public class IWorkerServiceTest {
     @Test
     public void testGetWorker() throws Exception {
         System.out.println("getWorker");
-        String id = "";
+        int id = 0;
         IWorkerService instance = new IWorkerServiceImpl();
         Worker expResult = null;
         Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class IWorkerServiceTest {
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -102,11 +102,11 @@ public class IWorkerServiceTest {
     public void testDeleteWorker() throws Exception {
         System.out.println("deleteWorker");
         Class Worker = null;
-        String id = "";
+        int id = 0;
         IWorkerService instance = new IWorkerServiceImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -121,7 +121,7 @@ public class IWorkerServiceTest {
         Worker result = instance.getworkerLogin(user);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -134,7 +134,7 @@ public class IWorkerServiceTest {
         IWorkerService instance = new IWorkerServiceImpl();
         instance.addWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class IWorkerServiceTest {
         IWorkerService instance = new IWorkerServiceImpl();
         instance.updateWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,13 +156,13 @@ public class IWorkerServiceTest {
     @Test
     public void testGetWorkerJDBC() throws Exception {
         System.out.println("getWorkerJDBC");
-        String id = "";
+        int id = 0;
         IWorkerService instance = new IWorkerServiceImpl();
         Worker expResult = null;
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -176,7 +176,7 @@ public class IWorkerServiceTest {
         ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -185,11 +185,11 @@ public class IWorkerServiceTest {
     @Test
     public void testDeleteWorkerJDBC() throws Exception {
         System.out.println("deleteWorkerJDBC");
-        String id = "";
+        int id = 0;
         IWorkerService instance = new IWorkerServiceImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -204,7 +204,7 @@ public class IWorkerServiceTest {
         Worker result = instance.getworkerLoginJDBC(user);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     public class IWorkerServiceImpl implements IWorkerService {
@@ -215,7 +215,7 @@ public class IWorkerServiceTest {
         public void updateWorker(Worker worker) throws Exception {
         }
 
-        public Worker getWorker(String id) throws Exception {
+        public Worker getWorker(int id) throws Exception {
             return null;
         }
 
@@ -223,7 +223,7 @@ public class IWorkerServiceTest {
             return null;
         }
 
-        public void deleteWorker(Class<?> Worker, String id) throws Exception {
+        public void deleteWorker(Class<?> Worker, int id) throws Exception {
         }
 
         public Worker getworkerLogin(Worker user) throws Exception {
@@ -236,7 +236,7 @@ public class IWorkerServiceTest {
         public void updateWorkerJDBC(Worker worker) throws Exception {
         }
 
-        public Worker getWorkerJDBC(String id) throws Exception {
+        public Worker getWorkerJDBC(int id) throws Exception {
             return null;
         }
 
@@ -244,7 +244,7 @@ public class IWorkerServiceTest {
             return null;
         }
 
-        public void deleteWorkerJDBC(String id) throws Exception {
+        public void deleteWorkerJDBC(int id) throws Exception {
         }
 
         public Worker getworkerLoginJDBC(Worker user) throws Exception {

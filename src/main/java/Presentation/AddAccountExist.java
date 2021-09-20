@@ -293,7 +293,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                 ac.setMonthlyInstalment(Float.parseFloat(installTextField.getText()));
                 ac.setDateOpened(dateOpenTextField.getText());
                 ac.setCustomerTRN(trnTextField2.getText());
-                ac.setWorkerId("123");
+                ac.setWorkerId(123);
                 
                 System.out.print(evt);
                 
@@ -309,7 +309,7 @@ public class AddAccountExist extends javax.swing.JFrame {
                  account1.setDateClosed(ac.getDateClosed());
                  account1.setCustomerTRN(customer.getTrn());
                  //account1.setWorkerId(worker.getId());
-                 account1.setWorkerId(String.valueOf(0001));
+                 account1.setWorkerId(0001);
                  
                 JOptionPane.showMessageDialog(f, "Customer info Saved"+ ac.getBalance()+ ac.getLoanAmount() + ac.getCustomerTRN());
                  
