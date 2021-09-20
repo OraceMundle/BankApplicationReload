@@ -18,13 +18,17 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 /**
  *
  * @author OraceMundle
  */
-public class WorkORMImpl extends HibernateMainConfig implements IWorkerService{
 
-    public static final Logger log = Logger.getLogger(WorkORMImpl.class);
+@Component("WorkerORM")
+
+public class WorkerORMImpl extends HibernateMainConfig implements IWorkerService{
+
+    public static final Logger log = Logger.getLogger(WorkerORMImpl.class);
     
     //ORM Methods
     @Override

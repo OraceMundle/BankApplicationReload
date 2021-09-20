@@ -267,12 +267,12 @@ public class WorkerDBTesting {
             WorkerManager workerORM = new WorkerManager();
             
                Scanner aScanner = new Scanner(System.in);
-               /*
-            System.out.println("Enter TRN: ");
-            String trn=aScanner.nextLine();
-            anWorker.setTrn(trn);
+               
+            System.out.println("Enter ID: ");
+            int id=aScanner.nextInt();
+            anWorker.setId(id);
 
-*/
+
             
             System.out.println("Enter first name: ");
             anWorker.setFirstname(aScanner.nextLine());
@@ -296,7 +296,7 @@ public class WorkerDBTesting {
         {
             WorkerManager workerORM = new WorkerManager();            
             Scanner aScanner = new Scanner(System. in);
-            System.out.println("Enter TRN: ");
+            System.out.println("Enter ID: ");
             
             workerORM.deleteWorker(Worker.class, aScanner.nextInt());
             System.out.println("Worker deleted using ORM");

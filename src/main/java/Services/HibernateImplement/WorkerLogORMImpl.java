@@ -16,11 +16,16 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author OraceMundle
  */
+
+
+@Component("WorkerLogORM")
+
 public class WorkerLogORMImpl extends HibernateMainConfig implements IWorkerLogService{
 
     private static final Logger log = Logger.getLogger(WorkerLogORMImpl.class);

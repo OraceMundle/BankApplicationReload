@@ -16,11 +16,15 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author OraceMundle
  */
+
+@Component("CustomerAddressORM")
+
 public class CustomerAddressORMImpl extends HibernateMainConfig implements ICustomerAddressService{
 
     private static final Logger log = Logger.getLogger(CustomerAddressORMImpl.class);

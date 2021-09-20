@@ -126,7 +126,7 @@ public class AppPresentationAccountConsole {
         else if(jdbcChoice==2)
         {
             Account anAccount=new Account();
-            AccountManager customerJDBC = new AccountManager();
+            AccountManager accountJDBC = new AccountManager();
             
               Scanner aScanner = new Scanner(System.in);
             System.out.println("Enter Account Number: ");
@@ -154,27 +154,27 @@ public class AppPresentationAccountConsole {
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
             
-            customerJDBC.updateAccountJDBC(anAccount);
+            accountJDBC.updateAccountJDBC(anAccount);
             System.out.println("Account updated Using JDBC");
         }
         else if(jdbcChoice==3)
         {
-            AccountManager customerJDBC = new AccountManager();            
+            AccountManager accountJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter TRN: ");
             
-            customerJDBC.deleteAccount(aScanner.nextLine());
+            accountJDBC.deleteAccount(aScanner.nextLine());
             System.out.println("Account deleted using JDBC");
         }
         else if(jdbcChoice==4)
         {
             Account anAccount=new Account();
-            AccountManager customerJDBC = new AccountManager();            
+            AccountManager accountJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System.in);
             
             System.out.println("Enter TRN: ");
             String trn = aScanner.nextLine();
-            anAccount = customerJDBC.getAccountJDBC(trn);
+            anAccount = accountJDBC.getAccountJDBC(trn);
             
             //Runtime.getRuntime().exec("cls");
             
@@ -192,11 +192,11 @@ public class AppPresentationAccountConsole {
         else if(jdbcChoice==5)
         {
             ResultSet rs=null;
-            AccountManager customerJDBC = new AccountManager();            
+            AccountManager accountJDBC = new AccountManager();            
             Scanner aScanner = new Scanner(System.in);
             
             
-            rs = customerJDBC.getAllAccountJDBC();
+            rs = accountJDBC.getAllAccountJDBC();
             
            // Runtime.getRuntime().exec("cls");
             
@@ -254,7 +254,7 @@ public class AppPresentationAccountConsole {
         if(ormChoice==1)
         {
             Account anAccount=new Account();
-            AccountManager customerORM = new AccountManager();
+            AccountManager accountORM = new AccountManager();
             
              Scanner aScanner = new Scanner(System.in);
             System.out.println("Enter Account Number: ");
@@ -282,13 +282,13 @@ public class AppPresentationAccountConsole {
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
             
-            customerORM.addAccount(anAccount);
+            accountORM.addAccount(anAccount);
             System.out.println("Account Added Using ORM");
         }
         else if(ormChoice==2)
         {
             Account anAccount=new Account();
-            AccountManager customerORM = new AccountManager();
+            AccountManager accountORM = new AccountManager();
             
                Scanner aScanner = new Scanner(System.in);
             System.out.println("Enter Account Number: ");
@@ -316,26 +316,26 @@ public class AppPresentationAccountConsole {
             System.out.println("Enter Worker ID: ");
             anAccount.setWorkerId(aScanner.nextInt());
             
-            customerORM.updateAccount(anAccount);
+            accountORM.updateAccount(anAccount);
             System.out.println("Account Added Using ORM");
         }
         else if(ormChoice==3)
         {
-            AccountManager customerORM = new AccountManager();            
+            AccountManager accountORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             System.out.println("Enter Account Number: ");
             
-            customerORM.deleteAccount(Account.class, aScanner.nextLine());
+            accountORM.deleteAccount(Account.class, aScanner.nextLine());
             System.out.println("Account deleted using ORM");
         }
         else if(ormChoice==4)
         {
             Account anAccount=new Account();
-            AccountManager customerORM = new AccountManager();            
+            AccountManager accountORM = new AccountManager();            
             Scanner aScanner = new Scanner(System. in);
             
             System.out.println("Enter Account: ");
-            anAccount = customerORM.getAccount(aScanner.nextLine());
+            anAccount = accountORM.getAccount(aScanner.nextLine());
             
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();
@@ -363,7 +363,7 @@ public class AppPresentationAccountConsole {
             //Runtime.getRuntime().exec("cls");
             //System.out.flush();
             
-            System.out.println("List of customer return using ORM\n");
+            System.out.println("List of account return using ORM\n");
             
             for(int i=0; i<account.size(); i++){
                 

@@ -26,14 +26,21 @@ public class WorkerManager {
     
     private static final Logger log = Logger.getLogger(WorkerLogManager.class);
     
+    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    
+    //ORM
+    
      public void addWorker(Worker aWorker)
     {
         try {
             
             System.out.println("In Business Layer addWorker(Worker aWorker) method");
-            Factory factory = new Factory();
-            IWorkerService iBookMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
-            iBookMgr.addWorker(aWorker);
+            //Factory factory = new Factory();
+            //IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            
+            
+            IWorkerService iWorkerMgr=(IWorkerService)context.getBean("WorkerORM");
+            iWorkerMgr.addWorker(aWorker);
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());    
             System.out.println(ex.getMessage());
@@ -47,8 +54,10 @@ public class WorkerManager {
         Worker aWorker=new Worker();
         try {
             System.out.println("In Business Layer getWorker(String trn) method");
-            Factory factory = new Factory();
-            IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            //Factory factory = new Factory();
+            //IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            
+            IWorkerService iWorkerMgr=(IWorkerService)context.getBean("WorkerORM");
             aWorker=iWorkerMgr.getWorker(id);
             
         } catch (ServiceLoadException ex) {
@@ -66,8 +75,10 @@ public class WorkerManager {
     {
         try {
             System.out.println("In Business Layer updateWorker(Worker aWorker) method");
-            Factory factory = new Factory();
-            IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            //Factory factory = new Factory();
+            //IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            
+            IWorkerService iWorkerMgr=(IWorkerService)context.getBean("WorkerORM");
             iWorkerMgr.updateWorker(aWorker);
             
         } catch (ServiceLoadException ex) {
@@ -84,8 +95,10 @@ public class WorkerManager {
         List<Worker> customerList = new ArrayList<>();
         try {
             System.out.println("In Business Layer getAllWorker method");
-            Factory factory = new Factory();
-            IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            //Factory factory = new Factory();
+            //IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            
+            IWorkerService iWorkerMgr=(IWorkerService)context.getBean("WorkerORM");
             customerList=iWorkerMgr.getAllWorker();
             
         } catch (ServiceLoadException ex) {
@@ -103,8 +116,10 @@ public class WorkerManager {
     {
         try {
             System.out.println("In Business Layer deleteWorker method");
-            Factory factory = new Factory();
-            IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            //Factory factory = new Factory();
+            //IWorkerService iWorkerMgr = (IWorkerService) factory.getTheService(IWorkerService.NAME);
+            
+            IWorkerService iWorkerMgr=(IWorkerService)context.getBean("WorkerORM");
             iWorkerMgr.deleteWorker(Worker, id);            
         } catch (ServiceLoadException ex) {
             log.info(ex.getMessage());
@@ -116,6 +131,9 @@ public class WorkerManager {
         }
     }
 
+    
+    //JDBC
+    
     
     public void addWorkerJDBC(Worker anWorker)
     {

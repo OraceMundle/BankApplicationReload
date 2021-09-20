@@ -15,11 +15,15 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import Services.ITransactionCalService;
 import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author OraceMundle
  */
+
+@Component("TransactionCalORM")
+
 public class TransactionCalORMImpl extends HibernateMainConfig implements ITransactionCalService{
         
      private static final Logger log = Logger.getLogger(TransactionCalORMImpl.class);

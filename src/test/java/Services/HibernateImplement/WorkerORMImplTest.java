@@ -19,9 +19,9 @@ import static org.junit.Assert.*;
  *
  * @author OraceMundle
  */
-public class WorkORMImplTest {
+public class WorkerORMImplTest {
     
-    public WorkORMImplTest() {
+    public WorkerORMImplTest() {
     }
     
     @BeforeClass
@@ -41,39 +41,39 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of addWorker method, of class WorkORMImpl.
+     * Test of addWorker method, of class WorkerORMImpl.
      */
     @Test
     public void testAddWorker() throws Exception {
         System.out.println("addWorker");
         Worker worker = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.addWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of updateWorker method, of class WorkORMImpl.
+     * Test of updateWorker method, of class WorkerORMImpl.
      */
     @Test
     public void testUpdateWorker() throws Exception {
         System.out.println("updateWorker");
         Worker worker = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.updateWorker(worker);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getWorker method, of class WorkORMImpl.
+     * Test of getWorker method, of class WorkerORMImpl.
      */
     @Test
     public void testGetWorker() throws Exception {
         System.out.println("getWorker");
         int id = 0;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         Worker expResult = null;
         Worker result = instance.getWorker(id);
         assertEquals(expResult, result);
@@ -82,12 +82,12 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of getAllWorker method, of class WorkORMImpl.
+     * Test of getAllWorker method, of class WorkerORMImpl.
      */
     @Test
     public void testGetAllWorker() throws Exception {
         System.out.println("getAllWorker");
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         List<Worker> expResult = null;
         List<Worker> result = instance.getAllWorker();
         assertEquals(expResult, result);
@@ -96,27 +96,27 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of deleteWorker method, of class WorkORMImpl.
+     * Test of deleteWorker method, of class WorkerORMImpl.
      */
     @Test
     public void testDeleteWorker() throws Exception {
         System.out.println("deleteWorker");
         Class Worker = null;
         int id = 0;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.deleteWorker(Worker, id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getworkerLogin method, of class WorkORMImpl.
+     * Test of getworkerLogin method, of class WorkerORMImpl.
      */
     @Test
     public void testGetworkerLogin() throws Exception {
         System.out.println("getworkerLogin");
         Worker user = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         Worker expResult = null;
         Worker result = instance.getworkerLogin(user);
         assertEquals(expResult, result);
@@ -125,39 +125,39 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of addWorkerJDBC method, of class WorkORMImpl.
+     * Test of addWorkerJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testAddWorkerJDBC() throws Exception {
         System.out.println("addWorkerJDBC");
         Worker worker = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.addWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of updateWorkerJDBC method, of class WorkORMImpl.
+     * Test of updateWorkerJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testUpdateWorkerJDBC() throws Exception {
         System.out.println("updateWorkerJDBC");
         Worker worker = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.updateWorkerJDBC(worker);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getWorkerJDBC method, of class WorkORMImpl.
+     * Test of getWorkerJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testGetWorkerJDBC() throws Exception {
         System.out.println("getWorkerJDBC");
         int id = 0;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         Worker expResult = null;
         Worker result = instance.getWorkerJDBC(id);
         assertEquals(expResult, result);
@@ -166,12 +166,12 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of getAllWorkerJDBC method, of class WorkORMImpl.
+     * Test of getAllWorkerJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testGetAllWorkerJDBC() throws Exception {
         System.out.println("getAllWorkerJDBC");
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         ResultSet expResult = null;
         ResultSet result = instance.getAllWorkerJDBC();
         assertEquals(expResult, result);
@@ -180,26 +180,26 @@ public class WorkORMImplTest {
     }
 
     /**
-     * Test of deleteWorkerJDBC method, of class WorkORMImpl.
+     * Test of deleteWorkerJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testDeleteWorkerJDBC() throws Exception {
         System.out.println("deleteWorkerJDBC");
         int id = 0;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         instance.deleteWorkerJDBC(id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getworkerLoginJDBC method, of class WorkORMImpl.
+     * Test of getworkerLoginJDBC method, of class WorkerORMImpl.
      */
     @Test
     public void testGetworkerLoginJDBC() throws Exception {
         System.out.println("getworkerLoginJDBC");
         Worker user = null;
-        WorkORMImpl instance = new WorkORMImpl();
+        WorkerORMImpl instance = new WorkerORMImpl();
         Worker expResult = null;
         Worker result = instance.getworkerLoginJDBC(user);
         assertEquals(expResult, result);

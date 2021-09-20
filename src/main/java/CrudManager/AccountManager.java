@@ -29,6 +29,9 @@ public class AccountManager {
     
      ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
     
+     
+     //ORM
+     
      public void addAccount(Account aAccount)
     {
         PropertyConfigurator.configure("C:\\Users\\orace\\Documents\\NetBeansProjects\\BankApplicationReload\\src\\main\\resources\\log4j.properties");
@@ -139,7 +142,8 @@ public class AccountManager {
             System.out.println(ex.getMessage());
         }
     }
-
+     
+    //JDBC
     
     public void addAccountJDBC(Account anAccount)
     {
