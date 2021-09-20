@@ -12,9 +12,6 @@ import org.apache.log4j.Logger;
  */
 public class AddAccountPrompt extends javax.swing.JFrame {
     private static final Logger log = Logger.getLogger(AddAccountPrompt.class);
-    Dashboard db = new Dashboard();
-    
-
     /**
      * Creates new form AddAccountPrompt
      */
@@ -134,12 +131,10 @@ public class AddAccountPrompt extends javax.swing.JFrame {
     //New customer button
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        try {
-        
-        AddAccountNew aan = new AddAccountNew();
-        
-                db.setVisible(false);
-                this.setVisible(false);
-                aan.setVisible(true);
+           
+            AddAccountNew aan = new AddAccountNew();
+            this.setVisible(false);
+            aan.setVisible(true);
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
@@ -155,11 +150,9 @@ public class AddAccountPrompt extends javax.swing.JFrame {
         
         try {
             
-             AddAccountExist aae = new AddAccountExist();
-                  
-            db.setVisible(false);
-            this.setVisible(false);
-            aae.setVisible(true);
+             AddAccountExist aae = new AddAccountExist();     
+             this.setVisible(false);
+             aae.setVisible(true);
             
         } catch (Exception ex) {
             log.info(ex.getMessage());
@@ -170,7 +163,6 @@ public class AddAccountPrompt extends javax.swing.JFrame {
     //Return to dashboard
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

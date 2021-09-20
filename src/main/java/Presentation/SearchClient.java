@@ -20,9 +20,6 @@ import org.apache.log4j.Logger;
 public class SearchClient extends javax.swing.JFrame {
     
     private static final Logger log = Logger.getLogger(SearchClient.class);
-    Dashboard db = new Dashboard();
-    
-
     /**
      * Creates new form AddAccount
      */
@@ -223,7 +220,6 @@ public class SearchClient extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Save button
@@ -253,7 +249,6 @@ public class SearchClient extends javax.swing.JFrame {
         JFrame f = new JFrame();
         JOptionPane.showMessageDialog(f, "Testig save button");
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -294,6 +289,7 @@ public class SearchClient extends javax.swing.JFrame {
                 couTextField.setText(address.getCountry());
                 */
                 System.out.println(customer.getFirstname());
+                this.setVisible(false);
             }
         }catch (Exception e) {
             

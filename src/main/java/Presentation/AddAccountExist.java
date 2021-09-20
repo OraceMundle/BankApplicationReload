@@ -20,7 +20,7 @@ import Domain.Worker;
  * @author Dinham
  */
 public class AddAccountExist extends javax.swing.JFrame {
-    //Dashboard db = new Dashboard();
+    
     JFrame f = new JFrame();
     CustomerManager customerMgr = new CustomerManager();
     Customer customer = new Customer();
@@ -284,10 +284,9 @@ public class AddAccountExist extends javax.swing.JFrame {
             }else
             {
                 
-                //JFrame f = new JFrame();
                 JOptionPane.showMessageDialog(f, "Customer info Saved");
                 this.setVisible(false);
-                //db.setVisible(true);
+                
                 
                 ac.setBalance(Float.parseFloat(balanceTextField.getText()));
                 ac.setLoanAmount(Float.parseFloat(loanTextField.getText()));

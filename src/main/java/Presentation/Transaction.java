@@ -16,9 +16,6 @@ import org.apache.log4j.Logger;
 public class Transaction extends javax.swing.JFrame {
     
     private static final Logger log = Logger.getLogger(Transaction.class);
-    Dashboard db = new Dashboard();
-    
-
     /**
      * Creates new form AddAccount
      */
@@ -215,7 +212,6 @@ public class Transaction extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -225,7 +221,6 @@ public class Transaction extends javax.swing.JFrame {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Testig save button");
             this.setVisible(false);
-            db.setVisible(true);
             
         } catch (Exception e) {
             log.info(e.getMessage());

@@ -349,13 +349,8 @@ public class AddAccountNew extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jBSaveAccountNewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaveAccountNewCustomerActionPerformed
-        JFrame f = new JFrame();
-        JOptionPane.showMessageDialog(f, "Testig save button");
-          this.setVisible(false);
+        
         //db.setVisible(true);
-        
-        
-        
         try {
                 Customer customer = new Customer();
                 CustomerAddress customerAddress = new CustomerAddress();
@@ -369,93 +364,73 @@ public class AddAccountNew extends javax.swing.JFrame {
 		  			                   "First Name  cant be Empty", "", JOptionPane.DEFAULT_OPTION);
             
             }
-        
-        
                 else 
             {
-                
-         
-        CustomerManager customerMgr = new CustomerManager();        
-                
-        customer.setFirstname(jTFirstName.getText().trim());
-        customer.setLastname(jTLastName.getText().trim());
-        customer.setDob(jTDob.getText().trim());
-        customer.setTrn(jTTrn.getText().trim());
-        customer.setEmail(jTEmail.getText().trim());
-        customer.setTelephoneNum(jTTelephone.getText().trim());
-        
-        
-        AccountManager accountMgr = new AccountManager();
-        account.setBalance(Float.parseFloat(jTBalance.getText().trim()));
-        account.setMonthlyInstalment(Float.parseFloat(jTInstallment.getText().trim()));
-        account.setDateOpened(jTDateOpened.getText().trim());
-        account.setDateClosed(jTDateClosed.getText().trim());
-        account.setLoanAmount(Float.parseFloat(jTLoanAmount.getText().trim()));
-        
-                   
-        customerAddress.setStreet(jTStreet.getText().trim());
-        customerAddress.setCommunity(jTCommunity.getText().trim());
-        customerAddress.setCountry(jTCountry.getText().trim());
-        
-        
-        //Adding Customer TRN to Account Foriegn Key Implementation
-        CustomerAddress customerAddress1 = new CustomerAddress(customerAddress, customer);
-        
-        
-        
-         
-        CustomerAddressManager customerAddMgr = new CustomerAddressManager();
-        //customerAddress1.setCustomer(customer.getTrn());
-        
-        //Adding Worker ID to Account Foriegn Key Implementation
-        Account account1 = new Account(account, customer, worker);
-        
-        account1.setBalance(account.getBalance());
-        account1.setMonthlyInstalment(account.getMonthlyInstalment());
-        account1.setDateClosed(account.getDateOpened());
-        account1.setDateClosed(account.getDateClosed());
-        account1.setLoanAmount(account.getLoanAmount());
-        account1.setCustomerTRN(customer.getTrn());
-        account1.setWorkerId(worker.getId());
-        
-        accountMgr.addAccount(account1);
-        
-             
-                               
-          
-        customerAddMgr.addCustomerAddress(customerAddress1);
-                      
-        
-        customerMgr.addCustomer(customer);
-        
-        //accountMgr.addAccount(customerAddress1);
-        
-        
-                
-        
-        
-        
-        
-        
-                }
-        
-            
-            
-            
+                CustomerManager customerMgr = new CustomerManager();        
+
+                customer.setFirstname(jTFirstName.getText().trim());
+                customer.setLastname(jTLastName.getText().trim());
+                customer.setDob(jTDob.getText().trim());
+                customer.setTrn(jTTrn.getText().trim());
+                customer.setEmail(jTEmail.getText().trim());
+                customer.setTelephoneNum(jTTelephone.getText().trim());
+
+
+                AccountManager accountMgr = new AccountManager();
+                account.setBalance(Float.parseFloat(jTBalance.getText().trim()));
+                account.setMonthlyInstalment(Float.parseFloat(jTInstallment.getText().trim()));
+                account.setDateOpened(jTDateOpened.getText().trim());
+                account.setDateClosed(jTDateClosed.getText().trim());
+                account.setLoanAmount(Float.parseFloat(jTLoanAmount.getText().trim()));
+
+
+                customerAddress.setStreet(jTStreet.getText().trim());
+                customerAddress.setCommunity(jTCommunity.getText().trim());
+                customerAddress.setCountry(jTCountry.getText().trim());
+
+
+                //Adding Customer TRN to Account Foriegn Key Implementation
+                CustomerAddress customerAddress1 = new CustomerAddress(customerAddress, customer);
+
+
+
+
+                CustomerAddressManager customerAddMgr = new CustomerAddressManager();
+                //customerAddress1.setCustomer(customer.getTrn());
+
+                //Adding Worker ID to Account Foriegn Key Implementation
+                Account account1 = new Account(account, customer, worker);
+
+                account1.setBalance(account.getBalance());
+                account1.setMonthlyInstalment(account.getMonthlyInstalment());
+                account1.setDateClosed(account.getDateOpened());
+                account1.setDateClosed(account.getDateClosed());
+                account1.setLoanAmount(account.getLoanAmount());
+                account1.setCustomerTRN(customer.getTrn());
+                account1.setWorkerId(worker.getId());
+
+                accountMgr.addAccount(account1);
+
+
+
+
+                customerAddMgr.addCustomerAddress(customerAddress1);
+
+
+                customerMgr.addCustomer(customer);
+
+                //accountMgr.addAccount(customerAddress1);
+                this.setVisible(false);
+
+            }  
             
         } catch (Exception ex) {
             
             int input = JOptionPane.showConfirmDialog(null, 
 		                  "Error  creating customer account", "", JOptionPane.DEFAULT_OPTION);
             	System.out.println(ex);
-                log.info(ex.getMessage());
-            
-        }
-        
-        
-       
-        
-        
+                log.info(ex.getMessage());       
+        }   
     }//GEN-LAST:event_jBSaveAccountNewCustomerActionPerformed
 
     private void jTLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTLastNameActionPerformed

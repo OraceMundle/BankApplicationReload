@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
  */
 public class ShowAllOptions extends javax.swing.JFrame {
      private static final Logger log = Logger.getLogger(ShowAllOptions.class);
-    Dashboard db = new Dashboard();
     /**
      * Creates new form AddAccountPrompt
      */
@@ -102,7 +101,6 @@ public class ShowAllOptions extends javax.swing.JFrame {
         try {
             
              TableAccount tblAccount = new  TableAccount();
-                db.setVisible(false);
                 this.setVisible(false);
                 tblAccount.setVisible(true);
                 tblAccount.viewTable("account");
@@ -120,7 +118,6 @@ public class ShowAllOptions extends javax.swing.JFrame {
         
         try {
             TableCustomer tblCustomer = new  TableCustomer();
-            db.setVisible(false);
             this.setVisible(false);
             tblCustomer.setVisible(true);
             tblCustomer.viewTable("customer");
@@ -137,7 +134,6 @@ public class ShowAllOptions extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

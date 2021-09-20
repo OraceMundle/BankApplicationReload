@@ -21,9 +21,6 @@ import org.apache.log4j.Logger;
 public class SearchAccount extends javax.swing.JFrame {
     
     private static final Logger log = Logger.getLogger(SearchAccount.class);
-    Dashboard db = new Dashboard();
-    
-
     /**
      * Creates new form AddAccount
      */
@@ -300,7 +297,6 @@ public class SearchAccount extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         this.setVisible(false);
-        db.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //used to update account info
@@ -345,6 +341,8 @@ public class SearchAccount extends javax.swing.JFrame {
                     account.setDateClosed(dclosedTextField.getText());
 
                     accountMgr.updateAccountJDBC(account);
+                    
+                    this.setVisible(false);
 
             }catch (Exception e) {
 
@@ -355,10 +353,6 @@ public class SearchAccount extends javax.swing.JFrame {
 
             }
                 
-        JFrame f = new JFrame();
-        JOptionPane.showMessageDialog(f, "Testig save button");
-        this.setVisible(false);
-        db.setVisible(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -414,6 +408,8 @@ public class SearchAccount extends javax.swing.JFrame {
                 dclosedTextField.setText(account.getDateClosed());
                 
                 System.out.println(customer.getFirstname());
+                
+                this.setVisible(false);
             }
         }catch (Exception e) {
             
