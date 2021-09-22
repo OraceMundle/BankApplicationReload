@@ -46,17 +46,17 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jInternalFrame1" alignment="0" max="32767" attributes="0"/>
+              <Component id="jIAddAccountExisting" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jInternalFrame1" alignment="1" max="32767" attributes="0"/>
+              <Component id="jIAddAccountExisting" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JInternalFrame" name="jInternalFrame1">
+        <Container class="javax.swing.JInternalFrame" name="jIAddAccountExisting">
           <Properties>
             <Property name="visible" type="boolean" value="true"/>
           </Properties>

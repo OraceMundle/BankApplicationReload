@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class DeleteClient extends javax.swing.JFrame {
+public class DeleteClient extends javax.swing.JInternalFrame {
     
     private static final Logger log = Logger.getLogger(DeleteClient.class);
     Dashboard db = new Dashboard();

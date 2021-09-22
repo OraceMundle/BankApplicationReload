@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class ShowAllOptions extends javax.swing.JFrame {
+public class ShowAllOptions extends javax.swing.JInternalFrame {
      private static final Logger log = Logger.getLogger(ShowAllOptions.class);
     /**
      * Creates new form AddAccountPrompt
@@ -119,6 +119,8 @@ public class ShowAllOptions extends javax.swing.JFrame {
         try {
             TableCustomer tblCustomer = new  TableCustomer();
             this.setVisible(false);
+            //BankAppAdminstration viewAdminstration = new BankAppAdminstration();
+            //viewAdminstration.add(tblCustomer);
             tblCustomer.setVisible(true);
             tblCustomer.viewTable("customer");
         } catch (Exception e) {

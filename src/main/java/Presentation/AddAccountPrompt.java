@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class AddAccountPrompt extends javax.swing.JFrame {
+public class AddAccountPrompt extends javax.swing.JInternalFrame {
     private static final Logger log = Logger.getLogger(AddAccountPrompt.class);
     /**
      * Creates new form AddAccountPrompt
@@ -132,7 +132,9 @@ public class AddAccountPrompt extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        try {
            
+           //BankAppAdminstration jdAppAdminstration = new BankAppAdminstration();
             AddAccountNew aan = new AddAccountNew();
+            //jdAppAdminstration.add(aan);            
             this.setVisible(false);
             aan.setVisible(true);
             
@@ -150,8 +152,10 @@ public class AddAccountPrompt extends javax.swing.JFrame {
         
         try {
             
+            //BankAppAdminstration jdAppAdminstration = new BankAppAdminstration();
              AddAccountExist aae = new AddAccountExist();     
              this.setVisible(false);
+             //jdAppAdminstration.add(aae);
              aae.setVisible(true);
             
         } catch (Exception ex) {

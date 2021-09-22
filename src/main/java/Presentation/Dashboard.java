@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class Dashboard extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JInternalFrame {
  private static final Logger log = Logger.getLogger(Dashboard.class);
  MenuShortcut s;
          

@@ -9,7 +9,7 @@ package Presentation;
  *
  * @author Dinham
  */
-public class CustomerForm extends javax.swing.JFrame {
+public class CustomerForm extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form CustomerForm

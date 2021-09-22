@@ -14,6 +14,7 @@ import Domain.Customer;
 import Domain.CustomerAddress;
 import Domain.Worker;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 
@@ -354,7 +355,10 @@ public class AddAccountNew extends javax.swing.JFrame {
     //Return to dashboard
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        AddAccountPrompt addAccountPrompt = new AddAccountPrompt();
         this.setVisible(false);
+        addAccountPrompt.setVisible(true);
+        //this.setVisible(false);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

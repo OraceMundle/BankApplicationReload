@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class DeleteAccount extends javax.swing.JFrame {
+public class DeleteAccount extends javax.swing.JInternalFrame {
     
     private static final Logger log = Logger.getLogger(DeleteAccount.class);
 

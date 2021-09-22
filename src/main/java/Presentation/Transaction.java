@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
  *
  * @author Dinham
  */
-public class Transaction extends javax.swing.JFrame {
+public class Transaction extends javax.swing.JInternalFrame {
     
     private static final Logger log = Logger.getLogger(Transaction.class);
     /**
