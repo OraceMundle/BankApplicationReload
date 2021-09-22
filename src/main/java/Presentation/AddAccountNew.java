@@ -81,6 +81,8 @@ public class AddAccountNew extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLWorkerId = new javax.swing.JLabel();
+        jTWorkerId = new javax.swing.JTextField();
 
         jLabel5.setText("Account Balance");
 
@@ -154,6 +156,8 @@ public class AddAccountNew extends javax.swing.JFrame {
 
         jLabel1.setText("Add Account For New Customer");
 
+        jLWorkerId.setText("Worker ID");
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -166,25 +170,6 @@ public class AddAccountNew extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator2)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4))
-                        .addGap(103, 103, 103)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTDateOpened, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTInstallment, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTLoanAmount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTDateClosed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBSaveAccountNewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(150, 150, 150))
                     .addComponent(jSeparator1)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +222,28 @@ public class AddAccountNew extends javax.swing.JFrame {
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(jLWorkerId))
+                        .addGap(103, 103, 103)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTDateOpened, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTInstallment, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTLoanAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTDateClosed, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTWorkerId))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBSaveAccountNewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(150, 150, 150))))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +307,11 @@ public class AddAccountNew extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTInstallment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLWorkerId)
+                    .addComponent(jTWorkerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(jInternalFrame1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -382,8 +392,9 @@ public class AddAccountNew extends javax.swing.JFrame {
                 account.setDateOpened(jTDateOpened.getText().trim());
                 account.setDateClosed(jTDateClosed.getText().trim());
                 account.setLoanAmount(Float.parseFloat(jTLoanAmount.getText().trim()));
-
-
+                account.setWorkerId(Integer.parseInt(jTWorkerId.getText().trim()));
+                account.setCustomerTRN(Integer.parseInt(customer.getTrn()));
+                
                 customerAddress.setStreet(jTStreet.getText().trim());
                 customerAddress.setCommunity(jTCommunity.getText().trim());
                 customerAddress.setCountry(jTCountry.getText().trim());
@@ -409,7 +420,8 @@ public class AddAccountNew extends javax.swing.JFrame {
                 account1.setCustomerTRN(Integer.parseInt(customer.getTrn()));
                 account1.setWorkerId(worker.getId());
 
-                accountMgr.addAccount(account1);
+                //accountMgr.addAccountJDBC(account1);
+                accountMgr.addAccountJDBC(account);
 
 
 
@@ -482,6 +494,7 @@ public class AddAccountNew extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLWorkerId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -516,5 +529,6 @@ public class AddAccountNew extends javax.swing.JFrame {
     private javax.swing.JTextField jTStreet;
     private javax.swing.JTextField jTTelephone;
     private javax.swing.JTextField jTTrn;
+    private javax.swing.JTextField jTWorkerId;
     // End of variables declaration//GEN-END:variables
 }

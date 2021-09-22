@@ -80,29 +80,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTBalance" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="jTDateOpened" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="jTInstallment" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="jTLoanAmount" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="jTDateClosed" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jButton1" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
-                                  <Component id="jBSaveAccountNewCustomer" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -175,6 +152,31 @@
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLWorkerId" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTBalance" pref="125" max="32767" attributes="0"/>
+                                  <Component id="jTDateOpened" pref="125" max="32767" attributes="0"/>
+                                  <Component id="jTInstallment" pref="125" max="32767" attributes="0"/>
+                                  <Component id="jTLoanAmount" alignment="0" pref="125" max="32767" attributes="0"/>
+                                  <Component id="jTDateClosed" alignment="0" pref="125" max="32767" attributes="0"/>
+                                  <Component id="jTWorkerId" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jButton1" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="jBSaveAccountNewCustomer" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -253,7 +255,12 @@
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTInstallment" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="99" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLWorkerId" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTWorkerId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="61" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -400,6 +407,13 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Account For New Customer"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLWorkerId">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Worker ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTWorkerId">
             </Component>
           </SubComponents>
         </Container>

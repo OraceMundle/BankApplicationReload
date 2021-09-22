@@ -19,9 +19,9 @@ import org.apache.log4j.Logger;
  *
  * @author OraceMundle
  */
-public class TransactionCalJDBCImp extends JDBCMainConfiguration implements ITransactionCalService{
+public class TransactionCalJDBCImpl extends JDBCMainConfiguration implements ITransactionCalService{
 
-     //private static final Logger log = Logger.getLogger(TransactionJDBCImpl.class);    
+     private static final Logger log = Logger.getLogger(TransactionCalJDBCImpl.class);    
     Statement statement;
     
     //ORM
@@ -105,9 +105,8 @@ public class TransactionCalJDBCImp extends JDBCMainConfiguration implements ITra
     @Override
     public TransactionCal getTransactionJDBC(int transactionId) throws Exception {
      
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               
         
-        /*
          TransactionCal transaction =new TransactionCal();
         
          
@@ -120,14 +119,13 @@ public class TransactionCalJDBCImp extends JDBCMainConfiguration implements ITra
         ResultSet rs=statement.executeQuery(selectTransaction);
                         
         while(rs.next()){
-        transaction.setPrevious_balance("previous_balance"); 
-        
+        transaction.setPrevious_balance(rs.getFloat("previous_balance")); 
+        transaction.setCurrent_balance(rs.getFloat("current_balance"));
+        transaction.setPayment_amount(rs.getFloat("payment_amount"));
         transaction.setTransaction_date("transaction_date");
-        customer.setFirstname(rs.getString("f_name"));
-        customer.setLastname(rs.getString("l_name"));
-        customer.setEmail(rs.getString("email"));
-        customer.setTelephoneNum(rs.getString("telephone_number"));
-        customer.setDob(rs.getString("dob"));
+        transaction.setWorker_id(rs.getString("worker_id"));
+        transaction.setAccount_number(rs.getInt("account_number"));
+       
         }
         
         } catch (Exception e) {
@@ -135,20 +133,44 @@ public class TransactionCalJDBCImp extends JDBCMainConfiguration implements ITra
         }
         
         
+        return transaction;
         
-        */
         
         
     }
 
     @Override
     public ResultSet getAllTransactionsJDBC() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+         ResultSet rs=null;
+        PreparedStatement ps;
+        
+        try {
+            
+        
+        String SelectAll="SELECT * FROM transaction";
+        //statement=this.getConnection().createStatement();
+        ps=this.getConnection().prepareStatement(SelectAll, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        rs=ps.executeQuery(SelectAll);
+        
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return rs;
+        
+        
+        
+        
     }
 
     @Override
     public void deleteTransactionJDBC(int transactionId) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
+        statement=this.getConnection().createStatement();
+        statement.execute("Delete From customer Where trn  = " + transactionId);
+        
+        
     }
 
     @Override

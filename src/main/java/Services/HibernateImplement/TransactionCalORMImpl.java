@@ -122,7 +122,7 @@ public class TransactionCalORMImpl extends HibernateMainConfig implements ITrans
          List<TransactionCal> transactionList =  new ArrayList<>();
          try{
              transact=session1.beginTransaction();
-             transactionList = (List<TransactionCal>) session1.createQuery("from transaction ").list();
+             transactionList = (List<TransactionCal>) session1.createQuery("from TransactionCal ").list();
              transact.commit();             
          }
          catch(HibernateException hex){
