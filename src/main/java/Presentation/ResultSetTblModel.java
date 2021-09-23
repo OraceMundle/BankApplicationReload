@@ -7,6 +7,7 @@ package Presentation;
 
 import CrudManager.AccountManager;
 import CrudManager.CustomerJDBCManager;
+import CrudManager.TransactionCalManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -30,6 +31,7 @@ public class ResultSetTblModel extends AbstractTableModel{
     private AccountManager am;
     private int numberOfRows, numberOfCols;
     private CustomerJDBCManager cm;
+    private TransactionCalManager t;
     
     private ResultSet rs;
     private ResultSetMetaData rsmd;
@@ -55,6 +57,16 @@ public class ResultSetTblModel extends AbstractTableModel{
                 cm = new CustomerJDBCManager();
                 System.out.println("Getting ResultSet");
                 rs = cm.getAllCustomerJDBC();
+                System.out.println("Got Customer ResultSet");
+                connectToDatabase = true;
+                System.out.println("Connected to database set to true");
+            }
+            
+            else if (objectType.equals("transaction"))
+            {
+                t = new TransactionCalManager();
+                System.out.println("Getting ResultSet");
+                rs = t.getAllTransactionCalJDBC();
                 System.out.println("Got Customer ResultSet");
                 connectToDatabase = true;
                 System.out.println("Connected to database set to true");

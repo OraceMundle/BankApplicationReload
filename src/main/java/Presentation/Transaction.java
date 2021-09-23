@@ -8,9 +8,13 @@ package Presentation;
 import CrudManager.AccountManager;
 import CrudManager.CustomerAddressManager;
 import CrudManager.CustomerManager;
+import CrudManager.TransactionCalManager;
 import Domain.Account;
 import Domain.Customer;
 import Domain.CustomerAddress;
+import Domain.TransactionCal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
@@ -22,6 +26,9 @@ import org.apache.log4j.Logger;
 public class Transaction extends javax.swing.JInternalFrame {
     
     private static final Logger log = Logger.getLogger(Transaction.class);
+    
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    LocalDate localDate = LocalDate.now();
     /**
      * Creates new form AddAccount
      */
@@ -59,7 +66,7 @@ public class Transaction extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         accNumTextField2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jInternalFrame1.setVisible(true);
 
@@ -90,10 +97,13 @@ public class Transaction extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Account Info");
 
+        balanceTextField.setEditable(false);
         balanceTextField.setToolTipText("Balance");
 
+        loanTextField.setEditable(false);
         loanTextField.setToolTipText("Loan Amount");
 
+        insTextField.setEditable(false);
         insTextField.setToolTipText("Installments");
 
         payTextField.setToolTipText("Payment Amount");
@@ -240,6 +250,40 @@ public class Transaction extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         try {
+                if(accNumTextField2.getText().isEmpty() && accNumTextField2.getText().isBlank()){
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "No Account Entered");
+            }else if (payTextField.getText().isEmpty() && payTextField.getText().isBlank()){
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Payment Amount Is Blank");
+            }else{
+                TransactionCal t = new TransactionCal();
+                TransactionCalManager tcm = new TransactionCalManager();
+                
+                float newBal = t.getCurrent_balance() - Float.parseFloat(payTextField.getText());
+                
+                if(newBal<0)
+                {
+                    JFrame f = new JFrame();
+                    JOptionPane.showMessageDialog(f, "Payment Amount Is is more than balance");
+                    t.setCurrent_balance(Float.parseFloat(balanceTextField.getText()));
+                    t.setPrevious_balance(Float.parseFloat(balanceTextField.getText()));
+                    
+                }else{
+                    t.setCurrent_balance(newBal);
+                    t.setPayment_amount(Float.parseFloat(payTextField.getText()));
+                    String date = localDate.format(dtf);
+                    t.setTransaction_date(date);
+                    
+                    tcm.addTransactionCalJDBC(t);
+                    
+                    JFrame f = new JFrame();
+                    JOptionPane.showMessageDialog(f, "Transaction Processed");
+                    this.setVisible(false);
+                    
+                }
+                
+            }             
             
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f, "Testig save button");
@@ -272,6 +316,8 @@ public class Transaction extends javax.swing.JInternalFrame {
                 
                 CustomerAddressManager addressMgr = new CustomerAddressManager();
                 CustomerAddress address = new CustomerAddress();
+                
+                TransactionCal t = new TransactionCal();
 
                 //Passes data from crudmanager to customer class
                 account=accountMgr.getAccount(Integer.parseInt(accNumTextField.getText().trim()));
@@ -290,6 +336,11 @@ public class Transaction extends javax.swing.JInternalFrame {
                 balanceTextField.setText(Float.toString(account.getBalance()));
                 loanTextField.setText(Float.toString(account.getLoanAmount()));
                 insTextField.setText(Float.toString(account.getMonthlyInstalment()));
+                
+                //Transaction push
+                t.setCurrent_balance(Float.parseFloat(balanceTextField.getText()));
+                t.setPrevious_balance(Float.parseFloat(balanceTextField.getText()));
+                t.setAccount_number(Integer.parseInt(accNumTextField2.getText()));
                 
                 System.out.println(customer.getFirstname());
             }
