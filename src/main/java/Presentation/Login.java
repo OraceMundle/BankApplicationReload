@@ -54,6 +54,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Username");
 
         userName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        userName.setToolTipText("Worker Lastname");
         userName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameActionPerformed(evt);
@@ -64,6 +65,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("User ID");
 
         password.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        password.setToolTipText("Worker ID#");
 
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
